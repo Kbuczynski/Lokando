@@ -15,6 +15,7 @@ Potem:
 ```batch
 \user> cp .env.example .env
 \user> cp webpack.mix.js.example webpack.mix.js.example
+\user> mkdir assets ./resources
 \user> composer update
 \user> npm install
 ```
