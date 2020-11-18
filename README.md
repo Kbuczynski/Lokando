@@ -13,10 +13,10 @@
 Pierwszym krokiem jest wrzucenie konfiguracji php.ini do swojego serwera php
 Potem:
 ```batch
-\user> composer update
-\user> npm install
 \user> cp .env.example .env
 \user> cp webpack.mix.js.example webpack.mix.js.example
+\user> composer update
+\user> npm install
 ```
 
 Następnie ustaw odpowiednio .env (Dane do bazy danych i APP_URL(ścieżka do katalogu aplikacji) wystarczy)
