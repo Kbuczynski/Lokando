@@ -3,9 +3,7 @@
     height: 100px;
 
     &__container {
-        margin: auto;
         height: 100px;
-        max-width: 1200px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -13,9 +11,17 @@
 
     &__logo {
         margin-right: 20px;
+
+        @include respond-to("large") {
+            margin-right: 10px;
+        }
     }
 
     .button {
         margin-left: 40px;
+
+        @include respond-to("large") {
+            margin-left: 10px;
+        }
     }
 }
