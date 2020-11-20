@@ -102,19 +102,19 @@ const FormSlider = () => {
                 organicArrows={false}
             >
                 <div
-                    data-src="assets/images/slide-one.png"
+                    data-src="assets/images/slider-register/slide-one.png"
                     className="slider__item"
                 >
                     Bezpieczeństwo połączone z wygodą
                 </div>
                 <div
-                    data-src="assets/images/slide-two.png"
+                    data-src="assets/images/slider-regiser/slide-two.png"
                     className="slider__item"
                 >
                     Wsparcie dla lokalnych biznesów
                 </div>
                 <div
-                    data-src="assets/images/slide-three.png"
+                    data-src="assets/images/slider-register/slide-three.png"
                     className="slider__item"
                 >
                     Możliwość dostawy bezkontaktowej

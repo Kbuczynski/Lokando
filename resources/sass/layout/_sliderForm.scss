@@ -55,7 +55,6 @@
 // }
 
 .sliderForm {
-    // max-width: 50vw;
     height: 900px;
 
     &__slider {
@@ -87,8 +86,4 @@
         left: 50% !important;
         transform: translate(-50%, -50%);
     }
-}
-
-.awssld__bullets {
-    // bottom: 0 !important;
 }
