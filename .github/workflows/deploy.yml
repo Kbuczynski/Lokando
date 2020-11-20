@@ -1,0 +1,23 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  build:
+
+    runs-on: [self-hosted, debian]
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Executing remote script
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        USERNAME: ${{ secrets.USERNAME }}
+        PORT: ${{ secrets.PORT }}
+        KEY: ${{ secrets.SSHKEY }}
+        script: /var/www/git-pull.sh
