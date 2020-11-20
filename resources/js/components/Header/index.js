@@ -15,8 +15,8 @@ const Header = (props) => {
         <div className={"header"} id={"page-wrap"}>
             <div className={"header__container container"}>
 
-                <span className={"logo header__logo"}>
-                    {/*<img src={"./assets/images/logo/lokando-logo-white.svg"} alt={"Logo"} />*/}
+                <span className={"header__logo"}>
+                    <img src={"./assets/images/logo/lokando-logo-white.svg"} alt={"Logo"} />
                 </span>
 
                 <Search
