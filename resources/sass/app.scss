@@ -18,6 +18,9 @@
 
 // 5. Components
 @import "components/button";
+@import "components/images";
+@import "components/header";
+@import "components/searchBar";
 
 // 6. Page-specific styles
 @import "pages/home", "pages/createAccount";

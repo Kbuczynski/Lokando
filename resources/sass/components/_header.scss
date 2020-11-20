@@ -1,0 +1,21 @@
+.header {
+    background-color: #33445B;
+    height: 100px;
+
+    &__container {
+        margin: auto;
+        height: 100px;
+        max-width: 1200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__logo {
+        margin-right: 20px;
+    }
+
+    .button {
+        margin-left: 40px;
+    }
+}
