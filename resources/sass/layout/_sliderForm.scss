@@ -1,55 +1,45 @@
 .sliderForm {
     height: 100vh;
-    width: 50vw;
-    background-image: $green-gradient;
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    &__item {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        filter: opacity(0);
-        transition: filter 0.1s 0.1s ease;
+    &__slider {
+        width: 100%;
 
-        .item__text {
-            font-size: 3rem;
+        .slider__item {
+            position: absolute;
+            top: 0rem;
+            font-size: 2rem;
             color: $white;
-            text-align: center;
-            margin-bottom: 5rem;
-        }
+            z-index: 1;
+            padding: 1rem;
 
-        .item__image {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-
-            .image__svg {
-                background: url("../images/slide-one.svg") no-repeat center;
-                height: 500px;
-                width: 600px;
+            & > img {
+                width: 50%;
             }
         }
     }
 
-    &__control {
-        position: absolute;
-        bottom: 2rem;
-        left: calc(50% - 2rem);
-        display: flex;
+    div div div div .awssld__box {
+        position: relative;
+        height: 1000px;
+    }
 
-        .control__bullet {
-            padding: 10px;
-            border-radius: 20px;
-            background-color: $blue;
-            filter: opacity(0.5);
-            transition: filter 0.1s 0.1s ease;
-            cursor: pointer;
+    .awssld__content {
+        background: transparent !important;
+        position: relative;
 
-            &:nth-child(2) {
-                margin: 0 1rem;
-            }
+        & > img {
+            width: 50% !important;
+            height: auto !important;
+            top: 50% !important;
+            left: 50% !important;
+            transform: translate(-50%, -40%);
         }
+    }
+
+    .awssld__timer {
+        visibility: hidden !important;
     }
 }
