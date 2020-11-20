@@ -1,0 +1,14 @@
+.createAccount {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    &__left {
+        background-image: $green-gradient;
+    }
+
+    &__right {
+        background-image: $blue-gradient;
+    }
+}
