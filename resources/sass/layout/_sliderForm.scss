@@ -1,89 +1,45 @@
-// .sliderForm {
-//     height: 100vh;
-//     width: 50vw;
-//     background-image: $green-gradient;
-//     position: relative;
-
-//     &__item {
-//         position: absolute;
-//         top: 50%;
-//         left: 50%;
-//         transform: translate(-50%, -50%);
-//         filter: opacity(0);
-//         transition: filter 0.1s 0.1s ease;
-
-//         .item__text {
-//             font-size: 3rem;
-//             color: $white;
-//             text-align: center;
-//             margin-bottom: 5rem;
-//         }
-
-//         .item__image {
-//             display: flex;
-//             justify-content: center;
-//             align-items: center;
-//             width: 100%;
-
-//             .image__svg {
-//                 background: url("../images/slide-one.svg") no-repeat center;
-//                 height: 500px;
-//                 width: 600px;
-//             }
-//         }
-//     }
-
-//     &__control {
-//         position: absolute;
-//         bottom: 2rem;
-//         left: calc(50% - 2rem);
-//         display: flex;
-
-//         .control__bullet {
-//             padding: 10px;
-//             border-radius: 20px;
-//             background-color: $blue;
-//             filter: opacity(0.5);
-//             transition: filter 0.1s 0.1s ease;
-//             cursor: pointer;
-
-//             &:nth-child(2) {
-//                 margin: 0 1rem;
-//             }
-//         }
-//     }
-// }
-
 .sliderForm {
-    height: 900px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &__slider {
         width: 100%;
 
         .slider__item {
             position: absolute;
-            top: 10rem;
+            top: 0rem;
+            font-size: 2rem;
+            color: $white;
+            z-index: 1;
+            padding: 1rem;
+
             & > img {
                 width: 50%;
             }
         }
     }
-}
 
-.awssld__box {
-    position: relative;
-    height: 1000px;
-}
+    div div div div .awssld__box {
+        position: relative;
+        height: 1000px;
+    }
 
-.awssld__content {
-    background: transparent !important;
-    position: relative;
+    .awssld__content {
+        background: transparent !important;
+        position: relative;
 
-    & > img {
-        width: 50% !important;
-        height: auto !important;
-        top: 50% !important;
-        left: 50% !important;
-        transform: translate(-50%, -50%);
+        & > img {
+            width: 50% !important;
+            height: auto !important;
+            top: 50% !important;
+            left: 50% !important;
+            transform: translate(-50%, -40%);
+        }
+    }
+
+    .awssld__timer {
+        visibility: hidden !important;
     }
 }
