@@ -1,10 +1,12 @@
 import React from 'react';
+import Wrapper from "../../components/Wrapper";
+import Filters from "./Filters";
 
-const SearchResults = () => {
+const SearchResults = (props) => {
     return (
-        <div>
-            <h1>Search results</h1>
-        </div>
+        <Wrapper>
+            <Filters />
+        </Wrapper>
     );
 };
 

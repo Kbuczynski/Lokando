@@ -10,6 +10,7 @@ import { Provider } from "react-redux";
 
 import Home from "./views/Home";
 import CreateAccount from "./views/CreateAccount";
+import SearchResults from "./views/SearchResults";
 
 const loggerMiddleware = createLogger();
 
@@ -28,6 +29,11 @@ function Router() {
                         exact
                         path="/utworz-konto"
                         component={CreateAccount}
+                    />
+                    <Route
+                        exact
+                        path="/szukaj"
+                        component={SearchResults}
                     />
                 </Switch>
             </BrowserRouter>
