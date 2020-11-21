@@ -78,6 +78,7 @@ class RouteServiceProvider extends ServiceProvider
             ->group(function($router) {
                 require base_path('routes/auth/login.php');
                 require base_path('routes/api/categories.php');
+                require base_path('routes/api/users.php');
             });
     }
 }

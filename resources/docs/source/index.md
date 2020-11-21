@@ -37,7 +37,7 @@ curl -X POST \
     "http://localhost/Lokando/api/auth/register" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"sit","surname":"ad","phone":"dolor","street":"repellat","street_number":"labore","city":"iste","postal":"est","email":"laborum","password":"qui","password_confirmation":"suscipit","company_nip":12,"company_name":"rem","company_phone":"ex","company_street":"ipsam","company_street_number":"error","company_city":"saepe","company_postal":"repellendus","company_description":"enim","company_slogan":"aliquam"}'
+    -d '{"name":"distinctio","surname":"tenetur","phone":"molestias","street":"minus","street_number":"error","city":"eos","postal":"quisquam","email":"est","password":"et","password_confirmation":"ut","company_nip":15,"company_name":"debitis","company_phone":"excepturi","company_street":"esse","company_street_number":"recusandae","company_city":"amet","company_postal":"tenetur","company_description":"enim","company_slogan":"dolores","category_id":16}'
 
 ```
 
@@ -52,25 +52,26 @@ let headers = {
 };
 
 let body = {
-    "name": "sit",
-    "surname": "ad",
-    "phone": "dolor",
-    "street": "repellat",
-    "street_number": "labore",
-    "city": "iste",
-    "postal": "est",
-    "email": "laborum",
-    "password": "qui",
-    "password_confirmation": "suscipit",
-    "company_nip": 12,
-    "company_name": "rem",
-    "company_phone": "ex",
-    "company_street": "ipsam",
-    "company_street_number": "error",
-    "company_city": "saepe",
-    "company_postal": "repellendus",
+    "name": "distinctio",
+    "surname": "tenetur",
+    "phone": "molestias",
+    "street": "minus",
+    "street_number": "error",
+    "city": "eos",
+    "postal": "quisquam",
+    "email": "est",
+    "password": "et",
+    "password_confirmation": "ut",
+    "company_nip": 15,
+    "company_name": "debitis",
+    "company_phone": "excepturi",
+    "company_street": "esse",
+    "company_street_number": "recusandae",
+    "company_city": "amet",
+    "company_postal": "tenetur",
     "company_description": "enim",
-    "company_slogan": "aliquam"
+    "company_slogan": "dolores",
+    "category_id": 16
 }
 
 fetch(url, {
@@ -92,11 +93,11 @@ Parameter | Type | Status | Description
 --------- | ------- | ------- | ------- | -----------
     `name` | string |  required  | 
         `surname` | string |  required  | 
-        `phone` | string |  required  | 
-        `street` | string |  optional  | optional
-        `street_number` | string |  optional  | optional
-        `city` | string |  optional  | optional
-        `postal` | string |  optional  | optional
+        `phone` | string |  optional  | optional DO NOT USE IF ITS COMPANY PROFILE
+        `street` | string |  optional  | optional DO NOT USE IF ITS COMPANY PROFILE
+        `street_number` | string |  optional  | optiona lDO NOT USE IF ITS COMPANY PROFILE
+        `city` | string |  optional  | optional DO NOT USE IF ITS COMPANY PROFILE
+        `postal` | string |  optional  | optional DO NOT USE IF ITS COMPANY PROFILE
         `email` | email |  required  | 
         `password` | string |  required  | 
         `password_confirmation` | string |  required  | 
@@ -109,6 +110,7 @@ Parameter | Type | Status | Description
         `company_postal` | string |  required  | 
         `company_description` | string |  required  | 
         `company_slogan` | string |  optional  | optional
+        `category_id` | integer |  required  | 
     
 <!-- END_2e1c96dcffcfe7e0eb58d6408f1d619e -->
 
@@ -124,7 +126,7 @@ curl -X POST \
     "http://localhost/Lokando/api/auth/login" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"email":"aut","password":"in"}'
+    -d '{"email":"delectus","password":"voluptatibus"}'
 
 ```
 
@@ -139,8 +141,8 @@ let headers = {
 };
 
 let body = {
-    "email": "aut",
-    "password": "in"
+    "email": "delectus",
+    "password": "voluptatibus"
 }
 
 fetch(url, {
@@ -258,6 +260,200 @@ fetch(url, {
 
 
 <!-- END_00e7e21641f05de650dbe13f242c6f2c -->
+
+#Category
+
+
+Categories Managment
+<!-- START_109013899e0bc43247b0f00b67f889cf -->
+## api/categories
+
+Return list of categories
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/Lokando/api/categories" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/Lokando/api/categories"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "current_page": 1,
+    "data": [
+        {
+            "id": 1,
+            "name": "Gastronomia",
+            "slug": "gastronomia",
+            "url": "http:\/\/localhost\/Lokando\/assets\/images\/category\/gastronomia.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Zakupy",
+            "slug": "zakupy",
+            "url": "http:\/\/localhost\/Lokando\/assets\/images\/category\/zakupy.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Zdrowie i Uroda",
+            "slug": "zdrowie-i-uroda",
+            "url": "http:\/\/localhost\/Lokando\/assets\/images\/category\/zdrowie-i-uroda.jpg"
+        },
+        {
+            "id": 4,
+            "name": "Wyposażenie",
+            "slug": "wyposazenie",
+            "url": "http:\/\/localhost\/Lokando\/assets\/images\/category\/wyposazenie.jpg"
+        },
+        {
+            "id": 5,
+            "name": "Edukacja",
+            "slug": "edukacja",
+            "url": "http:\/\/localhost\/Lokando\/assets\/images\/category\/edukacja.jpg"
+        },
+        {
+            "id": 6,
+            "name": "Transport",
+            "slug": "transport",
+            "url": "http:\/\/localhost\/Lokando\/assets\/images\/category\/transport.jpg"
+        },
+        {
+            "id": 7,
+            "name": "Elektronika",
+            "slug": "elektronika",
+            "url": "http:\/\/localhost\/Lokando\/assets\/images\/category\/elektronika.jpg"
+        },
+        {
+            "id": 8,
+            "name": "Zwierzęta",
+            "slug": "zwierzeta",
+            "url": "http:\/\/localhost\/Lokando\/assets\/images\/category\/zwierzeta.jpg"
+        },
+        {
+            "id": 9,
+            "name": "Sport i Hobby",
+            "slug": "sport-i-hobby",
+            "url": "http:\/\/localhost\/Lokando\/assets\/images\/category\/sport-i-hobby.jpg"
+        },
+        {
+            "id": 10,
+            "name": "Inne Usługi",
+            "slug": "inne-uslugi",
+            "url": "http:\/\/localhost\/Lokando\/assets\/images\/category\/inne-uslugi.jpg"
+        }
+    ],
+    "first_page_url": "http:\/\/localhost\/api\/categories?page=1",
+    "from": 1,
+    "last_page": 1,
+    "last_page_url": "http:\/\/localhost\/api\/categories?page=1",
+    "next_page_url": null,
+    "path": "http:\/\/localhost\/api\/categories",
+    "per_page": 15,
+    "prev_page_url": null,
+    "to": 10,
+    "total": 10
+}
+```
+
+### HTTP Request
+`GET api/categories`
+
+
+<!-- END_109013899e0bc43247b0f00b67f889cf -->
+
+#Users
+
+
+Users Managment
+<!-- START_a4a2abed1e8e8cad5e6a3282812fe3f3 -->
+## api/user
+
+Updates user
+
+> Example request:
+
+```bash
+curl -X PUT \
+    "http://localhost/Lokando/api/user/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"name":"fugiat","surname":"aut","phone":"consectetur","street":"et","street_number":"corrupti","city":"at","postal":"consequatur","email":"molestiae"}'
+
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/Lokando/api/user/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "fugiat",
+    "surname": "aut",
+    "phone": "consectetur",
+    "street": "et",
+    "street_number": "corrupti",
+    "city": "at",
+    "postal": "consequatur",
+    "email": "molestiae"
+}
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+    body: body
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`PUT api/user/{user}`
+
+`PATCH api/user/{user}`
+
+#### Body Parameters
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    `name` | string |  required  | 
+        `surname` | string |  required  | 
+        `phone` | string |  optional  | optional DO NOT USE IF ITS COMPANY PROFILE
+        `street` | string |  optional  | optional DO NOT USE IF ITS COMPANY PROFILE
+        `street_number` | string |  optional  | optional lDO NOT USE IF ITS COMPANY PROFILE
+        `city` | string |  optional  | optional DO NOT USE IF ITS COMPANY PROFILE
+        `postal` | string |  optional  | optional DO NOT USE IF ITS COMPANY PROFILE
+        `email` | email |  required  | 
+    
+<!-- END_a4a2abed1e8e8cad5e6a3282812fe3f3 -->
 
 #general
 
