@@ -26,11 +26,9 @@ class ApiClass {
          * @type {string[]}
          */
         this.allowedEndpoints = [
-            "/login",
-            "/reset",
-            "/auth",
-            "/api/auth/login",
-            "/api/auth/register"
+            "/auth/login",
+            "/auth/register",
+            "/categories"
         ];
 
         this.authorizedEndpoints = [];

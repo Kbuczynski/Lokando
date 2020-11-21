@@ -46,6 +46,14 @@ const categories = [
 ];
 
 const Category = () => {
+    // const [categories, setCategories] = useState({});
+
+    // useEffect(() => {
+    //     window.API.get("/categories").then(resp => {
+    //         setCategories(resp);
+    //     });
+    // }, []);
+
     return (
         <div className="category">
             <Title text="Kategorie" marginY="2.5" />
@@ -53,6 +61,13 @@ const Category = () => {
                 {categories.map(({ name, image }, index) => (
                     <CategoryItem key={index} name={name} image={image} />
                 ))}
+
+                {/* {Object.keys(categories).length > 0 &&
+                            categories.data.data.map(({ id, name }) => {
+                                return (
+                                    <CategoryItem key={id} name={name} image={image} />
+                                );
+                            })} */}
             </div>
         </div>
     );

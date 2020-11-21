@@ -7,6 +7,7 @@ const FormLogin = () => {
         email: "",
         password: ""
     });
+    const [isError, setIsError] = useState(false);
 
     const handleEmail = e => {
         const email = e.target.value;
@@ -29,7 +30,13 @@ const FormLogin = () => {
     const handleSubmit = e => {
         e.preventDefault();
 
-        API.post("/api/auth/login", loginData);
+        API.post("/auth/login", loginData)
+            .then(() => {
+                window.location.href = `${window.baseUrl}/`;
+            })
+            .catch(() => {
+                setIsError(true);
+            });
     };
 
     return (
@@ -45,6 +52,7 @@ const FormLogin = () => {
                     placeholder="Podaj swój e-mail"
                     required
                     onChange={handleEmail}
+                    value={loginData.email}
                 />
             </div>
             <div className="login__item">
@@ -60,10 +68,16 @@ const FormLogin = () => {
                     required
                     min="8"
                     onChange={handlePassword}
+                    value={loginData.password}
                 />
             </div>
             <div className="login__item">
                 <Button text="Zaloguj się" />
+                {isError && (
+                    <small className="item__alert">
+                        Login lub hasło nie są poprawne 🤔
+                    </small>
+                )}
             </div>
         </form>
     );
