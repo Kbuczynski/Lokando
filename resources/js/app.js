@@ -12,6 +12,7 @@ import axios from "axios";
 import Home from "./views/Home";
 import CreateAccount from "./views/CreateAccount";
 import SearchResults from "./views/SearchResults";
+import ScrollTop from "./components/ScrollTop";
 
 const loggerMiddleware = createLogger();
 
@@ -33,12 +34,9 @@ function Router() {
                         path="/utworz-konto"
                         component={CreateAccount}
                     />
-                    <Route
-                        exact
-                        path="/szukaj"
-                        component={SearchResults}
-                    />
+                    <Route exact path="/szukaj" component={SearchResults} />
                 </Switch>
+                <ScrollTop />
             </BrowserRouter>
         </Provider>
     );

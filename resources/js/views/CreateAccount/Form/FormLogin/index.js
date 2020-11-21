@@ -14,6 +14,7 @@ const FormLogin = () => {
                     type="email"
                     className="item__input"
                     placeholder="Podaj swój e-mail"
+                    required
                 />
             </div>
             <div className="login__item">
@@ -26,6 +27,7 @@ const FormLogin = () => {
                     className="item__input"
                     placeholder="Utwórz swoje hasło"
                     autoComplete="true"
+                    required
                 />
             </div>
             <div className="login__item">

@@ -1,9 +1,7 @@
 import React from "react";
 import AwesomeSlider from "react-awesome-slider";
 import withAutoplay from "../../../../../node_modules/react-awesome-slider/dist/autoplay";
-import AwesomeSliderStyles from "../../../../../node_modules/react-awesome-slider/src/styles";
-import AnimationStyles from "../../../../../node_modules/react-awesome-slider/src/styled/fold-out-animation/fold-out-animation.scss";
-
+import AwesomeSliderStyles from "../../../../../node_modules/react-awesome-slider/src/styled/fall-animation/fall-animation.scss";
 const AutoplaySlider = withAutoplay(AwesomeSlider);
 
 const HomeSlider = () => {
@@ -17,7 +15,7 @@ const HomeSlider = () => {
                 className="homeSlider__slider"
                 bullets={false}
                 organicArrows={true}
-                animation="foldOutAnimation"
+                animation="fallAnimation"
             >
                 <div
                     data-src="assets/images/slider-home/test.jpg"

@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import FormRegister from "./FormRegister";
 import FormLogin from "./FormLogin";
+import { Link } from "react-router-dom";
 
 const Form = () => {
     const [isRegister, setIsRegister] = useState(true);
@@ -12,25 +13,41 @@ const Form = () => {
             setIsRegister(!isRegister);
     };
 
+    useEffect(() => {
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+
+        if (urlParams.get("view") === "login") setIsRegister(false);
+        else if (urlParams.get("view") === "register") setIsRegister(true);
+    }, []);
+
     return (
         <div className="form">
             <div className="form__switch">
-                <button
-                    className={`switch__login ${
-                        !isRegister ? "switch__login--active" : ""
-                    }`}
-                    onClick={handleSwitch}
-                >
-                    Logowanie
-                </button>
-                <button
-                    className={`switch__register ${
-                        isRegister ? "switch__login--active" : ""
-                    }`}
-                    onClick={handleSwitch}
-                >
-                    Rejestracja
-                </button>
+                <Link to="/">
+                    <img
+                        src="assets/images/logo/lokando-logo-white.svg"
+                        alt="Lokando STARGARD"
+                    />
+                </Link>
+                <div>
+                    <button
+                        className={`switch__login ${
+                            !isRegister ? "switch__login--active" : ""
+                        }`}
+                        onClick={handleSwitch}
+                    >
+                        Logowanie
+                    </button>
+                    <button
+                        className={`switch__register ${
+                            isRegister ? "switch__login--active" : ""
+                        }`}
+                        onClick={handleSwitch}
+                    >
+                        Rejestracja
+                    </button>
+                </div>
             </div>
             {isRegister ? <FormRegister /> : <FormLogin />}
         </div>
