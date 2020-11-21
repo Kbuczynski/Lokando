@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-
+import { useHistory } from "react-router-dom";
 import Button from "../../../../components/Button";
 
 const FormLogin = () => {
+    const history = useHistory();
     const [loginData, setLoginData] = useState({
         email: "",
         password: ""
@@ -32,7 +33,9 @@ const FormLogin = () => {
 
         API.post("/auth/login", loginData)
             .then(() => {
-                window.location.href = `${window.baseUrl}/`;
+                history.push({
+                    pathname: `/`
+                });
             })
             .catch(() => {
                 setIsError(true);
@@ -52,7 +55,6 @@ const FormLogin = () => {
                     placeholder="Podaj swój e-mail"
                     required
                     onChange={handleEmail}
-                    value={loginData.email}
                 />
             </div>
             <div className="login__item">
@@ -68,14 +70,13 @@ const FormLogin = () => {
                     required
                     min="8"
                     onChange={handlePassword}
-                    value={loginData.password}
                 />
             </div>
             <div className="login__item">
                 <Button text="Zaloguj się" />
                 {isError && (
                     <small className="item__alert">
-                        Login lub hasło nie są poprawne 🤔
+                        Login lub hasło nie są poprawne
                     </small>
                 )}
             </div>
