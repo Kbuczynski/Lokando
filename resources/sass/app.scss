@@ -16,12 +16,15 @@
 // 4. Layout-related sections
 @import "layout/header", "layout/footer", "layout/register", "layout/sliderForm",
     "layout/category", "layout/newCompanies";
+@import "layout/_searchResults";
 
 // 5. Components
 @import "components/button";
 @import "components/header";
 @import "components/searchBar";
 @import "components/title";
+@import "components/filters";
+@import "components/product";
 
 // 6. Page-specific styles
 @import "pages/home", "pages/createAccount";

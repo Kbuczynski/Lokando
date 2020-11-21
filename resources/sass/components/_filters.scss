@@ -1,0 +1,57 @@
+.filters {
+    padding-top: 2rem;
+    background-color: $gray-background;
+    font-size: 1.2rem;
+    padding-bottom: .5rem;
+
+    &__inputs {
+        display: flex;
+        align-items: flex-end;
+    }
+
+    &__input {
+        height: 38px;
+    }
+
+    &__input, &__price {
+        margin-left: 4rem;
+    }
+
+    &__input:first-child {
+        margin-left: 0;
+    }
+
+    &__slider {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: .2rem;
+
+        span {
+            width: 50px;
+        }
+
+        div {
+            width: calc(100% - 70px);
+        }
+    }
+
+    &__sliderInputs {
+        span {
+            margin: 0 10px 0;
+        }
+    }
+
+    &__sorters {
+        margin-top: 1rem;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__sort {
+        span {
+            margin-right: 5px;
+        }
+    }
+
+}
