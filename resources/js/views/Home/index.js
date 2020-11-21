@@ -1,13 +1,19 @@
 import React from "react";
-import Header from "../../components/Header";
+import Category from "./Category";
+import HomeSlider from "./HomeSlider";
+import NewCompanies from "./NewCompanies";
+import Wrapper from "../../components/Wrapper";
 
 const Home = () => {
+
     return (
-        <div>
-            <Header/>
-            <h1>Home</h1>
-            {console.log(window.apiUrl)}
-        </div>
+        <Wrapper>
+            <div className="container">
+                <HomeSlider />
+                <Category />
+            </div>
+            <NewCompanies />
+        </Wrapper>
     );
 };
 

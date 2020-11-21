@@ -1,35 +1,46 @@
-import React, {useState} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Dropdown } from 'primereact/dropdown';
 import { InputText } from 'primereact/inputtext';
 
-const Search = () => {
-
-    const [category, setCategory] = useState("NY");
-    const [inputVal, setInputVal] = useState("");
+const Search = (props) => {
 
     const citySelectItems = [
-        {label: 'New York', value: 'NY'},
-        {label: 'Rome', value: 'RM'},
-        {label: 'London', value: 'LDN'},
-        {label: 'Istanbul', value: 'IST'},
-        {label: 'Paris', value: 'PRS'}
+        {label: 'Gastronomia', value: 'gastronomia'},
+        {label: 'Zakupy', value: 'zakupy'},
+        {label: 'Zdrowie i uroda', value: 'zdrowie'},
+        {label: 'Wyposażenie', value: 'wyposazenie'},
+        {label: 'Edukacja', value: 'edukacja'},
+        {label: 'Transport', value: 'transport'},
+        {label: 'Elektronika', value: 'elektronika'},
+        {label: 'Zwierzęta', value: 'zwierzeta'},
+        {label: 'Sport i Hobby', value: 'sport'}
     ];
 
     return (
-        <div className={"search"}>
+        <div className={`search ${props.mobile ? 'search--mobile' : ''}`}>
             <span className="search__left">
                 <i className="pi pi-search" />
-                <InputText value={inputVal} onChange={(e) => setInputVal(e.target.value)} placeholder="Znajdź coś dla siebie" className={"search__input"} />
+                <InputText value={props.inputVal} onChange={(e) => props.setInputVal(e.target.value)} placeholder="Znajdź coś dla siebie" className={"search__input"} />
             </span>
 
-            <Dropdown value={category} onChange={(e) => setCategory(e.target.value)} options={citySelectItems} placeholder="Select a City" className={"search__dropdown"} />
+            <Dropdown value={props.category} onChange={(e) => props.setCategory(e.target.value)} options={citySelectItems} placeholder="Kategoria" className={"search__dropdown"} />
 
-            <button className={"search__btn"}>
+            <button className={"search__btn search__btn--active"} onClick={() => props.onSearch()}>
                 <span>Szukaj</span>
                 <i className="pi pi-search" />
             </button>
         </div>
     );
+};
+
+Search.proptypes = {
+    mobile: PropTypes.bool,
+    onSearch: PropTypes.func,
+    category: PropTypes.string,
+    inputVal: PropTypes.string,
+    setInputVal: PropTypes.func,
+    setCategory: PropTypes.func,
 };
 
 export default Search;
