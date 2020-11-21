@@ -7,14 +7,24 @@ use App\Models\Category;
 use http\Env\Response;
 use Illuminate\Http\Request;
 
+/**
+ * @group Category
+ *
+ * Categories Managment
+ */
+
 class CategoryController extends Controller
 {
+    /**
+     * api/categories
+     *
+     * Return list of categories
+     */
+
     public function index(Request $request){
         $limit = $request->get('limit', 0);
 
         $categories = Category::paginate($limit);
-        return response()->json(env("APP_URL"));
-//        return response()->json($_ENV);
         return response()->json($categories);
     }
 }
