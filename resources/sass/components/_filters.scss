@@ -4,21 +4,43 @@
     font-size: 1.2rem;
     padding-bottom: .5rem;
 
+    &__dropdowns {
+        @include respond-to("large") {
+            max-width: 412px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
     &__inputs {
         display: flex;
         align-items: flex-end;
+        margin-top: 1rem;
+
+        @include respond-to("large") {
+            display: block;
+        }
     }
 
     &__input {
         height: 38px;
     }
 
-    &__input, &__price {
+    &__input {
         margin-left: 4rem;
+
+        @include respond-to("large") {
+            margin-left: unset;
+        }
     }
 
-    &__input:first-child {
-        margin-left: 0;
+    &__price {
+        @include respond-to("large") {
+            margin: 1rem 0 1.5rem;
+            width: 100%;
+            max-width: 412px;
+        }
     }
 
     &__slider {
@@ -40,12 +62,23 @@
         span {
             margin: 0 10px 0;
         }
+
+        @include respond-to("large") {
+            input {
+                max-width: 192px;
+                width: calc(100% / 2 - 15px);
+            }
+        }
     }
 
     &__sorters {
         margin-top: 1rem;
         display: flex;
         justify-content: flex-end;
+
+        @include respond-to("large") {
+            margin-top: 1.5rem;
+        }
     }
 
     &__sort {

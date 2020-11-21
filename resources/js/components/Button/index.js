@@ -1,12 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Button = ({ text, isGreen }) => {
+const Button = ({ text, isGreen, btnClassName }) => {
+
     return (
         <button
-            className={`button ${isGreen ? "button--green" : "button--blue"}`}
-            type="submit"
-        >
+            className={`button ${isGreen ? "button--green" : "button--blue"} ${btnClassName}`}
+            type="submit">
             {text}
         </button>
     );
@@ -14,12 +14,14 @@ const Button = ({ text, isGreen }) => {
 
 Button.propTypes = {
     text: PropTypes.string.isRequired,
-    isGreen: PropTypes.bool
+    isGreen: PropTypes.bool,
+    btnClassName: PropTypes.string
 };
 
 Button.defaultProps = {
     text: "",
-    isGreen: true
+    isGreen: true,
+    btnClassName: ""
 };
 
 export default Button;
