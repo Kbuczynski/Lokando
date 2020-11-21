@@ -4,6 +4,7 @@
 namespace App\Http\Controllers\Auth;
 
 
+use App\Helpers\SlugHelper;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\LoginRequest;
 use App\Models\Company;
@@ -65,10 +66,10 @@ class AuthController extends Controller {
      * @bodyParam  name string required
      * @bodyParam  surname string required
      * @bodyParam  phone string required
-     * @bodyParam  street string optional
-     * @bodyParam  street_number string optional
-     * @bodyParam  city string optional
-     * @bodyParam  postal string optional
+     * @bodyParam  street string optional DO NOT USE IF ITS COMPANY PROFILE
+     * @bodyParam  street_number string optiona lDO NOT USE IF ITS COMPANY PROFILE
+     * @bodyParam  city string optional DO NOT USE IF ITS COMPANY PROFILE
+     * @bodyParam  postal string optional DO NOT USE IF ITS COMPANY PROFILE
      * @bodyParam  email email required
      * @bodyParam  password string required
      * @bodyParam  password_confirmation string required
@@ -81,6 +82,7 @@ class AuthController extends Controller {
      * @bodyParam  company_postal string required
      * @bodyParam  company_description string required
      * @bodyParam  company_slogan string optional
+     * @bodyParam  category_id integer required
      */
     public function register(Request $request){
         $request->validate([
@@ -105,6 +107,7 @@ class AuthController extends Controller {
             'company_postal' => 'required|string',
             'company_description' => 'required|string',
             'company_slogan' => 'nullable|string',
+            'category_id' => 'required|integer',
         ]);
 
 
@@ -125,6 +128,7 @@ class AuthController extends Controller {
         $company = new Company([
             'company_nip' => $request->get('company_nip'),
             'company_name' => $request->get('company_name'),
+            'company_slug' => SlugHelper::nameToSlug($request->get('company_name')),
             'company_phone' => $request->get('company_phone'),
             'company_street' => $request->get('company_street'),
             'company_street_number' => $request->get('company_street_number'),
@@ -133,6 +137,7 @@ class AuthController extends Controller {
             'company_description' => $request->get('company_description'),
             'company_slogan' => $request->get('company_slogan', null),
             'user_id' => $user->id,
+            'category_id' => $request->get('category_id')
         ]);
 
         $company->save();
@@ -164,5 +169,7 @@ class AuthController extends Controller {
     public function me(){
         return response()->json(['data' => ['user' => Auth::user()]]);
     }
+
+
 
 }
