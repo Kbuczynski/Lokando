@@ -48,6 +48,246 @@
 <p>Welcome to the generated API reference.
 <a href="http://localhost/Lokando/docs/collection.json">Get Postman Collection</a></p>
 <!-- END_INFO -->
+<h1>Auth</h1>
+<p>Authorization endpoints</p>
+<!-- START_2e1c96dcffcfe7e0eb58d6408f1d619e -->
+<h2>api/auth/register</h2>
+<p>Registers new user</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://localhost/Lokando/api/auth/register" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"name":"impedit","surname":"beatae","phone":"et","street":"magni","street_number":"nam","city":"reiciendis","postal":"nam","email":"ipsum","password":"ut","password_confirmation":"sunt"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/Lokando/api/auth/register"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "impedit",
+    "surname": "beatae",
+    "phone": "et",
+    "street": "magni",
+    "street_number": "nam",
+    "city": "reiciendis",
+    "postal": "nam",
+    "email": "ipsum",
+    "password": "ut",
+    "password_confirmation": "sunt"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/auth/register</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>surname</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>phone</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>street</code></td>
+<td>string</td>
+<td>optional</td>
+<td>optional</td>
+</tr>
+<tr>
+<td><code>street_number</code></td>
+<td>string</td>
+<td>optional</td>
+<td>optional</td>
+</tr>
+<tr>
+<td><code>city</code></td>
+<td>string</td>
+<td>optional</td>
+<td>optional</td>
+</tr>
+<tr>
+<td><code>postal</code></td>
+<td>string</td>
+<td>optional</td>
+<td>optional</td>
+</tr>
+<tr>
+<td><code>email</code></td>
+<td>email</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>password_confirmation</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+</tbody>
+</table>
+<!-- END_2e1c96dcffcfe7e0eb58d6408f1d619e -->
+<!-- START_a925a8d22b3615f12fca79456d286859 -->
+<h2>api/auth/login</h2>
+<p>Login user using credentials</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://localhost/Lokando/api/auth/login" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"email":"ratione","password":"et"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/Lokando/api/auth/login"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "email": "ratione",
+    "password": "et"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/auth/login</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>email</code></td>
+<td>email</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+</tbody>
+</table>
+<!-- END_a925a8d22b3615f12fca79456d286859 -->
+<!-- START_b19e2ecbb41b5fa6802edaf581aab5f6 -->
+<h2>api/me</h2>
+<p>return user data based on sended token</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/Lokando/api/me" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/Lokando/api/me"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (401):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "Unauthenticated."
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/me</code></p>
+<!-- END_b19e2ecbb41b5fa6802edaf581aab5f6 -->
+<!-- START_00e7e21641f05de650dbe13f242c6f2c -->
+<h2>api/logout</h2>
+<p>removes token from database disabling login possibility</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/Lokando/api/logout" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/Lokando/api/logout"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (401):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "Unauthenticated."
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/logout</code></p>
+<!-- END_00e7e21641f05de650dbe13f242c6f2c -->
 <h1>general</h1>
 <!-- START_c6c5c00d6ac7f771f157dff4a2889b1a -->
 <h2>_debugbar/open</h2>

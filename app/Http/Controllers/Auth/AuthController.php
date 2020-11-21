@@ -10,10 +10,23 @@ use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Log;
+
+/**
+ * @group Auth
+ *
+ * Authorization endpoints
+ */
 
 class AuthController extends Controller {
 
+    /**
+     * api/auth/login
+     *
+     * Login user using credentials
+     *
+     * @bodyParam email email required
+     * @bodyParam password string required
+     */
     public function login(Request $request){
         $request->validate([
             'email' => 'required|string|email',
@@ -41,7 +54,22 @@ class AuthController extends Controller {
             )->toDateTimeString()
         ]);
     }
-
+    /**
+     * api/auth/register
+     *
+     * Registers new user
+     *
+     * @bodyParam  name string required
+     * @bodyParam  surname string required
+     * @bodyParam  phone string required
+     * @bodyParam  street string optional
+     * @bodyParam  street_number string optional
+     * @bodyParam  city string optional
+     * @bodyParam  postal string optional
+     * @bodyParam  email email required
+     * @bodyParam  password string required
+     * @bodyParam  password_confirmation string required
+     */
     public function register(Request $request){
         $request->validate([
             'name' => 'required|string',
@@ -74,6 +102,13 @@ class AuthController extends Controller {
         ], 200);
     }
 
+
+    /**
+     * api/logout
+     *
+     * removes token from database disabling login possibility
+     *
+     */
     public function logout(Request $request){
         $request->user()->token()->revoke();
         return response()->json([
@@ -81,9 +116,13 @@ class AuthController extends Controller {
         ]);
     }
 
-    public function me(\Illuminate\Http\Request $request){
-        return response()->json($request->header('Authorization'));
-        return response()->json(['data' => Auth::user()]);
+    /**
+     * api/me
+     *
+     * return user data based on sended token
+     */
+    public function me(){
+        return response()->json(['data' => ['user' => Auth::user()]]);
     }
 
 }
