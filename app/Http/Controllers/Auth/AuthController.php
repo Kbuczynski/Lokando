@@ -65,7 +65,7 @@ class AuthController extends Controller {
      *
      * @bodyParam  name string required
      * @bodyParam  surname string required
-     * @bodyParam  phone string required
+     * @bodyParam  phone string optional DO NOT USE IF ITS COMPANY PROFILE
      * @bodyParam  street string optional DO NOT USE IF ITS COMPANY PROFILE
      * @bodyParam  street_number string optiona lDO NOT USE IF ITS COMPANY PROFILE
      * @bodyParam  city string optional DO NOT USE IF ITS COMPANY PROFILE
@@ -88,7 +88,7 @@ class AuthController extends Controller {
         $request->validate([
             'name' => 'required|string',
             'surname' => 'required|string',
-            'phone' => 'required|string',
+            'phone' => 'nullable|string',
             'street' => 'nullable|string',
             'street_number' => 'nullable|string',
             'city' => 'nullable|string',
@@ -97,18 +97,6 @@ class AuthController extends Controller {
             'password' => 'required|string|confirmed',
         ]);
 
-        $request->validate([
-            'company_nip' => 'required|integer',
-            'company_name' => 'required|string',
-            'company_phone' => 'required|string',
-            'company_street' => 'required|string',
-            'company_street_number' => 'required|string',
-            'company_city' => 'required|string',
-            'company_postal' => 'required|string',
-            'company_description' => 'required|string',
-            'company_slogan' => 'nullable|string',
-            'category_id' => 'required|integer',
-        ]);
 
 
         $user = new User([
@@ -124,23 +112,37 @@ class AuthController extends Controller {
         ]);
 
         $user->save();
+        if(!empty($request->get('company_nip'))){
+            $request->validate([
+                'company_nip' => 'required|integer',
+                'company_name' => 'required|string',
+                'company_phone' => 'required|string',
+                'company_street' => 'required|string',
+                'company_street_number' => 'required|string',
+                'company_city' => 'required|string',
+                'company_postal' => 'required|string',
+                'company_description' => 'required|string',
+                'company_slogan' => 'nullable|string',
+                'category_id' => 'required|integer',
+            ]);
 
-        $company = new Company([
-            'company_nip' => $request->get('company_nip'),
-            'company_name' => $request->get('company_name'),
-            'company_slug' => SlugHelper::nameToSlug($request->get('company_name')),
-            'company_phone' => $request->get('company_phone'),
-            'company_street' => $request->get('company_street'),
-            'company_street_number' => $request->get('company_street_number'),
-            'company_city' => $request->get('company_city'),
-            'company_postal' => $request->get('company_postal'),
-            'company_description' => $request->get('company_description'),
-            'company_slogan' => $request->get('company_slogan', null),
-            'user_id' => $user->id,
-            'category_id' => $request->get('category_id')
-        ]);
+            $company = new Company([
+                'company_nip' => $request->get('company_nip'),
+                'company_name' => $request->get('company_name'),
+                'company_slug' => SlugHelper::nameToSlug($request->get('company_name')),
+                'company_phone' => $request->get('company_phone'),
+                'company_street' => $request->get('company_street'),
+                'company_street_number' => $request->get('company_street_number'),
+                'company_city' => $request->get('company_city'),
+                'company_postal' => $request->get('company_postal'),
+                'company_description' => $request->get('company_description'),
+                'company_slogan' => $request->get('company_slogan', null),
+                'user_id' => $user->id,
+                'category_id' => $request->get('category_id')
+            ]);
 
-        $company->save();
+            $company->save();
+        }
 
         return response()->json([
             'message' => 'Successfully created user!'
