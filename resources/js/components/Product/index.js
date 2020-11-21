@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from "../Button";
+import PropTypes from 'prop-types';
 
 const Product = (props) => {
     return (
@@ -45,6 +46,16 @@ const Product = (props) => {
 
         </div>
     );
+};
+
+Product.propTypes = {
+    img: PropTypes.string,
+    title: PropTypes.string,
+    desc: PropTypes.string,
+    price: PropTypes.number,
+    logo: PropTypes.string,
+    companyName: PropTypes.string,
+    companyLocation: PropTypes.string
 };
 
 export default Product;
