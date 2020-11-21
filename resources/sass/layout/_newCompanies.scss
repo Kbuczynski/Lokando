@@ -35,6 +35,10 @@
                 transition: text-transform 0.2s ease;
             }
 
+            .item__slogan {
+                text-align: center;
+            }
+
             @include respond-to("only-desktop") {
                 &:hover .item__image > img {
                     transform: scale(1.1);

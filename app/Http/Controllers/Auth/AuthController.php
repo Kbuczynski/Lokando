@@ -4,9 +4,11 @@
 namespace App\Http\Controllers\Auth;
 
 
+use App\Helpers\SlugHelper;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\LoginRequest;
 use App\Models\Company;
+use App\Models\CompanyContact;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -64,11 +66,12 @@ class AuthController extends Controller {
      *
      * @bodyParam  name string required
      * @bodyParam  surname string required
-     * @bodyParam  phone string required
-     * @bodyParam  street string optional
-     * @bodyParam  street_number string optional
-     * @bodyParam  city string optional
-     * @bodyParam  postal string optional
+     * @bodyParam  phone string optional DO NOT USE IF ITS COMPANY PROFILE
+     * @bodyParam  street string optional DO NOT USE IF ITS COMPANY PROFILE
+     * @bodyParam  street_number string optiona lDO NOT USE IF ITS COMPANY PROFILE
+     * @bodyParam  city string optional DO NOT USE IF ITS COMPANY PROFILE
+     * @bodyParam  postal string optional DO NOT USE IF ITS COMPANY PROFILE
+     * @bodyParam  is_company bool optional
      * @bodyParam  email email required
      * @bodyParam  password string required
      * @bodyParam  password_confirmation string required
@@ -81,61 +84,80 @@ class AuthController extends Controller {
      * @bodyParam  company_postal string required
      * @bodyParam  company_description string required
      * @bodyParam  company_slogan string optional
+     * @bodyParam  company_contacts array optional [name-string, contact-string]
+     * @bodyParam  category_id integer required
      */
     public function register(Request $request){
         $request->validate([
             'name' => 'required|string',
             'surname' => 'required|string',
-            'phone' => 'required|string',
+            'phone' => 'nullable|string',
             'street' => 'nullable|string',
             'street_number' => 'nullable|string',
             'city' => 'nullable|string',
             'postal' => 'nullable|string',
+            'is_company' => 'nullable|boolean',
             'email' => 'required|string|email|unique:users',
             'password' => 'required|string|confirmed',
         ]);
 
-        $request->validate([
-            'company_nip' => 'required|integer',
-            'company_name' => 'required|string',
-            'company_phone' => 'required|string',
-            'company_street' => 'required|string',
-            'company_street_number' => 'required|string',
-            'company_city' => 'required|string',
-            'company_postal' => 'required|string',
-            'company_description' => 'required|string',
-            'company_slogan' => 'nullable|string',
-        ]);
 
 
         $user = new User([
             'name' => $request->get('name'),
             'surname' => $request->get('surname'),
-            'phone' => $request->get('phone'),
+            'phone' => $request->get('phone', null),
             'street' => $request->get('street',null),
             'street_number' => $request->get('street_number',null),
             'city' => $request->get('city', null),
             'postal' => $request->get('postal', null),
+            'is_company' => $request->get('is_company', 0),
             'email' => $request->get('email'),
             'password' => bcrypt($request->get('password')),
         ]);
 
         $user->save();
+        if($request->get('is_company', 0) == 1){
+            $request->validate([
+                'company_nip' => 'required|integer',
+                'company_name' => 'required|string',
+                'company_phone' => 'required|string',
+                'company_street' => 'required|string',
+                'company_street_number' => 'required|string',
+                'company_city' => 'required|string',
+                'company_postal' => 'required|string',
+                'company_description' => 'required|string',
+                'company_slogan' => 'nullable|string',
+                'company_contacts' => 'nullable|array',
+                'category_id' => 'required|integer',
+            ]);
 
-        $company = new Company([
-            'company_nip' => $request->get('company_nip'),
-            'company_name' => $request->get('company_name'),
-            'company_phone' => $request->get('company_phone'),
-            'company_street' => $request->get('company_street'),
-            'company_street_number' => $request->get('company_street_number'),
-            'company_city' => $request->get('company_city'),
-            'company_postal' => $request->get('company_postal'),
-            'company_description' => $request->get('company_description'),
-            'company_slogan' => $request->get('company_slogan', null),
-            'user_id' => $user->id,
-        ]);
+            $company = new Company([
+                'company_nip' => $request->get('company_nip'),
+                'company_name' => $request->get('company_name'),
+                'company_slug' => SlugHelper::nameToSlug($request->get('company_name')),
+                'company_phone' => $request->get('company_phone'),
+                'company_street' => $request->get('company_street'),
+                'company_street_number' => $request->get('company_street_number'),
+                'company_city' => $request->get('company_city'),
+                'company_postal' => $request->get('company_postal'),
+                'company_description' => $request->get('company_description'),
+                'company_slogan' => $request->get('company_slogan', null),
+                'user_id' => $user->id,
+                'category_id' => $request->get('category_id')
+            ]);
 
-        $company->save();
+            $company->save();
+
+            foreach ($request->get('company_contacts', []) as $contact){
+                $cc = new CompanyContact([
+                    'name' => $contact['name'],
+                    'contact' => $contact['contact'],
+                    'company_id' => $company->id,
+                ]);
+                $cc->save();
+            }
+        }
 
         return response()->json([
             'message' => 'Successfully created user!'
@@ -164,5 +186,7 @@ class AuthController extends Controller {
     public function me(){
         return response()->json(['data' => ['user' => Auth::user()]]);
     }
+
+
 
 }
