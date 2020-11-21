@@ -6,7 +6,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\LoginRequest;
-use App\User;
+use App\Models\Company;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -47,17 +48,19 @@ class AuthController extends Controller {
             $token->expires_at = Carbon::now()->addWeeks(1);
         $token->save();
         return response()->json([
-            'user' => $user,
-            'access_token' => 'Bearer '.$tokenResult->accessToken,
-            'expires_at' => Carbon::parse(
-                $tokenResult->token->expires_at
-            )->toDateTimeString()
+            'data' => [
+                'access_token' => 'Bearer '.$tokenResult->accessToken,
+                'expires_at' => Carbon::parse(
+                    $tokenResult->token->expires_at
+                )->toDateTimeString()
+            ]
         ]);
     }
     /**
      * api/auth/register
      *
      * Registers new user
+     * If company_* fields are provided it also creates company profile, and user's optional fields are unnecessary
      *
      * @bodyParam  name string required
      * @bodyParam  surname string required
@@ -69,6 +72,15 @@ class AuthController extends Controller {
      * @bodyParam  email email required
      * @bodyParam  password string required
      * @bodyParam  password_confirmation string required
+     * @bodyParam  company_nip integer required
+     * @bodyParam  company_name string required
+     * @bodyParam  company_phone string required
+     * @bodyParam  company_street string required
+     * @bodyParam  company_street_number string required
+     * @bodyParam  company_city string required
+     * @bodyParam  company_postal string required
+     * @bodyParam  company_description string required
+     * @bodyParam  company_slogan string optional
      */
     public function register(Request $request){
         $request->validate([
@@ -83,6 +95,19 @@ class AuthController extends Controller {
             'password' => 'required|string|confirmed',
         ]);
 
+        $request->validate([
+            'company_nip' => 'required|integer',
+            'company_name' => 'required|string',
+            'company_phone' => 'required|string',
+            'company_street' => 'required|string',
+            'company_street_number' => 'required|string',
+            'company_city' => 'required|string',
+            'company_postal' => 'required|string',
+            'company_description' => 'required|string',
+            'company_slogan' => 'nullable|string',
+        ]);
+
+
         $user = new User([
             'name' => $request->get('name'),
             'surname' => $request->get('surname'),
@@ -96,6 +121,21 @@ class AuthController extends Controller {
         ]);
 
         $user->save();
+
+        $company = new Company([
+            'company_nip' => $request->get('company_nip'),
+            'company_name' => $request->get('company_name'),
+            'company_phone' => $request->get('company_phone'),
+            'company_street' => $request->get('company_street'),
+            'company_street_number' => $request->get('company_street_number'),
+            'company_city' => $request->get('company_city'),
+            'company_postal' => $request->get('company_postal'),
+            'company_description' => $request->get('company_description'),
+            'company_slogan' => $request->get('company_slogan', null),
+            'user_id' => $user->id,
+        ]);
+
+        $company->save();
 
         return response()->json([
             'message' => 'Successfully created user!'

@@ -28,6 +28,7 @@ Authorization endpoints
 ## api/auth/register
 
 Registers new user
+If company_* fields are provided it also creates company profile, and user's optional fields are unnecessary
 
 > Example request:
 
@@ -36,7 +37,7 @@ curl -X POST \
     "http://localhost/Lokando/api/auth/register" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"impedit","surname":"beatae","phone":"et","street":"magni","street_number":"nam","city":"reiciendis","postal":"nam","email":"ipsum","password":"ut","password_confirmation":"sunt"}'
+    -d '{"name":"sit","surname":"ad","phone":"dolor","street":"repellat","street_number":"labore","city":"iste","postal":"est","email":"laborum","password":"qui","password_confirmation":"suscipit","company_nip":12,"company_name":"rem","company_phone":"ex","company_street":"ipsam","company_street_number":"error","company_city":"saepe","company_postal":"repellendus","company_description":"enim","company_slogan":"aliquam"}'
 
 ```
 
@@ -51,16 +52,25 @@ let headers = {
 };
 
 let body = {
-    "name": "impedit",
-    "surname": "beatae",
-    "phone": "et",
-    "street": "magni",
-    "street_number": "nam",
-    "city": "reiciendis",
-    "postal": "nam",
-    "email": "ipsum",
-    "password": "ut",
-    "password_confirmation": "sunt"
+    "name": "sit",
+    "surname": "ad",
+    "phone": "dolor",
+    "street": "repellat",
+    "street_number": "labore",
+    "city": "iste",
+    "postal": "est",
+    "email": "laborum",
+    "password": "qui",
+    "password_confirmation": "suscipit",
+    "company_nip": 12,
+    "company_name": "rem",
+    "company_phone": "ex",
+    "company_street": "ipsam",
+    "company_street_number": "error",
+    "company_city": "saepe",
+    "company_postal": "repellendus",
+    "company_description": "enim",
+    "company_slogan": "aliquam"
 }
 
 fetch(url, {
@@ -90,6 +100,15 @@ Parameter | Type | Status | Description
         `email` | email |  required  | 
         `password` | string |  required  | 
         `password_confirmation` | string |  required  | 
+        `company_nip` | integer |  required  | 
+        `company_name` | string |  required  | 
+        `company_phone` | string |  required  | 
+        `company_street` | string |  required  | 
+        `company_street_number` | string |  required  | 
+        `company_city` | string |  required  | 
+        `company_postal` | string |  required  | 
+        `company_description` | string |  required  | 
+        `company_slogan` | string |  optional  | optional
     
 <!-- END_2e1c96dcffcfe7e0eb58d6408f1d619e -->
 
@@ -105,7 +124,7 @@ curl -X POST \
     "http://localhost/Lokando/api/auth/login" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"email":"ratione","password":"et"}'
+    -d '{"email":"aut","password":"in"}'
 
 ```
 
@@ -120,8 +139,8 @@ let headers = {
 };
 
 let body = {
-    "email": "ratione",
-    "password": "et"
+    "email": "aut",
+    "password": "in"
 }
 
 fetch(url, {
