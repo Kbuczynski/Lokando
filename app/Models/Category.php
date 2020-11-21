@@ -19,6 +19,9 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Category whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Category whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property string $slug
+ * @property-read mixed $url
+ * @method static \Illuminate\Database\Eloquent\Builder|Category whereSlug($value)
  */
 class Category extends Model
 {

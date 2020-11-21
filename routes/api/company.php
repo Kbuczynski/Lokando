@@ -8,6 +8,6 @@ Route::group([
         'auth:api',
     ],
 ], function() {
-    Route::put('/user', 'Api\UserController@update');
+    Route::put('/company', 'Api\CompanyController@update');
 });
 

@@ -2,46 +2,106 @@
     border: 1px solid $gray-border;
     width: 100%;
     display: flex;
-    position: relative;
+    justify-content: space-between;
+    margin-top: 3rem;
+
+    @include respond-to("medium") {
+        display: block;
+    }
+
+    &__left {
+        display: flex;
+
+        @include respond-to("small") {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
 
     &__img {
         object-fit: contain;
     }
 
+    &__text {
+        margin-left: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 1.5rem 0 1.5rem;
+
+        @include respond-to("medium") {
+            padding: 1rem 0 1rem;
+        }
+    }
+
     &__title {
         display: block;
-        margin-top: 1.5rem;
         color: $darkBlueText;
         font-weight: bold;
+
+        @include respond-to("small") {
+            margin-bottom: 1rem;
+            text-align: center;
+        }
     }
 
     &__desc {
+        white-space: pre-line;
         display: inline-block;
-        margin-top: 1rem;
         font-size: 1rem;
+
+        @include respond-to("small") {
+            margin-bottom: 1rem;
+        }
     }
 
     &__price {
         display: block;
-        margin-top: 2rem;
+        //margin-top: 2rem;
         color: #C82814;
         font-weight: bold;
         font-size: 1.8rem;
+
+        @include respond-to("small") {
+            text-align: center;
+        }
+    }
+
+    &__right {
+        height: 100%;
+        width: 220px;
+
+        @include respond-to("medium") {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        @include respond-to("small") {
+            display: block;
+        }
     }
 
     &__company {
-        position: absolute;
-        top: 0;
-        right: 0;
-        border: 1px solid $gray-border;
-        border-top: none;
-        border-right: none;
-        text-align: center;
-        padding-bottom: 10px;
+        text-align: right;
+        margin-right: 1.5rem;
+        height: 50%;
+
+        @include respond-to("medium") {
+            margin-left: 1.5rem;
+            height: 100%;
+            text-align: left;
+        }
     }
 
     &__logo {
         object-fit: contain;
+        object-position: right;
+
+        @include respond-to("medium") {
+            object-position: left;
+        }
     }
 
     &__companyName {
@@ -51,11 +111,22 @@
         font-size: 1.2rem;
         margin-bottom: 0;
         line-height: 18px;
+        margin-right: .5rem;
     }
 
     &__companyDesc {
+        margin-right: .5rem;
         font-size: 1rem;
     }
 
+    &__btnBasket {
+        margin-top: 2.5rem;
+        margin-right: 1rem;
 
+        @include respond-to("medium") {
+            display: block;
+            margin-right: 1.5rem;
+            margin-top: unset;
+        }
+    }
 }
