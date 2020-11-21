@@ -25,7 +25,11 @@ class ApiClass {
          * Allow this endpoint to run without authentication token
          * @type {string[]}
          */
-        this.allowedEndpoints = ["/auth/login", "/auth/register"];
+        this.allowedEndpoints = [
+            "/auth/login",
+            "/auth/register",
+            "/categories"
+        ];
 
         this.authorizedEndpoints = [];
 

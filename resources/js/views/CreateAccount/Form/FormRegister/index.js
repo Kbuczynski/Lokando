@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import Button from "../../../../components/Button";
 import { API } from "../../../../utils/ApiClass";
+import { useHistory } from "react-router-dom";
 
 const FormRegister = () => {
     const [checkboxValue, setCheckboxValue] = useState(false);
@@ -14,6 +15,8 @@ const FormRegister = () => {
     const [isValidPassword, setIsValidPassword] = useState(true);
     const passwordRef = useRef(),
         passwordRepeatRef = useRef();
+    const [isError, setIsError] = useState(false);
+    const history = useHistory();
 
     const changeValue = (key, newVal) => {
         const newValues = Object.assign(stepOneValues, {});
@@ -54,11 +57,25 @@ const FormRegister = () => {
     const handleSubmit = e => {
         e.preventDefault();
 
-        if (!checkboxValue) {
-            API.post("/auth/register", stepOneValues);
-        } else {
-            console.log("next form");
-        }
+        API.post("/auth/register", stepOneValues)
+            .then(() => {
+                if (checkboxValue) {
+                    history.push({
+                        pathname: `/uzupelnij-profil-firmy`,
+                        search: "?step=1",
+                        state: stepOneValues
+                    });
+                } else {
+                    history.push({
+                        pathname: `/utworz-konto`,
+                        search: "?view=login",
+                        state: stepOneValues
+                    });
+                }
+            })
+            .catch(() => {
+                setIsError(true);
+            });
     };
 
     return (
@@ -142,6 +159,11 @@ const FormRegister = () => {
             </div>
             <div className="login__item">
                 <Button text="Zarejestruj się" />
+                {isError && (
+                    <small className="item__alert">
+                        Konto o podanym adresie e-mail już istnieje 🤔
+                    </small>
+                )}
             </div>
         </form>
     );
