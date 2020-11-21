@@ -4,6 +4,11 @@
     display: flex;
     justify-content: space-between;
     margin-top: 3rem;
+    position: relative;
+
+    @include respond-to("small") {
+        padding-top: 4rem;
+    }
 
     @include respond-to("medium") {
         display: block;
@@ -76,10 +81,13 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            margin-bottom: 1rem;
         }
 
         @include respond-to("small") {
-            display: block;
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
         }
     }
 
@@ -89,9 +97,28 @@
         height: 50%;
 
         @include respond-to("medium") {
-            margin-left: 1.5rem;
+            //margin-left: 1.5rem;
             height: 100%;
+            width: 100%;
             text-align: left;
+            display: flex;
+            align-items: center;
+        }
+
+        @include respond-to("small") {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            height: 75px;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    &__companyText {
+        @include respond-to("small") {
+            margin-top: 8px;
         }
     }
 
@@ -101,6 +128,10 @@
 
         @include respond-to("medium") {
             object-position: left;
+        }
+
+        @include respond-to("medium") {
+            object-position: top center;
         }
     }
 
@@ -127,6 +158,11 @@
             display: block;
             margin-right: 1.5rem;
             margin-top: unset;
+        }
+
+        @include respond-to("small") {
+            display: block;
+            margin: 0 auto 2rem;
         }
     }
 }

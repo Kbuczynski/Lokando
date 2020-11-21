@@ -26,6 +26,7 @@ const SearchResults = () => {
 
                 <div className={"searchResults__products products container"}>
                     <Product
+                        id={1}
                         img={"https://f00.esfr.pl/foto/1/66040858489/6d4af2b5946aeb42acfce84b595c3fcb/samsung-smartfon-galaxy-a31-czarny-samsung,66040858489_8.jpg"}
                         title={"Samsung Galaxy A31 128GB (czarny)"}
                         desc={"Aparaty tylny/przedni   48 Mpix + 8 Mpix + 5 Mpix + 5 Mpix / 20 Mpix\n" +
@@ -39,6 +40,7 @@ const SearchResults = () => {
                     />
 
                     <Product
+                        id={2}
                         img={"https://f00.esfr.pl/foto/1/66040858489/6d4af2b5946aeb42acfce84b595c3fcb/samsung-smartfon-galaxy-a31-czarny-samsung,66040858489_8.jpg"}
                         title={"Samsung Galaxy A31 128GB (czarny)"}
                         desc={"Aparaty tylny/przedni   48 Mpix + 8 Mpix + 5 Mpix + 5 Mpix / 20 Mpix\n" +
@@ -52,6 +54,7 @@ const SearchResults = () => {
                     />
 
                     <Product
+                        id={3}
                         img={"https://f00.esfr.pl/foto/1/66040858489/6d4af2b5946aeb42acfce84b595c3fcb/samsung-smartfon-galaxy-a31-czarny-samsung,66040858489_8.jpg"}
                         title={"Samsung Galaxy A31 128GB (czarny)"}
                         desc={"Aparaty tylny/przedni   48 Mpix + 8 Mpix + 5 Mpix + 5 Mpix / 20 Mpix\n" +
@@ -65,6 +68,7 @@ const SearchResults = () => {
                     />
 
                     <Product
+                        id={4}
                         img={"https://f00.esfr.pl/foto/1/66040858489/6d4af2b5946aeb42acfce84b595c3fcb/samsung-smartfon-galaxy-a31-czarny-samsung,66040858489_8.jpg"}
                         title={"Samsung Galaxy A31 128GB (czarny)"}
                         desc={"Aparaty tylny/przedni   48 Mpix + 8 Mpix + 5 Mpix + 5 Mpix / 20 Mpix\n" +
@@ -78,6 +82,7 @@ const SearchResults = () => {
                     />
 
                     <Product
+                        id={5}
                         img={"https://f00.esfr.pl/foto/1/66040858489/6d4af2b5946aeb42acfce84b595c3fcb/samsung-smartfon-galaxy-a31-czarny-samsung,66040858489_8.jpg"}
                         title={"Samsung Galaxy A31 128GB (czarny)"}
                         desc={"Aparaty tylny/przedni   48 Mpix + 8 Mpix + 5 Mpix + 5 Mpix / 20 Mpix\n" +

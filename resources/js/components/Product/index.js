@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from "../Button";
+import PropTypes from 'prop-types';
 
 const Product = (props) => {
     return (
@@ -30,8 +31,12 @@ const Product = (props) => {
                          alt={"Logo firmy"}
                          className={"product__logo"}
                     />
-                    <span className={"product__companyName"}>{props.companyName}</span>
-                    <span className={"product__companyDesc"}>{props.companyLocation}</span>
+
+                    <div className={"product__companyText"}>
+                        <span className={"product__companyName"}>{props.companyName}</span>
+                        <span className={"product__companyDesc"}>{props.companyLocation}</span>
+                    </div>
+
                 </div>
 
                 <div className={"product__btnBasket"}>
@@ -41,6 +46,16 @@ const Product = (props) => {
 
         </div>
     );
+};
+
+Product.propTypes = {
+    img: PropTypes.string,
+    title: PropTypes.string,
+    desc: PropTypes.string,
+    price: PropTypes.number,
+    logo: PropTypes.string,
+    companyName: PropTypes.string,
+    companyLocation: PropTypes.string
 };
 
 export default Product;
