@@ -62,6 +62,7 @@ class User extends Authenticatable
         'street_number',
         'city',
         'postal',
+        'is_company',
         'email',
         'password',
     ];

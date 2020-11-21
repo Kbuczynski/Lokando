@@ -7,6 +7,7 @@ use App\Http\Requests\UserUpdateRequest;
 use App\Http\Resources\UserResource;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 /**
  * @group Users
@@ -30,8 +31,9 @@ class UserController extends Controller
      * @bodyParam  postal string optional DO NOT USE IF ITS COMPANY PROFILE
      * @bodyParam  email email required
      */
-    public function update(User $user, UserUpdateRequest $uur)  {
-        if($user->company) {
+    public function update(UserUpdateRequest $uur)  {
+        $user = Auth::user();
+        if($user->is_company) {
             return response()->json(['data' => [
                 'messages' => 'User has company, use different endpoint'
             ]], 403);

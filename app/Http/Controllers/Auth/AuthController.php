@@ -8,6 +8,7 @@ use App\Helpers\SlugHelper;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\LoginRequest;
 use App\Models\Company;
+use App\Models\CompanyContact;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -70,6 +71,7 @@ class AuthController extends Controller {
      * @bodyParam  street_number string optiona lDO NOT USE IF ITS COMPANY PROFILE
      * @bodyParam  city string optional DO NOT USE IF ITS COMPANY PROFILE
      * @bodyParam  postal string optional DO NOT USE IF ITS COMPANY PROFILE
+     * @bodyParam  is_company bool optional
      * @bodyParam  email email required
      * @bodyParam  password string required
      * @bodyParam  password_confirmation string required
@@ -82,6 +84,7 @@ class AuthController extends Controller {
      * @bodyParam  company_postal string required
      * @bodyParam  company_description string required
      * @bodyParam  company_slogan string optional
+     * @bodyParam  company_contacts array optional [name-string, contact-string]
      * @bodyParam  category_id integer required
      */
     public function register(Request $request){
@@ -93,6 +96,7 @@ class AuthController extends Controller {
             'street_number' => 'nullable|string',
             'city' => 'nullable|string',
             'postal' => 'nullable|string',
+            'is_company' => 'nullable|boolean',
             'email' => 'required|string|email|unique:users',
             'password' => 'required|string|confirmed',
         ]);
@@ -102,17 +106,18 @@ class AuthController extends Controller {
         $user = new User([
             'name' => $request->get('name'),
             'surname' => $request->get('surname'),
-            'phone' => $request->get('phone'),
+            'phone' => $request->get('phone', null),
             'street' => $request->get('street',null),
             'street_number' => $request->get('street_number',null),
             'city' => $request->get('city', null),
             'postal' => $request->get('postal', null),
+            'is_company' => $request->get('is_company', 0),
             'email' => $request->get('email'),
             'password' => bcrypt($request->get('password')),
         ]);
 
         $user->save();
-        if(!empty($request->get('company_nip'))){
+        if($request->get('is_company', 0) == 1){
             $request->validate([
                 'company_nip' => 'required|integer',
                 'company_name' => 'required|string',
@@ -123,6 +128,7 @@ class AuthController extends Controller {
                 'company_postal' => 'required|string',
                 'company_description' => 'required|string',
                 'company_slogan' => 'nullable|string',
+                'company_contacts' => 'nullable|array',
                 'category_id' => 'required|integer',
             ]);
 
@@ -142,6 +148,15 @@ class AuthController extends Controller {
             ]);
 
             $company->save();
+
+            foreach ($request->get('company_contacts', []) as $contact){
+                $cc = new CompanyContact([
+                    'name' => $contact['name'],
+                    'contact' => $contact['contact'],
+                    'company_id' => $company->id,
+                ]);
+                $cc->save();
+            }
         }
 
         return response()->json([

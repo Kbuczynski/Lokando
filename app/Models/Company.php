@@ -65,10 +65,14 @@ class Company extends Model
         'user_id', 'category_id'
     ];
 
-    protected $with = ['category'];
+    protected $with = ['category', 'companyContacts'];
 
     public function category(){
         return $this->belongsTo('App\Models\Category');
+    }
+
+    public function companyContacts(){
+        return $this->hasMany('App\Models\CompanyContact');
     }
 
 
