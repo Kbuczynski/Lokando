@@ -4,8 +4,16 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 
+    @include respond-to("medium") {
+        grid-template-columns: 1fr;
+    }
+
     &__left {
         background-image: $green-gradient;
+
+        @include respond-to("medium") {
+            display: none !important;
+        }
     }
 
     &__right {

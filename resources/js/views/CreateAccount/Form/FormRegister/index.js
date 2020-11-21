@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Button from "../../../../components/Button";
 
 const FormRegister = () => {
+    const [checkboxValue, setCheckboxValue] = useState(false);
+
+    const handleCheckbox = () => {
+        setCheckboxValue(!checkboxValue);
+    };
+
     return (
         <form className="form__register">
             <div className="register__item">
@@ -14,6 +20,7 @@ const FormRegister = () => {
                     type="text"
                     className="item__input"
                     placeholder="Podaj swoje imię i nazwisko"
+                    required
                 />
             </div>
             <div className="register__item">
@@ -25,6 +32,7 @@ const FormRegister = () => {
                     type="email"
                     className="item__input"
                     placeholder="Podaj swój e-mail"
+                    required
                 />
             </div>
             <div className="register__item">
@@ -37,6 +45,7 @@ const FormRegister = () => {
                     className="item__input"
                     placeholder="Utwórz swoje nowe hasło"
                     autoComplete="true"
+                    required
                 />
             </div>
             <div className="register__item">
@@ -49,7 +58,22 @@ const FormRegister = () => {
                     className="item__input"
                     placeholder="Powtórz utworzone hasło"
                     autoComplete="true"
+                    required
                 />
+            </div>
+            <div className="register__item">
+                <label htmlFor="account-type" className="item__label--checkbox">
+                    {checkboxValue && <i className="pi pi-check"></i>}
+                </label>
+                <input
+                    id="account-type"
+                    type="checkbox"
+                    className="item__input"
+                    onChange={handleCheckbox}
+                />
+                <label htmlFor="account-type" className="item__label">
+                    Zakładam konto dla mojej firmy
+                </label>
             </div>
             <div className="login__item">
                 <Button text="Zarejestruj się" />

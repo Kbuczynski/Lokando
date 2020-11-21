@@ -1,4 +1,5 @@
 import React from "react";
+import Title from "../../../components/Title";
 import NewCompaniesItem from "./NewCompaniesItem";
 
 const companies = [
@@ -26,7 +27,7 @@ const NewCompanies = () => {
         <div className="wrapper--gray">
             <div className="container">
                 <div className="newComapnies">
-                    <h2 className="newComapnies__title">Oni nam zaufali</h2>
+                    <Title text="Oni nam zaufali" marginY="2" />
                     <div className="newComapnies__box">
                         {companies.map(
                             ({ name, logo, slug, slogan }, index) => (

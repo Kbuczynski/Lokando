@@ -1,46 +1,50 @@
-import React, {Fragment, useState} from 'react';
-import PropTypes from 'prop-types';
+import React, { Fragment, useState } from "react";
+import PropTypes from "prop-types";
 import Button from "../Button";
 import Search from "./Search";
+import { Link } from "react-router-dom";
 // import { slide as Menu } from 'react-burger-menu'
 
-const Header = (props) => {
-
+const Header = props => {
     const isLoggedIn = false;
     const [category, setCategory] = useState("");
     const [inputVal, setInputVal] = useState("");
 
     return (
         <Fragment>
-        <div className={"header"} id={"page-wrap"}>
-            <div className={"header__container container"}>
+            <div className={"header"} id={"page-wrap"}>
+                <div className={"header__container container"}>
+                    <Link
+                        className={"header__logo"}
+                        to="/"
+                        title="Strona główna"
+                    >
+                        <img
+                            src={"./assets/images/logo/lokando-logo-white.svg"}
+                            alt={"Logo"}
+                        />
+                    </Link>
 
-                <span className={"header__logo"}>
-                    <img src={"./assets/images/logo/lokando-logo-white.svg"} alt={"Logo"} />
-                </span>
+                    <Search
+                        onSearch={() => props.onSearch(inputVal, category)}
+                        setInputVal={val => setInputVal(val)}
+                        setCategory={category => setCategory(category)}
+                        inputVal={inputVal}
+                        category={category}
+                    />
 
-                <Search
-                    onSearch={() => props.onSearch(inputVal, category)}
-                    setInputVal={(val) => setInputVal(val)}
-                    setCategory={(category) => setCategory(category)}
-                    inputVal={inputVal}
-                    category={category}
-                />
-
-                {isLoggedIn
-                    ?
-                    null // burger
-                    :
-                    <Button text={"Dołącz do nas!"} isGreen={true}/>
-                }
-
+                    {isLoggedIn ? null : ( // burger
+                        <Link to="/utworz-konto">
+                            <Button text={"Dołącz do nas!"} isGreen={true} />
+                        </Link>
+                    )}
+                </div>
             </div>
-        </div>
             <Search
                 mobile={true}
                 onSearch={() => props.onSearch(inputVal, category)}
-                setInputVal={(val) => setInputVal(val)}
-                setCategory={(category) => setCategory(category)}
+                setInputVal={val => setInputVal(val)}
+                setCategory={category => setCategory(category)}
                 inputVal={inputVal}
                 category={category}
             />
@@ -49,7 +53,7 @@ const Header = (props) => {
 };
 
 Header.propTypes = {
-    onSearch: PropTypes.func,
+    onSearch: PropTypes.func
 };
 
 export default Header;
