@@ -4,7 +4,9 @@ import Title from "../../components/Title";
 const Filters = () => {
     return (
         <div className={"filters"}>
-            <Title text={"Filtry"} />
+            <div className={"container"}>
+                <Title text={"Filtry"} position={"left"}/>
+            </div>
         </div>
     );
 };
