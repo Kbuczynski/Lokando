@@ -2,7 +2,7 @@ import React from 'react';
 import Header from "../Header";
 import PropTypes from 'prop-types';
 
-const Wrapper = (props) => {
+const Wrapper = ({children}) => {
 
     const onSearch = (inputText, category) => {
         console.log(inputText, category);
@@ -12,7 +12,7 @@ const Wrapper = (props) => {
         <div className={"wrapper"}>
             <Header onSearch={(inputText, category) => onSearch(inputText, category)} />
 
-            {props.children}
+            {children}
         </div>
     );
 };
