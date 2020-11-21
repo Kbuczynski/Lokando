@@ -1,5 +1,7 @@
 import React, { useRef, useState } from "react";
 import Button from "../../../../components/Button";
+import { API } from "../../../../utils/ApiClass";
+import { useHistory } from "react-router-dom";
 
 const FormRegister = () => {
     const [checkboxValue, setCheckboxValue] = useState(false);
@@ -8,64 +10,72 @@ const FormRegister = () => {
         surname: "",
         email: "",
         password: "",
-        isCompany: false
+        password_confirmation: ""
     });
     const [isValidPassword, setIsValidPassword] = useState(true);
     const passwordRef = useRef(),
         passwordRepeatRef = useRef();
+    const [isError, setIsError] = useState(false);
+    const history = useHistory();
+
+    const changeValue = (key, newVal) => {
+        const newValues = Object.assign(stepOneValues, {});
+        newValues[key] = newVal;
+
+        setStepOneValues(newValues);
+    };
 
     const handleFullName = e => {
         const values = e.target.value.split(" ");
         const name = values[0];
         const surname = values[1];
 
-        setStepOneValues({
-            name: name,
-            surname: surname,
-            email: stepOneValues.email,
-            password: stepOneValues.password,
-            isCompany: stepOneValues.isCompany
-        });
+        changeValue("name", name);
+        changeValue("surname", surname);
     };
 
     const handleEmail = e => {
         const email = e.target.value;
-
-        setStepOneValues({
-            name: stepOneValues.name,
-            surname: stepOneValues.surname,
-            email: email,
-            password: stepOneValues.password,
-            isCompany: stepOneValues.isCompany
-        });
+        changeValue("email", email);
     };
 
     const handlePassword = () => {
         if (passwordRef.current.value === passwordRepeatRef.current.value) {
             setIsValidPassword(true);
-            setStepOneValues({
-                name: stepOneValues.name,
-                surname: stepOneValues.surname,
-                email: stepOneValues.email,
-                password: passwordRef.current.value,
-                isCompany: stepOneValues.isCompany
-            });
+            changeValue("password", passwordRef.current.value);
+            changeValue(
+                "password_confirmation",
+                passwordRepeatRef.current.value
+            );
         } else setIsValidPassword(false);
     };
 
     const handleCheckbox = () => {
         setCheckboxValue(!checkboxValue);
-        setStepOneValues({
-            name: stepOneValues.name,
-            surname: stepOneValues.surname,
-            email: stepOneValues.email,
-            password: stepOneValues.password,
-            isCompany: !stepOneValues.isCompany
-        });
     };
 
     const handleSubmit = e => {
         e.preventDefault();
+
+        API.post("/auth/register", stepOneValues)
+            .then(() => {
+                if (checkboxValue) {
+                    history.push({
+                        pathname: `/uzupelnij-profil-firmy`,
+                        search: "?step=1",
+                        state: stepOneValues
+                    });
+                } else {
+                    history.push({
+                        pathname: `/utworz-konto`,
+                        search: "?view=login",
+                        state: stepOneValues
+                    });
+                }
+            })
+            .catch(() => {
+                setIsError(true);
+            });
     };
 
     return (
@@ -149,6 +159,11 @@ const FormRegister = () => {
             </div>
             <div className="login__item">
                 <Button text="Zarejestruj się" />
+                {isError && (
+                    <small className="item__alert">
+                        Konto o podanym adresie e-mail już istnieje 🤔
+                    </small>
+                )}
             </div>
         </form>
     );
