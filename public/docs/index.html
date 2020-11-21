@@ -61,7 +61,7 @@ If company_* fields are provided it also creates company profile, and user's opt
     "http://localhost/Lokando/api/auth/register" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"sit","surname":"ad","phone":"dolor","street":"repellat","street_number":"labore","city":"iste","postal":"est","email":"laborum","password":"qui","password_confirmation":"suscipit","company_nip":12,"company_name":"rem","company_phone":"ex","company_street":"ipsam","company_street_number":"error","company_city":"saepe","company_postal":"repellendus","company_description":"enim","company_slogan":"aliquam"}'
+    -d '{"name":"quam","surname":"sed","phone":"quis","street":"eum","street_number":"quia","city":"soluta","postal":"expedita","is_company":false,"email":"veniam","password":"voluptatem","password_confirmation":"eos","company_nip":16,"company_name":"modi","company_phone":"rerum","company_street":"sint","company_street_number":"consectetur","company_city":"repellendus","company_postal":"voluptate","company_description":"minus","company_slogan":"velit","company_contacts":[],"category_id":19}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost/Lokando/api/auth/register"
@@ -73,25 +73,28 @@ let headers = {
 };
 
 let body = {
-    "name": "sit",
-    "surname": "ad",
-    "phone": "dolor",
-    "street": "repellat",
-    "street_number": "labore",
-    "city": "iste",
-    "postal": "est",
-    "email": "laborum",
-    "password": "qui",
-    "password_confirmation": "suscipit",
-    "company_nip": 12,
-    "company_name": "rem",
-    "company_phone": "ex",
-    "company_street": "ipsam",
-    "company_street_number": "error",
-    "company_city": "saepe",
-    "company_postal": "repellendus",
-    "company_description": "enim",
-    "company_slogan": "aliquam"
+    "name": "quam",
+    "surname": "sed",
+    "phone": "quis",
+    "street": "eum",
+    "street_number": "quia",
+    "city": "soluta",
+    "postal": "expedita",
+    "is_company": false,
+    "email": "veniam",
+    "password": "voluptatem",
+    "password_confirmation": "eos",
+    "company_nip": 16,
+    "company_name": "modi",
+    "company_phone": "rerum",
+    "company_street": "sint",
+    "company_street_number": "consectetur",
+    "company_city": "repellendus",
+    "company_postal": "voluptate",
+    "company_description": "minus",
+    "company_slogan": "velit",
+    "company_contacts": [],
+    "category_id": 19
 }
 
 fetch(url, {
@@ -127,29 +130,36 @@ fetch(url, {
 <tr>
 <td><code>phone</code></td>
 <td>string</td>
-<td>required</td>
+<td>optional</td>
+<td>optional DO NOT USE IF ITS COMPANY PROFILE</td>
 </tr>
 <tr>
 <td><code>street</code></td>
 <td>string</td>
 <td>optional</td>
-<td>optional</td>
+<td>optional DO NOT USE IF ITS COMPANY PROFILE</td>
 </tr>
 <tr>
 <td><code>street_number</code></td>
 <td>string</td>
 <td>optional</td>
-<td>optional</td>
+<td>optiona lDO NOT USE IF ITS COMPANY PROFILE</td>
 </tr>
 <tr>
 <td><code>city</code></td>
 <td>string</td>
 <td>optional</td>
-<td>optional</td>
+<td>optional DO NOT USE IF ITS COMPANY PROFILE</td>
 </tr>
 <tr>
 <td><code>postal</code></td>
 <td>string</td>
+<td>optional</td>
+<td>optional DO NOT USE IF ITS COMPANY PROFILE</td>
+</tr>
+<tr>
+<td><code>is_company</code></td>
+<td>boolean</td>
 <td>optional</td>
 <td>optional</td>
 </tr>
@@ -214,6 +224,17 @@ fetch(url, {
 <td>optional</td>
 <td>optional</td>
 </tr>
+<tr>
+<td><code>company_contacts</code></td>
+<td>array</td>
+<td>optional</td>
+<td>optional [name-string, contact-string]</td>
+</tr>
+<tr>
+<td><code>category_id</code></td>
+<td>integer</td>
+<td>required</td>
+</tr>
 </tbody>
 </table>
 <!-- END_2e1c96dcffcfe7e0eb58d6408f1d619e -->
@@ -227,7 +248,7 @@ fetch(url, {
     "http://localhost/Lokando/api/auth/login" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"email":"aut","password":"in"}'
+    -d '{"email":"excepturi","password":"esse"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost/Lokando/api/auth/login"
@@ -239,8 +260,8 @@ let headers = {
 };
 
 let body = {
-    "email": "aut",
-    "password": "in"
+    "email": "excepturi",
+    "password": "esse"
 }
 
 fetch(url, {
@@ -344,6 +365,351 @@ fetch(url, {
 <h3>HTTP Request</h3>
 <p><code>GET api/logout</code></p>
 <!-- END_00e7e21641f05de650dbe13f242c6f2c -->
+<h1>Category</h1>
+<p>Categories Managment</p>
+<!-- START_109013899e0bc43247b0f00b67f889cf -->
+<h2>api/categories</h2>
+<p>Return list of categories</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/Lokando/api/categories" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/Lokando/api/categories"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "current_page": 1,
+    "data": [
+        {
+            "id": 1,
+            "name": "Gastronomia",
+            "slug": "gastronomia",
+            "url": "http:\/\/localhost\/Lokando\/assets\/images\/category\/gastronomia.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Zakupy",
+            "slug": "zakupy",
+            "url": "http:\/\/localhost\/Lokando\/assets\/images\/category\/zakupy.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Zdrowie i Uroda",
+            "slug": "zdrowie-i-uroda",
+            "url": "http:\/\/localhost\/Lokando\/assets\/images\/category\/zdrowie-i-uroda.jpg"
+        },
+        {
+            "id": 4,
+            "name": "Wyposażenie",
+            "slug": "wyposazenie",
+            "url": "http:\/\/localhost\/Lokando\/assets\/images\/category\/wyposazenie.jpg"
+        },
+        {
+            "id": 5,
+            "name": "Edukacja",
+            "slug": "edukacja",
+            "url": "http:\/\/localhost\/Lokando\/assets\/images\/category\/edukacja.jpg"
+        },
+        {
+            "id": 6,
+            "name": "Transport",
+            "slug": "transport",
+            "url": "http:\/\/localhost\/Lokando\/assets\/images\/category\/transport.jpg"
+        },
+        {
+            "id": 7,
+            "name": "Elektronika",
+            "slug": "elektronika",
+            "url": "http:\/\/localhost\/Lokando\/assets\/images\/category\/elektronika.jpg"
+        },
+        {
+            "id": 8,
+            "name": "Zwierzęta",
+            "slug": "zwierzeta",
+            "url": "http:\/\/localhost\/Lokando\/assets\/images\/category\/zwierzeta.jpg"
+        },
+        {
+            "id": 9,
+            "name": "Sport i Hobby",
+            "slug": "sport-i-hobby",
+            "url": "http:\/\/localhost\/Lokando\/assets\/images\/category\/sport-i-hobby.jpg"
+        },
+        {
+            "id": 10,
+            "name": "Inne Usługi",
+            "slug": "inne-uslugi",
+            "url": "http:\/\/localhost\/Lokando\/assets\/images\/category\/inne-uslugi.jpg"
+        }
+    ],
+    "first_page_url": "http:\/\/localhost\/api\/categories?page=1",
+    "from": 1,
+    "last_page": 1,
+    "last_page_url": "http:\/\/localhost\/api\/categories?page=1",
+    "next_page_url": null,
+    "path": "http:\/\/localhost\/api\/categories",
+    "per_page": 15,
+    "prev_page_url": null,
+    "to": 10,
+    "total": 10
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/categories</code></p>
+<!-- END_109013899e0bc43247b0f00b67f889cf -->
+<h1>Company</h1>
+<p>Company managment</p>
+<!-- START_08289eb8070f67ec2732827447292fbc -->
+<h2>api/company</h2>
+<p>Updates company</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X PUT \
+    "http://localhost/Lokando/api/company" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"name":"ipsum","surname":"et","email":"laborum","company_nip":14,"company_name":"incidunt","company_phone":"non","company_street":"rerum","company_street_number":"temporibus","company_city":"quis","company_postal":"expedita","company_description":"unde","company_slogan":"vel","category_id":16,"company_contacts":[]}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/Lokando/api/company"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "ipsum",
+    "surname": "et",
+    "email": "laborum",
+    "company_nip": 14,
+    "company_name": "incidunt",
+    "company_phone": "non",
+    "company_street": "rerum",
+    "company_street_number": "temporibus",
+    "company_city": "quis",
+    "company_postal": "expedita",
+    "company_description": "unde",
+    "company_slogan": "vel",
+    "category_id": 16,
+    "company_contacts": []
+}
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>PUT api/company</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>surname</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>email</code></td>
+<td>email</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>company_nip</code></td>
+<td>integer</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>company_name</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>company_phone</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>company_street</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>company_street_number</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>company_city</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>company_postal</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>company_description</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>company_slogan</code></td>
+<td>string</td>
+<td>optional</td>
+<td>optional</td>
+</tr>
+<tr>
+<td><code>category_id</code></td>
+<td>integer</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>company_contacts</code></td>
+<td>array</td>
+<td>optional</td>
+<td>optional [name-string, contact-string]</td>
+</tr>
+</tbody>
+</table>
+<!-- END_08289eb8070f67ec2732827447292fbc -->
+<h1>Users</h1>
+<p>Users Managment</p>
+<!-- START_00f7d0be1226887c1ffa251c97c8740a -->
+<h2>api/user</h2>
+<p>Updates user</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X PUT \
+    "http://localhost/Lokando/api/user" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"name":"doloremque","surname":"ut","phone":"eaque","street":"quia","street_number":"aut","city":"illo","postal":"consequatur","email":"eaque"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/Lokando/api/user"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "doloremque",
+    "surname": "ut",
+    "phone": "eaque",
+    "street": "quia",
+    "street_number": "aut",
+    "city": "illo",
+    "postal": "consequatur",
+    "email": "eaque"
+}
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>PUT api/user</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>surname</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>phone</code></td>
+<td>string</td>
+<td>optional</td>
+<td>optional DO NOT USE IF ITS COMPANY PROFILE</td>
+</tr>
+<tr>
+<td><code>street</code></td>
+<td>string</td>
+<td>optional</td>
+<td>optional DO NOT USE IF ITS COMPANY PROFILE</td>
+</tr>
+<tr>
+<td><code>street_number</code></td>
+<td>string</td>
+<td>optional</td>
+<td>optional lDO NOT USE IF ITS COMPANY PROFILE</td>
+</tr>
+<tr>
+<td><code>city</code></td>
+<td>string</td>
+<td>optional</td>
+<td>optional DO NOT USE IF ITS COMPANY PROFILE</td>
+</tr>
+<tr>
+<td><code>postal</code></td>
+<td>string</td>
+<td>optional</td>
+<td>optional DO NOT USE IF ITS COMPANY PROFILE</td>
+</tr>
+<tr>
+<td><code>email</code></td>
+<td>email</td>
+<td>required</td>
+</tr>
+</tbody>
+</table>
+<!-- END_00f7d0be1226887c1ffa251c97c8740a -->
 <h1>general</h1>
 <!-- START_c6c5c00d6ac7f771f157dff4a2889b1a -->
 <h2>_debugbar/open</h2>

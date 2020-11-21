@@ -37,7 +37,7 @@ curl -X POST \
     "http://localhost/Lokando/api/auth/register" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"sit","surname":"ad","phone":"dolor","street":"repellat","street_number":"labore","city":"iste","postal":"est","email":"laborum","password":"qui","password_confirmation":"suscipit","company_nip":12,"company_name":"rem","company_phone":"ex","company_street":"ipsam","company_street_number":"error","company_city":"saepe","company_postal":"repellendus","company_description":"enim","company_slogan":"aliquam"}'
+    -d '{"name":"quam","surname":"sed","phone":"quis","street":"eum","street_number":"quia","city":"soluta","postal":"expedita","is_company":false,"email":"veniam","password":"voluptatem","password_confirmation":"eos","company_nip":16,"company_name":"modi","company_phone":"rerum","company_street":"sint","company_street_number":"consectetur","company_city":"repellendus","company_postal":"voluptate","company_description":"minus","company_slogan":"velit","company_contacts":[],"category_id":19}'
 
 ```
 
@@ -52,25 +52,28 @@ let headers = {
 };
 
 let body = {
-    "name": "sit",
-    "surname": "ad",
-    "phone": "dolor",
-    "street": "repellat",
-    "street_number": "labore",
-    "city": "iste",
-    "postal": "est",
-    "email": "laborum",
-    "password": "qui",
-    "password_confirmation": "suscipit",
-    "company_nip": 12,
-    "company_name": "rem",
-    "company_phone": "ex",
-    "company_street": "ipsam",
-    "company_street_number": "error",
-    "company_city": "saepe",
-    "company_postal": "repellendus",
-    "company_description": "enim",
-    "company_slogan": "aliquam"
+    "name": "quam",
+    "surname": "sed",
+    "phone": "quis",
+    "street": "eum",
+    "street_number": "quia",
+    "city": "soluta",
+    "postal": "expedita",
+    "is_company": false,
+    "email": "veniam",
+    "password": "voluptatem",
+    "password_confirmation": "eos",
+    "company_nip": 16,
+    "company_name": "modi",
+    "company_phone": "rerum",
+    "company_street": "sint",
+    "company_street_number": "consectetur",
+    "company_city": "repellendus",
+    "company_postal": "voluptate",
+    "company_description": "minus",
+    "company_slogan": "velit",
+    "company_contacts": [],
+    "category_id": 19
 }
 
 fetch(url, {
@@ -92,11 +95,12 @@ Parameter | Type | Status | Description
 --------- | ------- | ------- | ------- | -----------
     `name` | string |  required  | 
         `surname` | string |  required  | 
-        `phone` | string |  required  | 
-        `street` | string |  optional  | optional
-        `street_number` | string |  optional  | optional
-        `city` | string |  optional  | optional
-        `postal` | string |  optional  | optional
+        `phone` | string |  optional  | optional DO NOT USE IF ITS COMPANY PROFILE
+        `street` | string |  optional  | optional DO NOT USE IF ITS COMPANY PROFILE
+        `street_number` | string |  optional  | optiona lDO NOT USE IF ITS COMPANY PROFILE
+        `city` | string |  optional  | optional DO NOT USE IF ITS COMPANY PROFILE
+        `postal` | string |  optional  | optional DO NOT USE IF ITS COMPANY PROFILE
+        `is_company` | boolean |  optional  | optional
         `email` | email |  required  | 
         `password` | string |  required  | 
         `password_confirmation` | string |  required  | 
@@ -109,6 +113,8 @@ Parameter | Type | Status | Description
         `company_postal` | string |  required  | 
         `company_description` | string |  required  | 
         `company_slogan` | string |  optional  | optional
+        `company_contacts` | array |  optional  | optional [name-string, contact-string]
+        `category_id` | integer |  required  | 
     
 <!-- END_2e1c96dcffcfe7e0eb58d6408f1d619e -->
 
@@ -124,7 +130,7 @@ curl -X POST \
     "http://localhost/Lokando/api/auth/login" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"email":"aut","password":"in"}'
+    -d '{"email":"excepturi","password":"esse"}'
 
 ```
 
@@ -139,8 +145,8 @@ let headers = {
 };
 
 let body = {
-    "email": "aut",
-    "password": "in"
+    "email": "excepturi",
+    "password": "esse"
 }
 
 fetch(url, {
@@ -258,6 +264,279 @@ fetch(url, {
 
 
 <!-- END_00e7e21641f05de650dbe13f242c6f2c -->
+
+#Category
+
+
+Categories Managment
+<!-- START_109013899e0bc43247b0f00b67f889cf -->
+## api/categories
+
+Return list of categories
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/Lokando/api/categories" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/Lokando/api/categories"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "current_page": 1,
+    "data": [
+        {
+            "id": 1,
+            "name": "Gastronomia",
+            "slug": "gastronomia",
+            "url": "http:\/\/localhost\/Lokando\/assets\/images\/category\/gastronomia.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Zakupy",
+            "slug": "zakupy",
+            "url": "http:\/\/localhost\/Lokando\/assets\/images\/category\/zakupy.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Zdrowie i Uroda",
+            "slug": "zdrowie-i-uroda",
+            "url": "http:\/\/localhost\/Lokando\/assets\/images\/category\/zdrowie-i-uroda.jpg"
+        },
+        {
+            "id": 4,
+            "name": "Wyposażenie",
+            "slug": "wyposazenie",
+            "url": "http:\/\/localhost\/Lokando\/assets\/images\/category\/wyposazenie.jpg"
+        },
+        {
+            "id": 5,
+            "name": "Edukacja",
+            "slug": "edukacja",
+            "url": "http:\/\/localhost\/Lokando\/assets\/images\/category\/edukacja.jpg"
+        },
+        {
+            "id": 6,
+            "name": "Transport",
+            "slug": "transport",
+            "url": "http:\/\/localhost\/Lokando\/assets\/images\/category\/transport.jpg"
+        },
+        {
+            "id": 7,
+            "name": "Elektronika",
+            "slug": "elektronika",
+            "url": "http:\/\/localhost\/Lokando\/assets\/images\/category\/elektronika.jpg"
+        },
+        {
+            "id": 8,
+            "name": "Zwierzęta",
+            "slug": "zwierzeta",
+            "url": "http:\/\/localhost\/Lokando\/assets\/images\/category\/zwierzeta.jpg"
+        },
+        {
+            "id": 9,
+            "name": "Sport i Hobby",
+            "slug": "sport-i-hobby",
+            "url": "http:\/\/localhost\/Lokando\/assets\/images\/category\/sport-i-hobby.jpg"
+        },
+        {
+            "id": 10,
+            "name": "Inne Usługi",
+            "slug": "inne-uslugi",
+            "url": "http:\/\/localhost\/Lokando\/assets\/images\/category\/inne-uslugi.jpg"
+        }
+    ],
+    "first_page_url": "http:\/\/localhost\/api\/categories?page=1",
+    "from": 1,
+    "last_page": 1,
+    "last_page_url": "http:\/\/localhost\/api\/categories?page=1",
+    "next_page_url": null,
+    "path": "http:\/\/localhost\/api\/categories",
+    "per_page": 15,
+    "prev_page_url": null,
+    "to": 10,
+    "total": 10
+}
+```
+
+### HTTP Request
+`GET api/categories`
+
+
+<!-- END_109013899e0bc43247b0f00b67f889cf -->
+
+#Company
+
+
+Company managment
+<!-- START_08289eb8070f67ec2732827447292fbc -->
+## api/company
+
+Updates company
+
+> Example request:
+
+```bash
+curl -X PUT \
+    "http://localhost/Lokando/api/company" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"name":"ipsum","surname":"et","email":"laborum","company_nip":14,"company_name":"incidunt","company_phone":"non","company_street":"rerum","company_street_number":"temporibus","company_city":"quis","company_postal":"expedita","company_description":"unde","company_slogan":"vel","category_id":16,"company_contacts":[]}'
+
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/Lokando/api/company"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "ipsum",
+    "surname": "et",
+    "email": "laborum",
+    "company_nip": 14,
+    "company_name": "incidunt",
+    "company_phone": "non",
+    "company_street": "rerum",
+    "company_street_number": "temporibus",
+    "company_city": "quis",
+    "company_postal": "expedita",
+    "company_description": "unde",
+    "company_slogan": "vel",
+    "category_id": 16,
+    "company_contacts": []
+}
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+    body: body
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`PUT api/company`
+
+#### Body Parameters
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    `name` | string |  required  | 
+        `surname` | string |  required  | 
+        `email` | email |  required  | 
+        `company_nip` | integer |  required  | 
+        `company_name` | string |  required  | 
+        `company_phone` | string |  required  | 
+        `company_street` | string |  required  | 
+        `company_street_number` | string |  required  | 
+        `company_city` | string |  required  | 
+        `company_postal` | string |  required  | 
+        `company_description` | string |  required  | 
+        `company_slogan` | string |  optional  | optional
+        `category_id` | integer |  required  | 
+        `company_contacts` | array |  optional  | optional [name-string, contact-string]
+    
+<!-- END_08289eb8070f67ec2732827447292fbc -->
+
+#Users
+
+
+Users Managment
+<!-- START_00f7d0be1226887c1ffa251c97c8740a -->
+## api/user
+
+Updates user
+
+> Example request:
+
+```bash
+curl -X PUT \
+    "http://localhost/Lokando/api/user" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"name":"doloremque","surname":"ut","phone":"eaque","street":"quia","street_number":"aut","city":"illo","postal":"consequatur","email":"eaque"}'
+
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/Lokando/api/user"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "doloremque",
+    "surname": "ut",
+    "phone": "eaque",
+    "street": "quia",
+    "street_number": "aut",
+    "city": "illo",
+    "postal": "consequatur",
+    "email": "eaque"
+}
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+    body: body
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`PUT api/user`
+
+#### Body Parameters
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    `name` | string |  required  | 
+        `surname` | string |  required  | 
+        `phone` | string |  optional  | optional DO NOT USE IF ITS COMPANY PROFILE
+        `street` | string |  optional  | optional DO NOT USE IF ITS COMPANY PROFILE
+        `street_number` | string |  optional  | optional lDO NOT USE IF ITS COMPANY PROFILE
+        `city` | string |  optional  | optional DO NOT USE IF ITS COMPANY PROFILE
+        `postal` | string |  optional  | optional DO NOT USE IF ITS COMPANY PROFILE
+        `email` | email |  required  | 
+    
+<!-- END_00f7d0be1226887c1ffa251c97c8740a -->
 
 #general
 

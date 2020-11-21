@@ -2,7 +2,7 @@
     "variables": [],
     "info": {
         "name": "Lokando API",
-        "_postman_id": "df35081a-54f5-48ee-a8a5-18c212b715b2",
+        "_postman_id": "e0a49b3a-feb3-4690-81a0-4518957d9ac6",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
@@ -33,7 +33,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"name\": \"sit\",\n    \"surname\": \"ad\",\n    \"phone\": \"dolor\",\n    \"street\": \"repellat\",\n    \"street_number\": \"labore\",\n    \"city\": \"iste\",\n    \"postal\": \"est\",\n    \"email\": \"laborum\",\n    \"password\": \"qui\",\n    \"password_confirmation\": \"suscipit\",\n    \"company_nip\": 12,\n    \"company_name\": \"rem\",\n    \"company_phone\": \"ex\",\n    \"company_street\": \"ipsam\",\n    \"company_street_number\": \"error\",\n    \"company_city\": \"saepe\",\n    \"company_postal\": \"repellendus\",\n    \"company_description\": \"enim\",\n    \"company_slogan\": \"aliquam\"\n}"
+                            "raw": "{\n    \"name\": \"quam\",\n    \"surname\": \"sed\",\n    \"phone\": \"quis\",\n    \"street\": \"eum\",\n    \"street_number\": \"quia\",\n    \"city\": \"soluta\",\n    \"postal\": \"expedita\",\n    \"is_company\": false,\n    \"email\": \"veniam\",\n    \"password\": \"voluptatem\",\n    \"password_confirmation\": \"eos\",\n    \"company_nip\": 16,\n    \"company_name\": \"modi\",\n    \"company_phone\": \"rerum\",\n    \"company_street\": \"sint\",\n    \"company_street_number\": \"consectetur\",\n    \"company_city\": \"repellendus\",\n    \"company_postal\": \"voluptate\",\n    \"company_description\": \"minus\",\n    \"company_slogan\": \"velit\",\n    \"company_contacts\": [],\n    \"category_id\": 19\n}"
                         },
                         "description": "Registers new user\nIf company_* fields are provided it also creates company profile, and user's optional fields are unnecessary",
                         "response": []
@@ -61,7 +61,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"email\": \"aut\",\n    \"password\": \"in\"\n}"
+                            "raw": "{\n    \"email\": \"excepturi\",\n    \"password\": \"esse\"\n}"
                         },
                         "description": "Login user using credentials",
                         "response": []
@@ -120,6 +120,108 @@
                             "raw": "[]"
                         },
                         "description": "removes token from database disabling login possibility",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Category",
+            "description": "\nCategories Managment",
+            "item": [
+                {
+                    "name": "api\/categories",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/Lokando",
+                            "path": "api\/categories",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Return list of categories",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Company",
+            "description": "\nCompany managment",
+            "item": [
+                {
+                    "name": "api\/company",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/Lokando",
+                            "path": "api\/company",
+                            "query": []
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"ipsum\",\n    \"surname\": \"et\",\n    \"email\": \"laborum\",\n    \"company_nip\": 14,\n    \"company_name\": \"incidunt\",\n    \"company_phone\": \"non\",\n    \"company_street\": \"rerum\",\n    \"company_street_number\": \"temporibus\",\n    \"company_city\": \"quis\",\n    \"company_postal\": \"expedita\",\n    \"company_description\": \"unde\",\n    \"company_slogan\": \"vel\",\n    \"category_id\": 16,\n    \"company_contacts\": []\n}"
+                        },
+                        "description": "Updates company",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Users",
+            "description": "\nUsers Managment",
+            "item": [
+                {
+                    "name": "api\/user",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/Lokando",
+                            "path": "api\/user",
+                            "query": []
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"doloremque\",\n    \"surname\": \"ut\",\n    \"phone\": \"eaque\",\n    \"street\": \"quia\",\n    \"street_number\": \"aut\",\n    \"city\": \"illo\",\n    \"postal\": \"consequatur\",\n    \"email\": \"eaque\"\n}"
+                        },
+                        "description": "Updates user",
                         "response": []
                     }
                 }
