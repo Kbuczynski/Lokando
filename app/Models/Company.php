@@ -42,6 +42,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Company whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Company whereUserId($value)
  * @mixin \Eloquent
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\CompanyContact[] $companyContacts
+ * @property-read int|null $company_contacts_count
  */
 class Company extends Model
 {
@@ -65,10 +67,14 @@ class Company extends Model
         'user_id', 'category_id'
     ];
 
-    protected $with = ['category'];
+    protected $with = ['category', 'companyContacts'];
 
     public function category(){
         return $this->belongsTo('App\Models\Category');
+    }
+
+    public function companyContacts(){
+        return $this->hasMany('App\Models\CompanyContact');
     }
 
 

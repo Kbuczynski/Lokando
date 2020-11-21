@@ -2,7 +2,7 @@
     "variables": [],
     "info": {
         "name": "Lokando API",
-        "_postman_id": "7af0f2ba-b123-4687-a0e8-601f7035548d",
+        "_postman_id": "e0a49b3a-feb3-4690-81a0-4518957d9ac6",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
@@ -33,7 +33,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"name\": \"distinctio\",\n    \"surname\": \"tenetur\",\n    \"phone\": \"molestias\",\n    \"street\": \"minus\",\n    \"street_number\": \"error\",\n    \"city\": \"eos\",\n    \"postal\": \"quisquam\",\n    \"email\": \"est\",\n    \"password\": \"et\",\n    \"password_confirmation\": \"ut\",\n    \"company_nip\": 15,\n    \"company_name\": \"debitis\",\n    \"company_phone\": \"excepturi\",\n    \"company_street\": \"esse\",\n    \"company_street_number\": \"recusandae\",\n    \"company_city\": \"amet\",\n    \"company_postal\": \"tenetur\",\n    \"company_description\": \"enim\",\n    \"company_slogan\": \"dolores\",\n    \"category_id\": 16\n}"
+                            "raw": "{\n    \"name\": \"quam\",\n    \"surname\": \"sed\",\n    \"phone\": \"quis\",\n    \"street\": \"eum\",\n    \"street_number\": \"quia\",\n    \"city\": \"soluta\",\n    \"postal\": \"expedita\",\n    \"is_company\": false,\n    \"email\": \"veniam\",\n    \"password\": \"voluptatem\",\n    \"password_confirmation\": \"eos\",\n    \"company_nip\": 16,\n    \"company_name\": \"modi\",\n    \"company_phone\": \"rerum\",\n    \"company_street\": \"sint\",\n    \"company_street_number\": \"consectetur\",\n    \"company_city\": \"repellendus\",\n    \"company_postal\": \"voluptate\",\n    \"company_description\": \"minus\",\n    \"company_slogan\": \"velit\",\n    \"company_contacts\": [],\n    \"category_id\": 19\n}"
                         },
                         "description": "Registers new user\nIf company_* fields are provided it also creates company profile, and user's optional fields are unnecessary",
                         "response": []
@@ -61,7 +61,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"email\": \"delectus\",\n    \"password\": \"voluptatibus\"\n}"
+                            "raw": "{\n    \"email\": \"excepturi\",\n    \"password\": \"esse\"\n}"
                         },
                         "description": "Login user using credentials",
                         "response": []
@@ -160,16 +160,16 @@
             ]
         },
         {
-            "name": "Users",
-            "description": "\nUsers Managment",
+            "name": "Company",
+            "description": "\nCompany managment",
             "item": [
                 {
-                    "name": "api\/user",
+                    "name": "api\/company",
                     "request": {
                         "url": {
                             "protocol": "http",
                             "host": "localhost\/Lokando",
-                            "path": "api\/user\/:user",
+                            "path": "api\/company",
                             "query": []
                         },
                         "method": "PUT",
@@ -185,7 +185,41 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"name\": \"fugiat\",\n    \"surname\": \"aut\",\n    \"phone\": \"consectetur\",\n    \"street\": \"et\",\n    \"street_number\": \"corrupti\",\n    \"city\": \"at\",\n    \"postal\": \"consequatur\",\n    \"email\": \"molestiae\"\n}"
+                            "raw": "{\n    \"name\": \"ipsum\",\n    \"surname\": \"et\",\n    \"email\": \"laborum\",\n    \"company_nip\": 14,\n    \"company_name\": \"incidunt\",\n    \"company_phone\": \"non\",\n    \"company_street\": \"rerum\",\n    \"company_street_number\": \"temporibus\",\n    \"company_city\": \"quis\",\n    \"company_postal\": \"expedita\",\n    \"company_description\": \"unde\",\n    \"company_slogan\": \"vel\",\n    \"category_id\": 16,\n    \"company_contacts\": []\n}"
+                        },
+                        "description": "Updates company",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Users",
+            "description": "\nUsers Managment",
+            "item": [
+                {
+                    "name": "api\/user",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/Lokando",
+                            "path": "api\/user",
+                            "query": []
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"doloremque\",\n    \"surname\": \"ut\",\n    \"phone\": \"eaque\",\n    \"street\": \"quia\",\n    \"street_number\": \"aut\",\n    \"city\": \"illo\",\n    \"postal\": \"consequatur\",\n    \"email\": \"eaque\"\n}"
                         },
                         "description": "Updates user",
                         "response": []

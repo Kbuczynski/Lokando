@@ -61,7 +61,7 @@ If company_* fields are provided it also creates company profile, and user's opt
     "http://localhost/Lokando/api/auth/register" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"distinctio","surname":"tenetur","phone":"molestias","street":"minus","street_number":"error","city":"eos","postal":"quisquam","email":"est","password":"et","password_confirmation":"ut","company_nip":15,"company_name":"debitis","company_phone":"excepturi","company_street":"esse","company_street_number":"recusandae","company_city":"amet","company_postal":"tenetur","company_description":"enim","company_slogan":"dolores","category_id":16}'
+    -d '{"name":"quam","surname":"sed","phone":"quis","street":"eum","street_number":"quia","city":"soluta","postal":"expedita","is_company":false,"email":"veniam","password":"voluptatem","password_confirmation":"eos","company_nip":16,"company_name":"modi","company_phone":"rerum","company_street":"sint","company_street_number":"consectetur","company_city":"repellendus","company_postal":"voluptate","company_description":"minus","company_slogan":"velit","company_contacts":[],"category_id":19}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost/Lokando/api/auth/register"
@@ -73,26 +73,28 @@ let headers = {
 };
 
 let body = {
-    "name": "distinctio",
-    "surname": "tenetur",
-    "phone": "molestias",
-    "street": "minus",
-    "street_number": "error",
-    "city": "eos",
-    "postal": "quisquam",
-    "email": "est",
-    "password": "et",
-    "password_confirmation": "ut",
-    "company_nip": 15,
-    "company_name": "debitis",
-    "company_phone": "excepturi",
-    "company_street": "esse",
-    "company_street_number": "recusandae",
-    "company_city": "amet",
-    "company_postal": "tenetur",
-    "company_description": "enim",
-    "company_slogan": "dolores",
-    "category_id": 16
+    "name": "quam",
+    "surname": "sed",
+    "phone": "quis",
+    "street": "eum",
+    "street_number": "quia",
+    "city": "soluta",
+    "postal": "expedita",
+    "is_company": false,
+    "email": "veniam",
+    "password": "voluptatem",
+    "password_confirmation": "eos",
+    "company_nip": 16,
+    "company_name": "modi",
+    "company_phone": "rerum",
+    "company_street": "sint",
+    "company_street_number": "consectetur",
+    "company_city": "repellendus",
+    "company_postal": "voluptate",
+    "company_description": "minus",
+    "company_slogan": "velit",
+    "company_contacts": [],
+    "category_id": 19
 }
 
 fetch(url, {
@@ -156,6 +158,12 @@ fetch(url, {
 <td>optional DO NOT USE IF ITS COMPANY PROFILE</td>
 </tr>
 <tr>
+<td><code>is_company</code></td>
+<td>boolean</td>
+<td>optional</td>
+<td>optional</td>
+</tr>
+<tr>
 <td><code>email</code></td>
 <td>email</td>
 <td>required</td>
@@ -217,6 +225,12 @@ fetch(url, {
 <td>optional</td>
 </tr>
 <tr>
+<td><code>company_contacts</code></td>
+<td>array</td>
+<td>optional</td>
+<td>optional [name-string, contact-string]</td>
+</tr>
+<tr>
 <td><code>category_id</code></td>
 <td>integer</td>
 <td>required</td>
@@ -234,7 +248,7 @@ fetch(url, {
     "http://localhost/Lokando/api/auth/login" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"email":"delectus","password":"voluptatibus"}'
+    -d '{"email":"excepturi","password":"esse"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost/Lokando/api/auth/login"
@@ -246,8 +260,8 @@ let headers = {
 };
 
 let body = {
-    "email": "delectus",
-    "password": "voluptatibus"
+    "email": "excepturi",
+    "password": "esse"
 }
 
 fetch(url, {
@@ -459,22 +473,22 @@ fetch(url, {
 <h3>HTTP Request</h3>
 <p><code>GET api/categories</code></p>
 <!-- END_109013899e0bc43247b0f00b67f889cf -->
-<h1>Users</h1>
-<p>Users Managment</p>
-<!-- START_a4a2abed1e8e8cad5e6a3282812fe3f3 -->
-<h2>api/user</h2>
-<p>Updates user</p>
+<h1>Company</h1>
+<p>Company managment</p>
+<!-- START_08289eb8070f67ec2732827447292fbc -->
+<h2>api/company</h2>
+<p>Updates company</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "http://localhost/Lokando/api/user/1" \
+    "http://localhost/Lokando/api/company" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"fugiat","surname":"aut","phone":"consectetur","street":"et","street_number":"corrupti","city":"at","postal":"consequatur","email":"molestiae"}'
+    -d '{"name":"ipsum","surname":"et","email":"laborum","company_nip":14,"company_name":"incidunt","company_phone":"non","company_street":"rerum","company_street_number":"temporibus","company_city":"quis","company_postal":"expedita","company_description":"unde","company_slogan":"vel","category_id":16,"company_contacts":[]}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/Lokando/api/user/1"
+    "http://localhost/Lokando/api/company"
 );
 
 let headers = {
@@ -483,14 +497,20 @@ let headers = {
 };
 
 let body = {
-    "name": "fugiat",
-    "surname": "aut",
-    "phone": "consectetur",
-    "street": "et",
-    "street_number": "corrupti",
-    "city": "at",
-    "postal": "consequatur",
-    "email": "molestiae"
+    "name": "ipsum",
+    "surname": "et",
+    "email": "laborum",
+    "company_nip": 14,
+    "company_name": "incidunt",
+    "company_phone": "non",
+    "company_street": "rerum",
+    "company_street_number": "temporibus",
+    "company_city": "quis",
+    "company_postal": "expedita",
+    "company_description": "unde",
+    "company_slogan": "vel",
+    "category_id": 16,
+    "company_contacts": []
 }
 
 fetch(url, {
@@ -501,8 +521,136 @@ fetch(url, {
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
 <h3>HTTP Request</h3>
-<p><code>PUT api/user/{user}</code></p>
-<p><code>PATCH api/user/{user}</code></p>
+<p><code>PUT api/company</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>surname</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>email</code></td>
+<td>email</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>company_nip</code></td>
+<td>integer</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>company_name</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>company_phone</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>company_street</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>company_street_number</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>company_city</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>company_postal</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>company_description</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>company_slogan</code></td>
+<td>string</td>
+<td>optional</td>
+<td>optional</td>
+</tr>
+<tr>
+<td><code>category_id</code></td>
+<td>integer</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>company_contacts</code></td>
+<td>array</td>
+<td>optional</td>
+<td>optional [name-string, contact-string]</td>
+</tr>
+</tbody>
+</table>
+<!-- END_08289eb8070f67ec2732827447292fbc -->
+<h1>Users</h1>
+<p>Users Managment</p>
+<!-- START_00f7d0be1226887c1ffa251c97c8740a -->
+<h2>api/user</h2>
+<p>Updates user</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X PUT \
+    "http://localhost/Lokando/api/user" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"name":"doloremque","surname":"ut","phone":"eaque","street":"quia","street_number":"aut","city":"illo","postal":"consequatur","email":"eaque"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/Lokando/api/user"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "doloremque",
+    "surname": "ut",
+    "phone": "eaque",
+    "street": "quia",
+    "street_number": "aut",
+    "city": "illo",
+    "postal": "consequatur",
+    "email": "eaque"
+}
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>PUT api/user</code></p>
 <h4>Body Parameters</h4>
 <table>
 <thead>
@@ -561,7 +709,7 @@ fetch(url, {
 </tr>
 </tbody>
 </table>
-<!-- END_a4a2abed1e8e8cad5e6a3282812fe3f3 -->
+<!-- END_00f7d0be1226887c1ffa251c97c8740a -->
 <h1>general</h1>
 <!-- START_c6c5c00d6ac7f771f157dff4a2889b1a -->
 <h2>_debugbar/open</h2>

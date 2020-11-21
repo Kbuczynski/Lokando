@@ -37,7 +37,7 @@ curl -X POST \
     "http://localhost/Lokando/api/auth/register" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"distinctio","surname":"tenetur","phone":"molestias","street":"minus","street_number":"error","city":"eos","postal":"quisquam","email":"est","password":"et","password_confirmation":"ut","company_nip":15,"company_name":"debitis","company_phone":"excepturi","company_street":"esse","company_street_number":"recusandae","company_city":"amet","company_postal":"tenetur","company_description":"enim","company_slogan":"dolores","category_id":16}'
+    -d '{"name":"quam","surname":"sed","phone":"quis","street":"eum","street_number":"quia","city":"soluta","postal":"expedita","is_company":false,"email":"veniam","password":"voluptatem","password_confirmation":"eos","company_nip":16,"company_name":"modi","company_phone":"rerum","company_street":"sint","company_street_number":"consectetur","company_city":"repellendus","company_postal":"voluptate","company_description":"minus","company_slogan":"velit","company_contacts":[],"category_id":19}'
 
 ```
 
@@ -52,26 +52,28 @@ let headers = {
 };
 
 let body = {
-    "name": "distinctio",
-    "surname": "tenetur",
-    "phone": "molestias",
-    "street": "minus",
-    "street_number": "error",
-    "city": "eos",
-    "postal": "quisquam",
-    "email": "est",
-    "password": "et",
-    "password_confirmation": "ut",
-    "company_nip": 15,
-    "company_name": "debitis",
-    "company_phone": "excepturi",
-    "company_street": "esse",
-    "company_street_number": "recusandae",
-    "company_city": "amet",
-    "company_postal": "tenetur",
-    "company_description": "enim",
-    "company_slogan": "dolores",
-    "category_id": 16
+    "name": "quam",
+    "surname": "sed",
+    "phone": "quis",
+    "street": "eum",
+    "street_number": "quia",
+    "city": "soluta",
+    "postal": "expedita",
+    "is_company": false,
+    "email": "veniam",
+    "password": "voluptatem",
+    "password_confirmation": "eos",
+    "company_nip": 16,
+    "company_name": "modi",
+    "company_phone": "rerum",
+    "company_street": "sint",
+    "company_street_number": "consectetur",
+    "company_city": "repellendus",
+    "company_postal": "voluptate",
+    "company_description": "minus",
+    "company_slogan": "velit",
+    "company_contacts": [],
+    "category_id": 19
 }
 
 fetch(url, {
@@ -98,6 +100,7 @@ Parameter | Type | Status | Description
         `street_number` | string |  optional  | optiona lDO NOT USE IF ITS COMPANY PROFILE
         `city` | string |  optional  | optional DO NOT USE IF ITS COMPANY PROFILE
         `postal` | string |  optional  | optional DO NOT USE IF ITS COMPANY PROFILE
+        `is_company` | boolean |  optional  | optional
         `email` | email |  required  | 
         `password` | string |  required  | 
         `password_confirmation` | string |  required  | 
@@ -110,6 +113,7 @@ Parameter | Type | Status | Description
         `company_postal` | string |  required  | 
         `company_description` | string |  required  | 
         `company_slogan` | string |  optional  | optional
+        `company_contacts` | array |  optional  | optional [name-string, contact-string]
         `category_id` | integer |  required  | 
     
 <!-- END_2e1c96dcffcfe7e0eb58d6408f1d619e -->
@@ -126,7 +130,7 @@ curl -X POST \
     "http://localhost/Lokando/api/auth/login" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"email":"delectus","password":"voluptatibus"}'
+    -d '{"email":"excepturi","password":"esse"}'
 
 ```
 
@@ -141,8 +145,8 @@ let headers = {
 };
 
 let body = {
-    "email": "delectus",
-    "password": "voluptatibus"
+    "email": "excepturi",
+    "password": "esse"
 }
 
 fetch(url, {
@@ -384,29 +388,29 @@ fetch(url, {
 
 <!-- END_109013899e0bc43247b0f00b67f889cf -->
 
-#Users
+#Company
 
 
-Users Managment
-<!-- START_a4a2abed1e8e8cad5e6a3282812fe3f3 -->
-## api/user
+Company managment
+<!-- START_08289eb8070f67ec2732827447292fbc -->
+## api/company
 
-Updates user
+Updates company
 
 > Example request:
 
 ```bash
 curl -X PUT \
-    "http://localhost/Lokando/api/user/1" \
+    "http://localhost/Lokando/api/company" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"fugiat","surname":"aut","phone":"consectetur","street":"et","street_number":"corrupti","city":"at","postal":"consequatur","email":"molestiae"}'
+    -d '{"name":"ipsum","surname":"et","email":"laborum","company_nip":14,"company_name":"incidunt","company_phone":"non","company_street":"rerum","company_street_number":"temporibus","company_city":"quis","company_postal":"expedita","company_description":"unde","company_slogan":"vel","category_id":16,"company_contacts":[]}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/Lokando/api/user/1"
+    "http://localhost/Lokando/api/company"
 );
 
 let headers = {
@@ -415,14 +419,20 @@ let headers = {
 };
 
 let body = {
-    "name": "fugiat",
-    "surname": "aut",
-    "phone": "consectetur",
-    "street": "et",
-    "street_number": "corrupti",
-    "city": "at",
-    "postal": "consequatur",
-    "email": "molestiae"
+    "name": "ipsum",
+    "surname": "et",
+    "email": "laborum",
+    "company_nip": 14,
+    "company_name": "incidunt",
+    "company_phone": "non",
+    "company_street": "rerum",
+    "company_street_number": "temporibus",
+    "company_city": "quis",
+    "company_postal": "expedita",
+    "company_description": "unde",
+    "company_slogan": "vel",
+    "category_id": 16,
+    "company_contacts": []
 }
 
 fetch(url, {
@@ -437,9 +447,82 @@ fetch(url, {
 
 
 ### HTTP Request
-`PUT api/user/{user}`
+`PUT api/company`
 
-`PATCH api/user/{user}`
+#### Body Parameters
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    `name` | string |  required  | 
+        `surname` | string |  required  | 
+        `email` | email |  required  | 
+        `company_nip` | integer |  required  | 
+        `company_name` | string |  required  | 
+        `company_phone` | string |  required  | 
+        `company_street` | string |  required  | 
+        `company_street_number` | string |  required  | 
+        `company_city` | string |  required  | 
+        `company_postal` | string |  required  | 
+        `company_description` | string |  required  | 
+        `company_slogan` | string |  optional  | optional
+        `category_id` | integer |  required  | 
+        `company_contacts` | array |  optional  | optional [name-string, contact-string]
+    
+<!-- END_08289eb8070f67ec2732827447292fbc -->
+
+#Users
+
+
+Users Managment
+<!-- START_00f7d0be1226887c1ffa251c97c8740a -->
+## api/user
+
+Updates user
+
+> Example request:
+
+```bash
+curl -X PUT \
+    "http://localhost/Lokando/api/user" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"name":"doloremque","surname":"ut","phone":"eaque","street":"quia","street_number":"aut","city":"illo","postal":"consequatur","email":"eaque"}'
+
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/Lokando/api/user"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "doloremque",
+    "surname": "ut",
+    "phone": "eaque",
+    "street": "quia",
+    "street_number": "aut",
+    "city": "illo",
+    "postal": "consequatur",
+    "email": "eaque"
+}
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+    body: body
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`PUT api/user`
 
 #### Body Parameters
 Parameter | Type | Status | Description
@@ -453,7 +536,7 @@ Parameter | Type | Status | Description
         `postal` | string |  optional  | optional DO NOT USE IF ITS COMPANY PROFILE
         `email` | email |  required  | 
     
-<!-- END_a4a2abed1e8e8cad5e6a3282812fe3f3 -->
+<!-- END_00f7d0be1226887c1ffa251c97c8740a -->
 
 #general
 
