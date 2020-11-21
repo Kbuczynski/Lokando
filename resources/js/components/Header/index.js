@@ -34,7 +34,7 @@ const Header = props => {
                     />
 
                     {isLoggedIn ? null : ( // burger
-                        <Link to="/utworz-konto">
+                        <Link to="/utworz-konto?view=register">
                             <Button text={"Dołącz do nas!"} isGreen={true} />
                         </Link>
                     )}

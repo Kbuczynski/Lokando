@@ -14,6 +14,11 @@ import CreateAccount from "./views/CreateAccount";
 import SearchResults from "./views/SearchResults";
 import ScrollTop from "./components/ScrollTop";
 
+console.log(window.apiUrl, window.baseUrl);
+
+import { API } from "../js/utils/ApiClass";
+window.API = API;
+
 const loggerMiddleware = createLogger();
 
 const store = createStore(
@@ -21,7 +26,7 @@ const store = createStore(
     applyMiddleware(thunk, loggerMiddleware, PromiseMiddleware)
 );
 
-axios.get("")
+axios.get("");
 
 function Router() {
     return (

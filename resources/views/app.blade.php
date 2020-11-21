@@ -17,7 +17,7 @@
 <div id="app"></div>
 
 <script type="text/javascript">
-    window.apiUrl = "{{ empty(env('API_URL')) ? config('app.url/').'api' : env('API_URL') }}";
+    window.appUrl = "{{ env('APP_URL') }}";
     window.baseUrl = "{{ request()->getBasePath() }}";
     window.assetsUrl = "{{ asset('') }}"
 </script>
