@@ -34,7 +34,7 @@ const Search = (props) => {
     );
 };
 
-Search.proptypes = {
+Search.propTypes = {
     mobile: PropTypes.bool,
     onSearch: PropTypes.func,
     category: PropTypes.string,
