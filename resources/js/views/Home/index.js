@@ -5,9 +5,14 @@ import HomeSlider from "./HomeSlider";
 import NewCompanies from "./NewCompanies";
 
 const Home = () => {
+
+    const onSearch = (inputText, category) => {
+      console.log(inputText, category);
+    };
+
     return (
         <div>
-            <Header />
+            <Header onSearch={(inputText, category) => onSearch(inputText, category)} />
             <div className="container">
                 <HomeSlider />
                 <Category />
