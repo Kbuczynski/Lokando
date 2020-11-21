@@ -18,7 +18,7 @@ window.onclick = function (event) {
 };
 
 const Header = props => {
-    const isLoggedIn = false;
+    const isLoggedIn = true;
     const [category, setCategory] = useState("");
     const [inputVal, setInputVal] = useState("");
 
@@ -27,8 +27,14 @@ const Header = props => {
 
     useEffect(() => {
         const URLParams = new URLSearchParams(window.location.search);
-        setCategory(URLParams.get('cat'));
-        setInputVal(URLParams.get('tags'));
+        const category = URLParams.get('cat');
+        const inputVal = URLParams.get('tags');
+
+        if (category)
+             setCategory(category);
+        if (inputVal)
+            setInputVal(inputVal);
+
     }, []);
 
     const onSearch = () => {
@@ -70,7 +76,7 @@ const Header = props => {
                             <div className="dropdown">
                                 <button onClick={() => onMenuClick()} className="dropdown__btn">Menu</button>
                                 <div className={`dropdown__content`} ref={refDropdown}>
-                                    <Link to={''}>Link 1</Link>
+                                    <Link to={''}>Zamówienia</Link>
                                     <Link to={''}>Link 2</Link>
                                     <Link to={''}>Link 3</Link>
                                 </div>
