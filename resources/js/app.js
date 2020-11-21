@@ -7,6 +7,7 @@ import PromiseMiddleware from "redux-promise-middleware";
 import rootReducer from "./redux";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
+import axios from "axios";
 
 import Home from "./views/Home";
 import CreateAccount from "./views/CreateAccount";
@@ -19,6 +20,8 @@ const store = createStore(
     rootReducer,
     applyMiddleware(thunk, loggerMiddleware, PromiseMiddleware)
 );
+
+axios.get("")
 
 function Router() {
     return (

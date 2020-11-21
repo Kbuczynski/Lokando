@@ -1,0 +1,61 @@
+.product {
+    border: 1px solid $gray-border;
+    width: 100%;
+    display: flex;
+    position: relative;
+
+    &__img {
+        object-fit: contain;
+    }
+
+    &__title {
+        display: block;
+        margin-top: 1.5rem;
+        color: $darkBlueText;
+        font-weight: bold;
+    }
+
+    &__desc {
+        display: inline-block;
+        margin-top: 1rem;
+        font-size: 1rem;
+    }
+
+    &__price {
+        display: block;
+        margin-top: 2rem;
+        color: #C82814;
+        font-weight: bold;
+        font-size: 1.8rem;
+    }
+
+    &__company {
+        position: absolute;
+        top: 0;
+        right: 0;
+        border: 1px solid $gray-border;
+        border-top: none;
+        border-right: none;
+        text-align: center;
+        padding-bottom: 10px;
+    }
+
+    &__logo {
+        object-fit: contain;
+    }
+
+    &__companyName {
+        display: block;
+        color: $darkBlueText;
+        font-weight: bold;
+        font-size: 1.2rem;
+        margin-bottom: 0;
+        line-height: 18px;
+    }
+
+    &__companyDesc {
+        font-size: 1rem;
+    }
+
+
+}

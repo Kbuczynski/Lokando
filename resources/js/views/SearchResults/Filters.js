@@ -1,12 +1,87 @@
 import React from 'react';
 import Title from "../../components/Title";
+import PropTypes from 'prop-types';
 
-const Filters = () => {
+import {Dropdown} from 'primereact/dropdown';
+import {Slider} from 'primereact/slider';
+import {InputText} from 'primereact/inputtext';
+
+const Filters = (props) => {
+
+    const categories = [
+        {label: 'Gastronomia', value: 'gastronomia'},
+        {label: 'Zakupy', value: 'zakupy'},
+        {label: 'Zdrowie i uroda', value: 'zdrowie'},
+        {label: 'Wyposażenie', value: 'wyposazenie'},
+        {label: 'Edukacja', value: 'edukacja'},
+        {label: 'Transport', value: 'transport'},
+        {label: 'Elektronika', value: 'elektronika'},
+        {label: 'Zwierzęta', value: 'zwierzeta'},
+        {label: 'Sport i Hobby', value: 'sport'}
+    ];
+
+    const status = [
+        {label: 'Pokaż wszystko', value: 'wszystkie'},
+        {label: 'Dostępne', value: 'dostepne'},
+        {label: 'Promocja', value: 'promocja'},
+        {label: 'Dostawa wkrótce', value: 'dostawa_wkrotce'},
+    ];
+
+    const sort = [
+        {label: 'Domyślnie', value: 'domyslnie'},
+        {label: 'Najtańsze', value: 'najtansze'},
+        {label: 'Najdroższe', value: 'najdrozsze'},
+        {label: 'Najlepiej oceniane', value: 'naj_ocena'},
+    ];
+
     return (
         <div className={"filters"}>
-            <Title text={"Filtry"} />
+            <div className={"container"}>
+                <Title text={"Filtry"} position={"left"}/>
+
+                <div className={"filters__inputs"}>
+                    <Dropdown value={props.category} options={categories} onChange={(e) => props.setCategory(e.value)}
+                              placeholder="Kategoria" className={"filters__input"}/>
+                    <div className={"filters__price"}>
+                        <div className={"filters__slider"}>
+                            <span>Cena: </span>
+                            <Slider value={props.priceRange} onChange={(e) => props.setPriceRange(e.value)} range
+                                    min={1}
+                                    max={10000} step={1}/>
+                        </div>
+                        <div className={"filters__sliderInputs"}>
+                            <InputText value={props.priceRange[0]}
+                                       onChange={(e) => props.setPriceRange([e.target.value, props.priceRange[1]])}/>
+                            <span>-</span>
+                            <InputText value={props.priceRange[1]}
+                                       onChange={(e) => props.setPriceRange([props.priceRange[0]], e.target.value)}/>
+                        </div>
+                    </div>
+                    <Dropdown value={props.status} options={status} onChange={(e) => props.setStatus(e.value)}
+                              placeholder="Status" className={"filters__input"}/>
+                </div>
+
+                <div className={"filters__sorters"}>
+                    <div className={"filters__sort"}>
+                        <span>Sortuj: </span>
+                        <Dropdown value={props.sort} options={sort} onChange={(e) => props.setSort(e.value)}
+                                  className={"filters__sortDropdown"}/>
+                    </div>
+                </div>
+            </div>
         </div>
     );
+};
+
+Filters.propTypes = {
+    category: PropTypes.string,
+    priceRange: PropTypes.array,
+    status: PropTypes.string,
+    sort: PropTypes.string,
+    setCategory: PropTypes.func,
+    setPriceRange: PropTypes.func,
+    setStatus: PropTypes.func,
+    setSort: PropTypes.func,
 };
 
 export default Filters;
