@@ -17,6 +17,7 @@ class CreateCompanyTable extends Migration
             $table->id();
             $table->bigInteger('company_nip');
             $table->string('company_name');
+            $table->string('company_slug');
             $table->string('company_phone');
             $table->string('company_street');
             $table->string('company_street_number');
@@ -24,6 +25,9 @@ class CreateCompanyTable extends Migration
             $table->string('company_postal');
             $table->text('company_description');
             $table->string('company_slogan')->nullable();
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('categories');
+
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
