@@ -30,8 +30,12 @@ const Product = (props) => {
                          alt={"Logo firmy"}
                          className={"product__logo"}
                     />
-                    <span className={"product__companyName"}>{props.companyName}</span>
-                    <span className={"product__companyDesc"}>{props.companyLocation}</span>
+
+                    <div className={"product__companyText"}>
+                        <span className={"product__companyName"}>{props.companyName}</span>
+                        <span className={"product__companyDesc"}>{props.companyLocation}</span>
+                    </div>
+
                 </div>
 
                 <div className={"product__btnBasket"}>
