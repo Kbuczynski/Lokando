@@ -29,7 +29,7 @@ const FormLogin = () => {
     const handleSubmit = e => {
         e.preventDefault();
 
-        API.post("/api/auth/login", loginData);
+        API.post("/auth/login", loginData);
     };
 
     return (

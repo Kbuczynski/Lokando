@@ -14,8 +14,6 @@ import CreateAccount from "./views/CreateAccount";
 import SearchResults from "./views/SearchResults";
 import ScrollTop from "./components/ScrollTop";
 
-console.log(window.apiUrl, window.baseUrl);
-
 import { API } from "../js/utils/ApiClass";
 window.API = API;
 
