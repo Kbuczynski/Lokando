@@ -18,10 +18,8 @@
     "layout/category", "layout/newCompanies";
 
 // 5. Components
-@import "components/button";
-@import "components/header";
-@import "components/searchBar";
-@import "components/title";
+@import "components/button", "components/scrollTop", "components/header",
+    "components/searchBar", "components/title";
 
 // 6. Page-specific styles
 @import "pages/home", "pages/createAccount";

@@ -4,11 +4,7 @@ import { Link } from "react-router-dom";
 
 const NewCompaniesItem = ({ logo, name, slug, slogan }) => {
     return (
-        <Link
-            to={`${window.baseUrl}/firmy/${slug}`}
-            className="box__item"
-            title="Odwiedź sklep"
-        >
+        <Link to={`/firmy/${slug}`} className="box__item" title="Odwiedź sklep">
             <div className="item__image">
                 <img src={`${logo}`} alt={name} />
             </div>

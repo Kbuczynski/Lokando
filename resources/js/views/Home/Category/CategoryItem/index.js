@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const CategoryItem = ({ name, image }) => {
     return (
         <Link
-            to={`${window.baseUrl}/szukaj?kategoria=${name}`}
+            to={`/szukaj?kategoria=${name}`}
             className="box__item"
             title={name}
         >

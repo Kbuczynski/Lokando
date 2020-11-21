@@ -1,4 +1,5 @@
 import React from "react";
+import Title from "../../../components/Title";
 import CategoryItem from "./CategoryItem";
 
 const categories = [
@@ -47,7 +48,7 @@ const categories = [
 const Category = () => {
     return (
         <div className="category">
-            <h2 className="category__title">Kategorie</h2>
+            <Title text="Kategorie" marginY="2.5" />
             <div className="category__box">
                 {categories.map(({ name, image }, index) => (
                     <CategoryItem key={index} name={name} image={image} />

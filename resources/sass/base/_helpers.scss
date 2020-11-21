@@ -22,7 +22,16 @@
     padding: 0.5rem 0;
 }
 
+.wrapper--blue {
+    background-image: $blue-gradient;
+    padding: 0.5rem 0;
+}
+
 .switch__login--active {
     background-image: $green-gradient !important;
     filter: opacity(1) !important;
+}
+
+.awssld__content > img {
+    object-fit: inherit !important;
 }

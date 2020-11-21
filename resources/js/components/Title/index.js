@@ -1,9 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-const Title = ({text, position}) => {
+const Title = ({ text, position, marginY }) => {
     return (
-        <span className={`title title--${position}`}>
+        <span
+            className={`title title--${position}`}
+            style={{ margin: `${marginY}rem 0` }}
+        >
             {text}
         </span>
     );
@@ -11,11 +14,14 @@ const Title = ({text, position}) => {
 
 Title.propTypes = {
     text: PropTypes.string,
-    position: PropTypes.string
+    position: PropTypes.string,
+    marginY: PropTypes.string
 };
 
 Title.defaultProps = {
-    position: "center"
+    position: "center",
+    text: "",
+    marginY: "0"
 };
 
 export default Title;
