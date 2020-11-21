@@ -5,6 +5,25 @@ import RegisterCompanyDetails from "./RegisterCompanyDetails";
 
 const RegisterCompany = props => {
     const [baseValues, setBaseValues] = useState(props.location.state);
+
+    const [fullValues, setFullValues] = useState({
+        name: baseValues.name,
+        surname: baseValues.surname,
+        email: baseValues.email,
+        password: baseValues.password,
+        password_confirmation: baseValues.password_confirmation,
+        is_company: 1,
+        company_nip: "",
+        company_name: "",
+        company_phone: "",
+        company_street: "",
+        company_street_number: "",
+        company_city: "",
+        company_postal: "",
+        company_description: "",
+        company_slogan: "",
+        category_id: 1
+    });
     const [step, setStep] = useState("1");
 
     useEffect(() => {
@@ -17,9 +36,15 @@ const RegisterCompany = props => {
     return (
         <div className="registerCompany">
             {step === "1" ? (
-                <RegisterCompanyAddress />
+                <RegisterCompanyAddress
+                    fullValues={fullValues}
+                    setFullValues={setFullValues}
+                />
             ) : (
-                <RegisterCompanyDetails />
+                <RegisterCompanyDetails
+                    fullValues={fullValues}
+                    setFullValues={setFullValues}
+                />
             )}
         </div>
     );
