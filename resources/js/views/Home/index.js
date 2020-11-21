@@ -6,6 +6,7 @@ const Home = () => {
         <div>
             <Header/>
             <h1>Home</h1>
+            {console.log(window.apiUrl)}
         </div>
     );
 };
