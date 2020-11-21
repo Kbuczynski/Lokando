@@ -1,10 +1,11 @@
 import React from 'react';
 import Wrapper from "../../components/Wrapper";
+import Filters from "./Filters";
 
 const SearchResults = (props) => {
     return (
         <Wrapper>
-            <h1>Search results</h1>
+            <Filters />
         </Wrapper>
     );
 };

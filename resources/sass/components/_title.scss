@@ -1,0 +1,10 @@
+.title {
+    display: inline-block;
+    width: 100%;
+    font-size: 2rem;
+    color: $darkBlueText;
+
+    &--center {
+        text-align: center;
+    }
+}
