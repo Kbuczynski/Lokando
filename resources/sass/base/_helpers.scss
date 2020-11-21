@@ -17,6 +17,11 @@
     width: 100%; /* 1 */
 }
 
+.wrapper--gray {
+    background-color: $gray-background;
+    padding: 0.5rem 0;
+}
+
 .switch__login--active {
     background-image: $green-gradient !important;
     filter: opacity(1) !important;
