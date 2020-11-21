@@ -49,6 +49,8 @@ use Laravel\Passport\HasApiTokens;
  * @method static \Illuminate\Database\Eloquent\Builder|User whereStreet($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereStreetNumber($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereSurname($value)
+ * @property int $is_company
+ * @method static \Illuminate\Database\Eloquent\Builder|User whereIsCompany($value)
  */
 class User extends Authenticatable
 {
