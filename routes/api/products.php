@@ -11,11 +11,10 @@ Route::group([
     Route::get('{id}/products', 'Api\ProductController@companyIndex');
     Route::get('products/own', 'Api\ProductController@ownIndex');
     Route::post('products', 'Api\ProductController@store');
-    Route::post('products/search', 'Api\ProductController@search');
     Route::put('products/{id}', 'Api\ProductController@update');
     Route::put('products/{id}/rate', 'Api\ProductController@rate');
 
 });
-
+Route::post('products/search', 'Api\ProductController@search');
 Route::get('products', 'Api\ProductController@index');
 
