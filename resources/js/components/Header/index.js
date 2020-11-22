@@ -97,7 +97,6 @@ const Header = props => {
                                     ref={refDropdown}
                                 >
                                     <Link to={""}>Zamówienia</Link>
-                                    <Link to={""}>Link 2</Link>
                                     <Link to={"/"} onClick={handleLogout}>
                                         Wyloguj się
                                     </Link>
