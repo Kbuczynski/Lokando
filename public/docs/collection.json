@@ -1,0 +1,1041 @@
+{
+    "variables": [],
+    "info": {
+        "name": "Lokando API",
+        "_postman_id": "cbb3255a-9539-4b1a-bda2-abc744fd3ba8",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Auth",
+            "description": "\nAuthorization endpoints",
+            "item": [
+                {
+                    "name": "api\/auth\/register",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/Lokando",
+                            "path": "api\/auth\/register",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"voluptatem\",\n    \"surname\": \"aut\",\n    \"phone\": \"optio\",\n    \"street\": \"quis\",\n    \"street_number\": \"dolor\",\n    \"city\": \"dolorem\",\n    \"postal\": \"nihil\",\n    \"is_company\": false,\n    \"email\": \"nesciunt\",\n    \"password\": \"sapiente\",\n    \"password_confirmation\": \"quo\",\n    \"company_nip\": 17,\n    \"company_name\": \"est\",\n    \"company_phone\": \"sed\",\n    \"company_street\": \"et\",\n    \"company_street_number\": \"qui\",\n    \"company_city\": \"est\",\n    \"company_postal\": \"dolor\",\n    \"company_description\": \"asperiores\",\n    \"company_slogan\": \"rerum\",\n    \"company_contacts\": [],\n    \"category_id\": 14\n}"
+                        },
+                        "description": "Registers new user\nIf company_* fields are provided it also creates company profile, and user's optional fields are unnecessary",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/auth\/login",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/Lokando",
+                            "path": "api\/auth\/login",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"email\": \"incidunt\",\n    \"password\": \"fugit\"\n}"
+                        },
+                        "description": "Login user using credentials",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/me",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/Lokando",
+                            "path": "api\/me",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "return user data based on sended token",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/logout",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/Lokando",
+                            "path": "api\/logout",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "removes token from database disabling login possibility",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Category",
+            "description": "\nCategories Managment",
+            "item": [
+                {
+                    "name": "api\/categories",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/Lokando",
+                            "path": "api\/categories",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Return list of categories",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Company",
+            "description": "\nCompany managment",
+            "item": [
+                {
+                    "name": "api\/company",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/Lokando",
+                            "path": "api\/company",
+                            "query": []
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"numquam\",\n    \"surname\": \"reiciendis\",\n    \"email\": \"quia\",\n    \"company_nip\": 2,\n    \"company_name\": \"sed\",\n    \"company_phone\": \"dolores\",\n    \"company_street\": \"rem\",\n    \"company_street_number\": \"sed\",\n    \"company_city\": \"consequuntur\",\n    \"company_postal\": \"eum\",\n    \"company_description\": \"perferendis\",\n    \"company_slogan\": \"fugit\",\n    \"category_id\": 7,\n    \"company_contacts\": []\n}"
+                        },
+                        "description": "Updates company",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/company\/latest",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/Lokando",
+                            "path": "api\/company\/latest",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Returns 3 latest companies",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Product",
+            "description": "\nProduct managment",
+            "item": [
+                {
+                    "name": "api\/{id}\/products",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/Lokando",
+                            "path": "api\/:id\/products",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Returns company product based on id",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/products\/own",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/Lokando",
+                            "path": "api\/products\/own",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Returns all currently user's company products",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/products",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/Lokando",
+                            "path": "api\/products",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"voluptatem\",\n    \"short_description\": \"distinctio\",\n    \"long_description\": \"temporibus\",\n    \"price\": 17,\n    \"type\": 10\n}"
+                        },
+                        "description": "Stores new Product",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/products\/{id}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/Lokando",
+                            "path": "api\/products\/:id",
+                            "query": [
+                                {
+                                    "key": "id",
+                                    "value": "doloribus",
+                                    "description": "integer required",
+                                    "disabled": false
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"molestiae\",\n    \"short_description\": \"optio\",\n    \"long_description\": \"odit\",\n    \"price\": 11,\n    \"type\": 7\n}"
+                        },
+                        "description": "Updates Product",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/products\/{id}\/rate",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/Lokando",
+                            "path": "api\/products\/:id\/rate",
+                            "query": [
+                                {
+                                    "key": "id",
+                                    "value": "aut",
+                                    "description": "integer required",
+                                    "disabled": false
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"rate\": 3\n}"
+                        },
+                        "description": "Rates Product",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/products",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/Lokando",
+                            "path": "api\/products",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Returns all products with pagination",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Users",
+            "description": "\nUsers Managment",
+            "item": [
+                {
+                    "name": "api\/user",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/Lokando",
+                            "path": "api\/user",
+                            "query": []
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"laboriosam\",\n    \"surname\": \"et\",\n    \"phone\": \"sunt\",\n    \"street\": \"natus\",\n    \"street_number\": \"iste\",\n    \"city\": \"aliquid\",\n    \"postal\": \"tempore\",\n    \"email\": \"sequi\"\n}"
+                        },
+                        "description": "Updates user",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "general",
+            "description": "",
+            "item": [
+                {
+                    "name": "_debugbar\/open",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/Lokando",
+                            "path": "_debugbar\/open",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Return Clockwork output",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/Lokando",
+                            "path": "_debugbar\/clockwork\/:id",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "_debugbar\/telescope\/{id}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/Lokando",
+                            "path": "_debugbar\/telescope\/:id",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Return the stylesheets for the Debugbar",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/Lokando",
+                            "path": "_debugbar\/assets\/stylesheets",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Return the javascript for the Debugbar",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/Lokando",
+                            "path": "_debugbar\/assets\/javascript",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Forget a cache key",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/Lokando",
+                            "path": "_debugbar\/cache\/:key\/:tags",
+                            "query": []
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Authorize a client to access the user's account.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/Lokando",
+                            "path": "oauth\/authorize",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Approve the authorization request.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/Lokando",
+                            "path": "oauth\/authorize",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Deny the authorization request.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/Lokando",
+                            "path": "oauth\/authorize",
+                            "query": []
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Authorize a client to access the user's account.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/Lokando",
+                            "path": "oauth\/token",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Get all of the authorized tokens for the authenticated user.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/Lokando",
+                            "path": "oauth\/tokens",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Delete the given token.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/Lokando",
+                            "path": "oauth\/tokens\/:token_id",
+                            "query": []
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Get a fresh transient token cookie for the authenticated user.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/Lokando",
+                            "path": "oauth\/token\/refresh",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Get all of the clients for the authenticated user.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/Lokando",
+                            "path": "oauth\/clients",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Store a new client.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/Lokando",
+                            "path": "oauth\/clients",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Update the given client.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/Lokando",
+                            "path": "oauth\/clients\/:client_id",
+                            "query": []
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Delete the given client.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/Lokando",
+                            "path": "oauth\/clients\/:client_id",
+                            "query": []
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Get all of the available scopes for the application.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/Lokando",
+                            "path": "oauth\/scopes",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Get all of the personal access tokens for the authenticated user.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/Lokando",
+                            "path": "oauth\/personal-access-tokens",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Create a new personal access token for the user.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/Lokando",
+                            "path": "oauth\/personal-access-tokens",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Delete the given token.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/Lokando",
+                            "path": "oauth\/personal-access-tokens\/:token_id",
+                            "query": []
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        }
+    ]
+}
