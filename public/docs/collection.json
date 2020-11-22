@@ -2,7 +2,7 @@
     "variables": [],
     "info": {
         "name": "Lokando API",
-        "_postman_id": "e0a49b3a-feb3-4690-81a0-4518957d9ac6",
+        "_postman_id": "cbb3255a-9539-4b1a-bda2-abc744fd3ba8",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
@@ -33,7 +33,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"name\": \"quam\",\n    \"surname\": \"sed\",\n    \"phone\": \"quis\",\n    \"street\": \"eum\",\n    \"street_number\": \"quia\",\n    \"city\": \"soluta\",\n    \"postal\": \"expedita\",\n    \"is_company\": false,\n    \"email\": \"veniam\",\n    \"password\": \"voluptatem\",\n    \"password_confirmation\": \"eos\",\n    \"company_nip\": 16,\n    \"company_name\": \"modi\",\n    \"company_phone\": \"rerum\",\n    \"company_street\": \"sint\",\n    \"company_street_number\": \"consectetur\",\n    \"company_city\": \"repellendus\",\n    \"company_postal\": \"voluptate\",\n    \"company_description\": \"minus\",\n    \"company_slogan\": \"velit\",\n    \"company_contacts\": [],\n    \"category_id\": 19\n}"
+                            "raw": "{\n    \"name\": \"voluptatem\",\n    \"surname\": \"aut\",\n    \"phone\": \"optio\",\n    \"street\": \"quis\",\n    \"street_number\": \"dolor\",\n    \"city\": \"dolorem\",\n    \"postal\": \"nihil\",\n    \"is_company\": false,\n    \"email\": \"nesciunt\",\n    \"password\": \"sapiente\",\n    \"password_confirmation\": \"quo\",\n    \"company_nip\": 17,\n    \"company_name\": \"est\",\n    \"company_phone\": \"sed\",\n    \"company_street\": \"et\",\n    \"company_street_number\": \"qui\",\n    \"company_city\": \"est\",\n    \"company_postal\": \"dolor\",\n    \"company_description\": \"asperiores\",\n    \"company_slogan\": \"rerum\",\n    \"company_contacts\": [],\n    \"category_id\": 14\n}"
                         },
                         "description": "Registers new user\nIf company_* fields are provided it also creates company profile, and user's optional fields are unnecessary",
                         "response": []
@@ -61,7 +61,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"email\": \"excepturi\",\n    \"password\": \"esse\"\n}"
+                            "raw": "{\n    \"email\": \"incidunt\",\n    \"password\": \"fugit\"\n}"
                         },
                         "description": "Login user using credentials",
                         "response": []
@@ -185,9 +185,225 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"name\": \"ipsum\",\n    \"surname\": \"et\",\n    \"email\": \"laborum\",\n    \"company_nip\": 14,\n    \"company_name\": \"incidunt\",\n    \"company_phone\": \"non\",\n    \"company_street\": \"rerum\",\n    \"company_street_number\": \"temporibus\",\n    \"company_city\": \"quis\",\n    \"company_postal\": \"expedita\",\n    \"company_description\": \"unde\",\n    \"company_slogan\": \"vel\",\n    \"category_id\": 16,\n    \"company_contacts\": []\n}"
+                            "raw": "{\n    \"name\": \"numquam\",\n    \"surname\": \"reiciendis\",\n    \"email\": \"quia\",\n    \"company_nip\": 2,\n    \"company_name\": \"sed\",\n    \"company_phone\": \"dolores\",\n    \"company_street\": \"rem\",\n    \"company_street_number\": \"sed\",\n    \"company_city\": \"consequuntur\",\n    \"company_postal\": \"eum\",\n    \"company_description\": \"perferendis\",\n    \"company_slogan\": \"fugit\",\n    \"category_id\": 7,\n    \"company_contacts\": []\n}"
                         },
                         "description": "Updates company",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/company\/latest",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/Lokando",
+                            "path": "api\/company\/latest",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Returns 3 latest companies",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Product",
+            "description": "\nProduct managment",
+            "item": [
+                {
+                    "name": "api\/{id}\/products",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/Lokando",
+                            "path": "api\/:id\/products",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Returns company product based on id",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/products\/own",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/Lokando",
+                            "path": "api\/products\/own",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Returns all currently user's company products",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/products",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/Lokando",
+                            "path": "api\/products",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"voluptatem\",\n    \"short_description\": \"distinctio\",\n    \"long_description\": \"temporibus\",\n    \"price\": 17,\n    \"type\": 10\n}"
+                        },
+                        "description": "Stores new Product",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/products\/{id}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/Lokando",
+                            "path": "api\/products\/:id",
+                            "query": [
+                                {
+                                    "key": "id",
+                                    "value": "doloribus",
+                                    "description": "integer required",
+                                    "disabled": false
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"molestiae\",\n    \"short_description\": \"optio\",\n    \"long_description\": \"odit\",\n    \"price\": 11,\n    \"type\": 7\n}"
+                        },
+                        "description": "Updates Product",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/products\/{id}\/rate",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/Lokando",
+                            "path": "api\/products\/:id\/rate",
+                            "query": [
+                                {
+                                    "key": "id",
+                                    "value": "aut",
+                                    "description": "integer required",
+                                    "disabled": false
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"rate\": 3\n}"
+                        },
+                        "description": "Rates Product",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/products",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/Lokando",
+                            "path": "api\/products",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Returns all products with pagination",
                         "response": []
                     }
                 }
@@ -219,7 +435,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"name\": \"doloremque\",\n    \"surname\": \"ut\",\n    \"phone\": \"eaque\",\n    \"street\": \"quia\",\n    \"street_number\": \"aut\",\n    \"city\": \"illo\",\n    \"postal\": \"consequatur\",\n    \"email\": \"eaque\"\n}"
+                            "raw": "{\n    \"name\": \"laboriosam\",\n    \"surname\": \"et\",\n    \"phone\": \"sunt\",\n    \"street\": \"natus\",\n    \"street_number\": \"iste\",\n    \"city\": \"aliquid\",\n    \"postal\": \"tempore\",\n    \"email\": \"sequi\"\n}"
                         },
                         "description": "Updates user",
                         "response": []
