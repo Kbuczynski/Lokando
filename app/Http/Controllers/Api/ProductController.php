@@ -21,7 +21,8 @@ class ProductController extends Controller
      *
      * Returns all products with pagination
      */
-    public function index(Request $request){
+    public function index(Request $request)
+    {
         $limit = $request->get('limit', 0);
 
         $products = Product::with(['company' => function ($query) {
@@ -30,29 +31,39 @@ class ProductController extends Controller
         return response()->json(['data' => $products]);
     }
 
-    public function search(Request $request){
+    /**
+     * api/products/search
+     *
+     * @bodyParam phrase string required
+     * @bodyParam category integer optional
+     * @bodyParam order_by string optional
+     * @bodyParam ascending boolean optional
+     */
+    public function search(Request $request)
+    {
         $request->validate([
-           'phrase' => 'nullable|string',
-           'category' => 'nullable|integer',
-           'order_by' => 'nullable|string',
+            'phrase' => 'required|string',
+            'category' => 'nullable|integer',
+            'order_by' => 'nullable|string',
+            'ascending' => 'nullable|boolean'
         ]);
 
+
         $list = Product::query();
-        if($request->get('category', 0) != 0){
-            $list->where('category_id', $request->get('category'));
-        }
         $pieces = explode(" ", $request->get('phrase', ''));
-//        for($i = 0; $i < count($pieces); $i++)
-//        {
-//            $list->orWhere('name', 'Like', '%'.$pieces[$i].'%');
-//        }
-        $list->whereIn('name', $pieces);
-        if($request->get('order_by', 0) != 0){
-            $list->orderBy($request->get('order_by'));
+        if (!empty($request->get('order_by'))) {
+            if ($request->get('ascending') == 1) {
+                $list->orderBy($request->get('order_by'));
+            } else {
+                $list->orderByDesc($request->get('order_by'));
+            }
         }
+        if (!empty($request->get('category'))) {
+            $list->where('category_id', '=', $request->get('category'));
+        }
+        $list->where('name', 'like', '%'.$pieces[0].'%');
+
         return response()->json(['data' => $list->paginate($request->get('limit', 0))]);
-
-
     }
 
     /**
@@ -60,7 +71,8 @@ class ProductController extends Controller
      *
      * Returns company product based on id
      */
-    public function companyIndex(Request $request, $id){
+    public function companyIndex(Request $request, $id)
+    {
         $limit = $request->get('limit', 0);
 
         $products = Product::where('company_id', $id)->with(['company' => function ($query) {
@@ -74,7 +86,8 @@ class ProductController extends Controller
      *
      * Returns all currently user's company products
      */
-    public function ownIndex(Request $request){
+    public function ownIndex(Request $request)
+    {
         $companyId = Auth::user()->company->id;
 
         $limit = $request->get('limit', 0);
@@ -84,6 +97,7 @@ class ProductController extends Controller
         }])->paginate($limit);
         return response()->json(['data' => $products]);
     }
+
     /**
      * api/products
      *
@@ -95,8 +109,10 @@ class ProductController extends Controller
      * @bodyParam  price integer required null if type 0
      * @bodyParam  type integer required 0,1,2
      */
-    public function store(ProductStoreRequest $psr){
+    public function store(ProductStoreRequest $psr)
+    {
         $companyId = Auth::user()->company->id;
+        $categoryId = Auth::user()->company->category->id;
 
         $product = Product::create([
             'name' => $psr->get('name'),
@@ -104,7 +120,8 @@ class ProductController extends Controller
             'long_description' => $psr->get('long_description', null),
             'price' => $psr->get('price', null),
             'type' => $psr->get('type'),
-            'company_id' => $companyId
+            'company_id' => $companyId,
+            'category_id' => $categoryId,
         ]);
 
         return response()->json(['data' => [
@@ -124,7 +141,8 @@ class ProductController extends Controller
      * @bodyParam  price integer required null if type 0
      * @bodyParam  type integer required 0,1,2
      */
-    public function update(ProductUpdateRequest $pur, $id){
+    public function update(ProductUpdateRequest $pur, $id)
+    {
         $product = Product::findOrFail($id);
 
         $product->update([
@@ -148,11 +166,12 @@ class ProductController extends Controller
      * @queryParam id integer required
      * @bodyParam  rate integer required between 1 and 5
      */
-    public function rate(Request $request, $id){
+    public function rate(Request $request, $id)
+    {
         $product = Product::findOrFail($id);
 
         $request->validate([
-           'rate' => 'required|integer|min:1|max:5'
+            'rate' => 'required|integer|min:1|max:5'
         ]);
 
         $rate = $request->get('rate');
@@ -161,7 +180,7 @@ class ProductController extends Controller
         $productRateAmount = $product->rating_amount;
 
         $product->update([
-           'rating' => (($productRate * $productRateAmount) + $rate ) / ($productRateAmount + 1),
+            'rating' => (($productRate * $productRateAmount) + $rate) / ($productRateAmount + 1),
             'rating_amount' => $productRateAmount + 1
         ]);
         return response()->json(['data' => [

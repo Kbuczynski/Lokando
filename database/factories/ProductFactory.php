@@ -16,5 +16,6 @@ $factory->define(Product::class, function (Faker $faker) {
         'rating' => (mt_rand() / mt_getrandmax()) * 5,
         'rating_amount' => random_int(1,100),
         'company_id' => random_int(1,5),
+        'category_id' => random_int(1,10),
     ];
 });
