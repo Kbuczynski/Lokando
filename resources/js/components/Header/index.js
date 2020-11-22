@@ -2,7 +2,8 @@ import React, { Fragment, useState, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import Button from "../Button";
 import Search from "./Search";
-import { Link, useHistory } from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
+import Basket from "../Basket";
 
 window.onclick = function(event) {
     if (!event.target.matches(".dropdown__btn")) {
@@ -31,8 +32,10 @@ const Header = props => {
         const inputVal = URLParams.get("tags");
         const user = sessionStorage.getItem("user");
 
-        if (category) setCategory(category);
-        if (inputVal) setInputVal(inputVal);
+        if (category)
+            setCategory(category);
+        if (inputVal)
+            setInputVal(inputVal);
 
         if (user) {
             const { is_company } = JSON.parse(user).user;
@@ -106,6 +109,7 @@ const Header = props => {
                                     </Link>
                                 </div>
                             </div>
+                            <Basket/>
                         </div>
                     ) : (
                         // burger

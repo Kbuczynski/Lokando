@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Title = ({ text, position, marginY }) => {
+const Title = ({ text, position, marginY, className }) => {
     return (
         <span
-            className={`title title--${position}`}
+            className={`title title--${position} ${className}`}
             style={{ margin: `${marginY}rem 0` }}
         >
             {text}

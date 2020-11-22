@@ -15,6 +15,7 @@ import ScrollTop from "./components/ScrollTop";
 
 import { API } from "../js/utils/ApiClass";
 import RegisterCompany from "./views/RegisterCompany";
+import BasketSummary from "./views/BasketSummary";
 window.API = API;
 
 const loggerMiddleware = createLogger();
@@ -40,6 +41,11 @@ function Router() {
                         exact
                         path="/uzupelnij-profil-firmy"
                         component={RegisterCompany}
+                    />
+                    <Route
+                        exact
+                        path="/koszyk"
+                        component={BasketSummary}
                     />
                 </Switch>
                 <ScrollTop />
