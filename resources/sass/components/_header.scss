@@ -1,5 +1,5 @@
 .header {
-    background-color: #33445B;
+    background-color: #33445b;
 
     &__container {
         height: 100px;
@@ -17,7 +17,7 @@
     }
 
     &__logo {
-        margin-right: .5rem;
+        margin-right: 0.5rem;
         display: block;
         width: 200px;
 
@@ -44,7 +44,6 @@
         @include respond-to("large") {
             justify-content: space-evenly;
             transform: translateX(-20px);
-            width: 100vw;
 
             a button {
                 padding: 0.5rem 1rem;

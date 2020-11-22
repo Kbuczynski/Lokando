@@ -6,7 +6,11 @@ const NewCompaniesItem = ({ logo, name, slug, slogan }) => {
     return (
         <Link to={`/firmy/${slug}`} className="box__item" title="Odwiedź sklep">
             <div className="item__image">
-                <img src={`${logo}`} alt={name} />
+                {logo.length > 1 ? (
+                    <img src={`${logo}`} alt={name} />
+                ) : (
+                    <p>brak loga</p>
+                )}
             </div>
             <h3 className="item__title">{name}</h3>
             <p className="item__slogan">{slogan}</p>
