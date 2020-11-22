@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Button from "../Button";
 import Search from "./Search";
 import {Link, useHistory} from "react-router-dom";
+import Basket from "../Basket";
 
 window.onclick = function (event) {
     if (!event.target.matches('.dropdown__btn')) {
@@ -31,7 +32,7 @@ const Header = props => {
         const inputVal = URLParams.get('tags');
 
         if (category)
-             setCategory(category);
+            setCategory(category);
         if (inputVal)
             setInputVal(inputVal);
 
@@ -81,6 +82,7 @@ const Header = props => {
                                     <Link to={''}>Link 3</Link>
                                 </div>
                             </div>
+                            <Basket/>
                         </div>
                         : ( // burger
                             <div className={"header__buttons"}>

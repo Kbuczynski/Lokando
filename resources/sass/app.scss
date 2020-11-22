@@ -15,13 +15,13 @@
 
 // 4. Layout-related sections
 @import "layout/header", "layout/footer", "layout/register", "layout/sliderForm",
-    "layout/category", "layout/newCompanies", "layout/registerCompany";
-@import "layout/_searchResults";
+    "layout/category", "layout/newCompanies", "layout/registerCompany", "layout/_searchResults",
+    "layout/basketSummary";
 
 // 5. Components
 @import "components/button", "components/scrollTop", "components/header",
     "components/searchBar", "components/title", "components/filters",
-    "components/product", "components/dropdown";
+    "components/product", "components/dropdown", "components/basket";
 
 // 6. Page-specific styles
 @import "pages/home", "pages/createAccount";

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const Product = (props) => {
     return (
-        <div className={"product"}>
+        <div className={`product ${props.className}`}>
 
             <div className={"product__left"}>
                 <img src={props.img}
@@ -39,9 +39,13 @@ const Product = (props) => {
 
                 </div>
 
-                <div className={"product__btnBasket"}>
-                    <Button text={"Dodaj do koszyka"}/>
-                </div>
+                {props.showAddToBasket ?
+                    <div className={"product__btnBasket"}>
+                        <Button text={"Dodaj do koszyka"}/>
+                    </div>
+                    :
+                    null
+                }
             </div>
 
         </div>
@@ -49,6 +53,8 @@ const Product = (props) => {
 };
 
 Product.propTypes = {
+    className: PropTypes.string,
+    showAddToBasket: PropTypes.bool,
     img: PropTypes.string,
     title: PropTypes.string,
     desc: PropTypes.string,
@@ -56,6 +62,10 @@ Product.propTypes = {
     logo: PropTypes.string,
     companyName: PropTypes.string,
     companyLocation: PropTypes.string
+};
+
+Product.defaultProps = {
+  showAddToBasket: true
 };
 
 export default Product;
