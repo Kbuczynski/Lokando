@@ -1,0 +1,34 @@
+.grayBg {
+    background-color: $gray-background;
+    padding-bottom: 3rem;
+}
+
+.productGroup {
+    position: relative;
+
+    &__btn {
+        display: flex;
+        justify-content: center;
+        margin: 1rem 0 3rem;
+    }
+
+    &:before {
+        content: "";
+        position: absolute;
+        width: 110%;
+        height: calc(100% - 20px - 70px);
+        left: 50%;
+        transform: translateX(-50%);
+        top: 70px;
+        background-color: #cecece41;
+        z-index: -1;
+    }
+}
+
+.basketSummary {
+
+    &__product {
+        margin-top: unset !important;
+        background-color: white;
+    }
+}
