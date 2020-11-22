@@ -24,8 +24,9 @@ class ApiClass {
             "/auth/login",
             "/auth/register",
             "/categories",
-		"/products",
-		"/products/search",
+            "/products",
+            "/products/search",
+            "/company/latest",
         ];
 
         this.authorizedEndpoints = [];
