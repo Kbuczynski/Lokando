@@ -2,7 +2,7 @@ import React, {Fragment, useState, useRef, useEffect} from "react";
 import PropTypes from "prop-types";
 import Button from "../Button";
 import Search from "./Search";
-import {Link, useHistory} from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Basket from "../Basket";
 
 import { bindActionCreators } from 'redux';
@@ -36,14 +36,11 @@ const Header = props => {
         const inputVal = URLParams.get("tags");
         const user = sessionStorage.getItem("user");
 
-        if (category)
-            setCategory(category);
-        if (inputVal)
-            setInputVal(inputVal);
+        if (category) setCategory(category);
+        if (inputVal) setInputVal(inputVal);
 
         if (user) setLoggedIn(true);
         else setLoggedIn(false);
-
     }, []);
 
     const onSearch = () => {
