@@ -1,6 +1,5 @@
 import React, { useRef, useState } from "react";
 import Button from "../../../../components/Button";
-import { API } from "../../../../utils/ApiClass";
 import { useHistory } from "react-router-dom";
 
 const FormRegister = () => {
@@ -10,13 +9,14 @@ const FormRegister = () => {
         surname: "",
         email: "",
         password: "",
-        password_confirmation: ""
+        password_confirmation: "",
+        is_company: false
     });
     const [isValidPassword, setIsValidPassword] = useState(true);
     const passwordRef = useRef(),
         passwordRepeatRef = useRef();
-    const [isError, setIsError] = useState(false);
     const history = useHistory();
+    const [isError, setIsError] = useState(false);
 
     const changeValue = (key, newVal) => {
         const newValues = Object.assign(stepOneValues, {});
@@ -57,25 +57,25 @@ const FormRegister = () => {
     const handleSubmit = e => {
         e.preventDefault();
 
-        API.post("/auth/register", stepOneValues)
-            .then(() => {
-                if (checkboxValue) {
-                    history.push({
-                        pathname: `/uzupelnij-profil-firmy`,
-                        search: "?step=1",
-                        state: stepOneValues
-                    });
-                } else {
+        if (checkboxValue) {
+            history.push({
+                pathname: `/uzupelnij-profil-firmy`,
+                search: "?step=1",
+                state: stepOneValues
+            });
+        } else {
+            console.log("elo");
+            API.post("/auth/register", stepOneValues)
+                .then(() => {
                     history.push({
                         pathname: `/utworz-konto`,
-                        search: "?view=login",
-                        state: stepOneValues
+                        search: "?view=login"
                     });
-                }
-            })
-            .catch(() => {
-                setIsError(true);
-            });
+                })
+                .catch(() => {
+                    setIsError(true);
+                });
+        }
     };
 
     return (
@@ -92,6 +92,9 @@ const FormRegister = () => {
                     required
                     onChange={handleFullName}
                 />
+                <small className="item__alert">
+                    Należy podać w formacie &quot;Imię Nazwisko&quot;
+                </small>
             </div>
             <div className="register__item">
                 <label htmlFor="email" className="item__label">
@@ -105,6 +108,11 @@ const FormRegister = () => {
                     required
                     onChange={handleEmail}
                 />
+                {isError && (
+                    <small className="item__alert">
+                        Konto z podanym adresem e-mail już istnieje
+                    </small>
+                )}
             </div>
             <div className="register__item">
                 <label htmlFor="password" className="item__label">
@@ -159,11 +167,6 @@ const FormRegister = () => {
             </div>
             <div className="login__item">
                 <Button text="Zarejestruj się" />
-                {isError && (
-                    <small className="item__alert">
-                        Konto o podanym adresie e-mail już istnieje 🤔
-                    </small>
-                )}
             </div>
         </form>
     );

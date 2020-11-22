@@ -1,12 +1,30 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
 import Button from "../../../components/Button";
 import { useHistory } from "react-router-dom";
 import { useState } from "react";
+import PropTypes from "prop-types";
 
-const RegisterCompanyDetails = () => {
+const RegisterCompanyDetails = ({ fullValues, setFullValues }) => {
+    const [isError, setIsError] = useState(false);
+    const [registrationSuccess, setRegistrationSuccess] = useState(false);
+
     const handleSubmit = e => {
         e.preventDefault();
+
+        API.post("/auth/register", fullValues)
+            .then(() => {
+                setRegistrationSuccess(true);
+
+                setTimeout(() => {
+                    history.push({
+                        pathname: `/utworz-konto`,
+                        search: "?view=login"
+                    });
+                }, 5000);
+            })
+            .catch(() => {
+                setIsError(true);
+            });
     };
     const history = useHistory();
     const [categories, setCategories] = useState({});
@@ -16,6 +34,13 @@ const RegisterCompanyDetails = () => {
             setCategories(resp);
         });
     }, []);
+
+    const changeValue = (key, newVal) => {
+        const newValues = Object.assign(fullValues, {});
+        newValues[key] = newVal;
+
+        setFullValues(newValues);
+    };
 
     return (
         <div className="registerCompany__address container">
@@ -35,6 +60,10 @@ const RegisterCompanyDetails = () => {
                         id="company_desc"
                         className="item__input"
                         placeholder="Podaj opis firmy"
+                        defaultValue={fullValues.company_description}
+                        onChange={e =>
+                            changeValue("company_description", e.target.value)
+                        }
                     />
                 </div>
                 <div className="form__item">
@@ -46,6 +75,10 @@ const RegisterCompanyDetails = () => {
                         type="text"
                         className="item__input"
                         placeholder="Podaj slogan"
+                        defaultValue={fullValues.company_slogan}
+                        onChange={e =>
+                            changeValue("company_slogan", e.target.value)
+                        }
                     />
                 </div>
                 <div className="form__item">
@@ -56,6 +89,9 @@ const RegisterCompanyDetails = () => {
                         name="cars"
                         id="company_category"
                         className="item__input"
+                        onChange={e =>
+                            changeValue("category_id", e.target.value)
+                        }
                     >
                         {Object.keys(categories).length > 0 &&
                             categories.data.data.map(({ id, name }) => {
@@ -66,18 +102,43 @@ const RegisterCompanyDetails = () => {
                                 );
                             })}
                     </select>
+                    {registrationSuccess && (
+                        <small className="item__alert">
+                            Konto zostało utworzone poprawnie, zostaniesz
+                            przekierowany na stronę do logowania
+                        </small>
+                    )}
+                    {isError && (
+                        <small className="item__alert">
+                            Konto nie mogło zostać utworzone, sprawdź czy
+                            wypełniłeś wszystkie pola
+                        </small>
+                    )}
                 </div>
                 <div className="login__item">
                     <span onClick={() => history.goBack()}>
-                        <Button text="Powrót" isGreen={false} />
+                        <Button
+                            text="Powrót"
+                            isGreen={false}
+                            isSubmit={false}
+                        />
                     </span>
-                    <Link to="/uzupelnij-profil-firmy?step=2">
-                        <Button text="Przejdź dalej" />
-                    </Link>
+
+                    <Button text="Zakończ tworzenie konta" />
                 </div>
             </form>
         </div>
     );
+};
+
+RegisterCompanyDetails.propTypes = {
+    fullValues: PropTypes.object,
+    setFullValues: PropTypes.func
+};
+
+RegisterCompanyDetails.defaultProps = {
+    fullValues: {},
+    setFullValues: () => {}
 };
 
 export default RegisterCompanyDetails;

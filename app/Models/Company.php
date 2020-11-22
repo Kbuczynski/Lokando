@@ -44,6 +44,8 @@ use Illuminate\Database\Eloquent\Model;
  * @mixin \Eloquent
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\CompanyContact[] $companyContacts
  * @property-read int|null $company_contacts_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Product[] $products
+ * @property-read int|null $products_count
  */
 class Company extends Model
 {
@@ -75,6 +77,10 @@ class Company extends Model
 
     public function companyContacts(){
         return $this->hasMany('App\Models\CompanyContact');
+    }
+
+    public function products(){
+        return $this->hasMany('App\Models\Product');
     }
 
 

@@ -1,24 +1,44 @@
 import React, { useEffect, useState } from "react";
-
 import FormRegister from "./FormRegister";
 import FormLogin from "./FormLogin";
 import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const Form = () => {
-    const [isRegister, setIsRegister] = useState(true);
+    const [isRegister, setIsRegister] = useState("register");
+    const history = useHistory();
 
     const handleSwitch = e => {
         const target = e.target;
-        if (!target.classList.contains("switch__login--active"))
-            setIsRegister(!isRegister);
+        if (!target.classList.contains("switch__login--active")) {
+            if (isRegister === "register") {
+                history.push({
+                    pathname: `/utworz-konto`,
+                    search: "?view=login"
+                });
+            } else {
+                history.push({
+                    pathname: `/utworz-konto`,
+                    search: "?view=register"
+                });
+            }
+        }
     };
 
     useEffect(() => {
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
 
-        if (urlParams.get("view") === "login") setIsRegister(false);
-        else if (urlParams.get("view") === "register") setIsRegister(true);
+        setIsRegister(urlParams.get("view"));
+    }, [window.location.search]);
+
+    useEffect(() => {
+        if (window.location.search === "") {
+            history.push({
+                pathname: `/utworz-konto`,
+                search: "?view=register"
+            });
+        }
     }, []);
 
     return (
@@ -33,7 +53,9 @@ const Form = () => {
                 <div>
                     <button
                         className={`switch__login ${
-                            !isRegister ? "switch__login--active" : ""
+                            isRegister === "login"
+                                ? "switch__login--active"
+                                : ""
                         }`}
                         onClick={handleSwitch}
                     >
@@ -41,7 +63,9 @@ const Form = () => {
                     </button>
                     <button
                         className={`switch__register ${
-                            isRegister ? "switch__login--active" : ""
+                            isRegister === "register"
+                                ? "switch__login--active"
+                                : ""
                         }`}
                         onClick={handleSwitch}
                     >
@@ -49,7 +73,7 @@ const Form = () => {
                     </button>
                 </div>
             </div>
-            {isRegister ? <FormRegister /> : <FormLogin />}
+            {isRegister === "register" ? <FormRegister /> : <FormLogin />}
         </div>
     );
 };

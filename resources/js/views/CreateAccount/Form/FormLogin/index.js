@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-
+import { useHistory } from "react-router-dom";
 import Button from "../../../../components/Button";
 
 const FormLogin = () => {
+    const history = useHistory();
     const [loginData, setLoginData] = useState({
         email: "",
         password: ""
@@ -27,16 +28,26 @@ const FormLogin = () => {
         });
     };
 
+    const sendLogin = () => {
+        return API.post("/auth/login", loginData);
+    };
+
+    const getInfo = () => {
+        API.get("/me").then(resp => {
+            sessionStorage.setItem("user", JSON.stringify(resp.data.data));
+
+            history.push({
+                pathname: `/`
+            });
+        });
+    };
+
     const handleSubmit = e => {
         e.preventDefault();
 
-        API.post("/auth/login", loginData)
-            .then(() => {
-                window.location.href = `${window.baseUrl}/`;
-            })
-            .catch(() => {
-                setIsError(true);
-            });
+        sendLogin().then(() => {
+            getInfo();
+        });
     };
 
     return (
@@ -52,7 +63,6 @@ const FormLogin = () => {
                     placeholder="Podaj swój e-mail"
                     required
                     onChange={handleEmail}
-                    value={loginData.email}
                 />
             </div>
             <div className="login__item">
@@ -68,14 +78,13 @@ const FormLogin = () => {
                     required
                     min="8"
                     onChange={handlePassword}
-                    value={loginData.password}
                 />
             </div>
             <div className="login__item">
                 <Button text="Zaloguj się" />
                 {isError && (
                     <small className="item__alert">
-                        Login lub hasło nie są poprawne 🤔
+                        Login lub hasło nie są poprawne
                     </small>
                 )}
             </div>

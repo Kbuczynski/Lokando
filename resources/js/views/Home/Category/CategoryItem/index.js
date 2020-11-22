@@ -2,15 +2,15 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-const CategoryItem = ({ name, image }) => {
+const CategoryItem = ({ name, image, slug }) => {
     return (
         <Link
-            to={`/szukaj?kategoria=${name}`}
+            to={`/szukaj?kategoria=${slug}`}
             className="box__item"
             title={name}
         >
             <div className="item__img">
-                <img src={`${image}`} alt={name} />
+                <img src={`${image}`} alt={slug} />
             </div>
             <h3 className="item__title">{name}</h3>
         </Link>
@@ -19,12 +19,14 @@ const CategoryItem = ({ name, image }) => {
 
 CategoryItem.propTypes = {
     name: PropTypes.string,
-    image: PropTypes.string
+    image: PropTypes.string,
+    slug: PropTypes.string
 };
 
 CategoryItem.defaultProps = {
     name: "",
-    image: ""
+    image: "",
+    slug: ""
 };
 
 export default CategoryItem;
