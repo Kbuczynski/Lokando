@@ -11,3 +11,5 @@ Route::group([
     Route::put('/company', 'Api\CompanyController@update');
 });
 
+Route::get('/company/latest', 'Api\CompanyController@latestCompanies');
+Route::get('/company/{slug}', 'Api\CompanyController@returnBySlug');

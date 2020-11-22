@@ -38,7 +38,8 @@ class UserTableSeeder extends Seeder
                     'company_description' => $rand,
                     'company_slogan' => $rand,
                     'category_id' => random_int(1,10),
-                    'user_id' => $i + 1
+                    'user_id' => $i + 1,
+                    'created_at' => \Carbon\Carbon::now()->subDays(random_int(1,100))
                 ]);
 
                 for($j = 0; $j < random_int(1,3); $j++){
