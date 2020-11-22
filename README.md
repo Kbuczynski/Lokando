@@ -31,6 +31,7 @@ pass: osoba123
 login: czlowiek@czlowiek.pl
 pass: czlowiek123
 ```
+:okando and firma account belongs to category "Gastronomia" and product are only there for now
 
 ## Local Installation
 
