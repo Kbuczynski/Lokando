@@ -7,3 +7,10 @@ export function addToBasket(item) {
         payload: item,
     };
 }
+
+export function removeFromBasket(itemId) {
+    return {
+        type: 'REMOVE_FROM_BASKET',
+        payload: itemId,
+    };
+}

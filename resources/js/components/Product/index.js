@@ -3,6 +3,7 @@ import Button from "../Button";
 import PropTypes from 'prop-types';
 
 const Product = (props) => {
+
     return (
         <div className={`product ${props.className}`}>
 
@@ -41,7 +42,7 @@ const Product = (props) => {
 
                 {props.showAddToBasket ?
                     <div className={"product__btnBasket"}>
-                        <Button text={"Dodaj do koszyka"}/>
+                        <Button text={"Dodaj do koszyka"} onClickButton={() => props.onAddToBasketClicked()} />
                     </div>
                     :
                     null
@@ -53,6 +54,7 @@ const Product = (props) => {
 };
 
 Product.propTypes = {
+    onAddToBasketClicked: PropTypes.func,
     className: PropTypes.string,
     showAddToBasket: PropTypes.bool,
     img: PropTypes.string,

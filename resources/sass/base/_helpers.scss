@@ -17,6 +17,10 @@
     width: 100%; /* 1 */
 }
 
+.wrapper {
+    min-height: calc(100vh);
+}
+
 .wrapper--gray {
     background-color: $gray-background;
     padding: 0.5rem 0;
