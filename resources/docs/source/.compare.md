@@ -37,7 +37,7 @@ curl -X POST \
     "http://localhost/Lokando/api/auth/register" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"voluptatem","surname":"aut","phone":"optio","street":"quis","street_number":"dolor","city":"dolorem","postal":"nihil","is_company":false,"email":"nesciunt","password":"sapiente","password_confirmation":"quo","company_nip":17,"company_name":"est","company_phone":"sed","company_street":"et","company_street_number":"qui","company_city":"est","company_postal":"dolor","company_description":"asperiores","company_slogan":"rerum","company_contacts":[],"category_id":14}'
+    -d '{"name":"dolor","surname":"veniam","phone":"iste","street":"rerum","street_number":"similique","city":"sequi","postal":"velit","is_company":false,"email":"ut","password":"ratione","password_confirmation":"inventore","company_nip":6,"company_name":"qui","company_phone":"quia","company_street":"quibusdam","company_street_number":"atque","company_city":"sed","company_postal":"veritatis","company_description":"adipisci","company_slogan":"dolorum","company_contacts":[],"category_id":6}'
 
 ```
 
@@ -52,28 +52,28 @@ let headers = {
 };
 
 let body = {
-    "name": "voluptatem",
-    "surname": "aut",
-    "phone": "optio",
-    "street": "quis",
-    "street_number": "dolor",
-    "city": "dolorem",
-    "postal": "nihil",
+    "name": "dolor",
+    "surname": "veniam",
+    "phone": "iste",
+    "street": "rerum",
+    "street_number": "similique",
+    "city": "sequi",
+    "postal": "velit",
     "is_company": false,
-    "email": "nesciunt",
-    "password": "sapiente",
-    "password_confirmation": "quo",
-    "company_nip": 17,
-    "company_name": "est",
-    "company_phone": "sed",
-    "company_street": "et",
-    "company_street_number": "qui",
-    "company_city": "est",
-    "company_postal": "dolor",
-    "company_description": "asperiores",
-    "company_slogan": "rerum",
+    "email": "ut",
+    "password": "ratione",
+    "password_confirmation": "inventore",
+    "company_nip": 6,
+    "company_name": "qui",
+    "company_phone": "quia",
+    "company_street": "quibusdam",
+    "company_street_number": "atque",
+    "company_city": "sed",
+    "company_postal": "veritatis",
+    "company_description": "adipisci",
+    "company_slogan": "dolorum",
     "company_contacts": [],
-    "category_id": 14
+    "category_id": 6
 }
 
 fetch(url, {
@@ -130,7 +130,7 @@ curl -X POST \
     "http://localhost/Lokando/api/auth/login" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"email":"incidunt","password":"fugit"}'
+    -d '{"email":"ratione","password":"corporis"}'
 
 ```
 
@@ -145,8 +145,8 @@ let headers = {
 };
 
 let body = {
-    "email": "incidunt",
-    "password": "fugit"
+    "email": "ratione",
+    "password": "corporis"
 }
 
 fetch(url, {
@@ -404,7 +404,7 @@ curl -X PUT \
     "http://localhost/Lokando/api/company" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"numquam","surname":"reiciendis","email":"quia","company_nip":2,"company_name":"sed","company_phone":"dolores","company_street":"rem","company_street_number":"sed","company_city":"consequuntur","company_postal":"eum","company_description":"perferendis","company_slogan":"fugit","category_id":7,"company_contacts":[]}'
+    -d '{"name":"autem","surname":"et","email":"omnis","company_nip":11,"company_name":"vero","company_phone":"quae","company_street":"qui","company_street_number":"aliquid","company_city":"mollitia","company_postal":"nam","company_description":"aut","company_slogan":"sit","category_id":7,"company_contacts":[]}'
 
 ```
 
@@ -419,18 +419,18 @@ let headers = {
 };
 
 let body = {
-    "name": "numquam",
-    "surname": "reiciendis",
-    "email": "quia",
-    "company_nip": 2,
-    "company_name": "sed",
-    "company_phone": "dolores",
-    "company_street": "rem",
-    "company_street_number": "sed",
-    "company_city": "consequuntur",
-    "company_postal": "eum",
-    "company_description": "perferendis",
-    "company_slogan": "fugit",
+    "name": "autem",
+    "surname": "et",
+    "email": "omnis",
+    "company_nip": 11,
+    "company_name": "vero",
+    "company_phone": "quae",
+    "company_street": "qui",
+    "company_street_number": "aliquid",
+    "company_city": "mollitia",
+    "company_postal": "nam",
+    "company_description": "aut",
+    "company_slogan": "sit",
     "category_id": 7,
     "company_contacts": []
 }
@@ -506,67 +506,106 @@ fetch(url, {
 
 ```json
 {
-    "data": {
-        "2": {
-            "id": 3,
+    "data": [
+        {
+            "id": 1,
             "company_nip": 1111111111,
-            "company_name": "3b3f7",
-            "company_slug": "3b3f7",
-            "company_phone": "3b3f7",
-            "company_street": "3b3f7",
-            "company_street_number": "3b3f7",
-            "company_city": "3b3f7",
-            "company_postal": "3b3f7",
-            "company_description": "3b3f7",
-            "company_slogan": "3b3f7",
-            "created_at": "2020-11-18T00:29:08.000000Z",
+            "company_name": "278e7",
+            "company_slug": "278e7",
+            "company_phone": "278e7",
+            "company_street": "278e7",
+            "company_street_number": "278e7",
+            "company_city": "278e7",
+            "company_postal": "278e7",
+            "company_description": "278e7",
+            "company_slogan": "278e7",
+            "created_at": "2020-11-15T01:38:00.000000Z",
             "updated_at": null,
             "category": {
-                "id": 2,
-                "name": "Zakupy",
-                "slug": "zakupy",
-                "url": "http:\/\/localhost\/Lokando\/assets\/images\/category\/zakupy.jpg"
+                "id": 9,
+                "name": "Sport i Hobby",
+                "slug": "sport-i-hobby",
+                "url": "http:\/\/localhost\/Lokando\/assets\/images\/category\/sport-i-hobby.jpg"
             },
             "company_contacts": [
                 {
-                    "id": 5,
-                    "name": "3b3f70",
-                    "contact": "3b3f70",
-                    "company_id": 3,
+                    "id": 1,
+                    "name": "278e70",
+                    "contact": "278e70",
+                    "company_id": 1,
                     "created_at": null,
                     "updated_at": null
                 },
                 {
-                    "id": 6,
-                    "name": "3b3f71",
-                    "contact": "3b3f71",
-                    "company_id": 3,
+                    "id": 2,
+                    "name": "278e71",
+                    "contact": "278e71",
+                    "company_id": 1,
                     "created_at": null,
                     "updated_at": null
                 },
                 {
-                    "id": 7,
-                    "name": "3b3f72",
-                    "contact": "3b3f72",
-                    "company_id": 3,
+                    "id": 3,
+                    "name": "278e72",
+                    "contact": "278e72",
+                    "company_id": 1,
                     "created_at": null,
                     "updated_at": null
                 }
             ]
         },
-        "3": {
-            "id": 4,
+        {
+            "id": 2,
             "company_nip": 1111111111,
-            "company_name": "d8dfd",
-            "company_slug": "d8dfd",
-            "company_phone": "d8dfd",
-            "company_street": "d8dfd",
-            "company_street_number": "d8dfd",
-            "company_city": "d8dfd",
-            "company_postal": "d8dfd",
-            "company_description": "d8dfd",
-            "company_slogan": "d8dfd",
-            "created_at": "2020-10-28T00:29:08.000000Z",
+            "company_name": "23df0",
+            "company_slug": "23df0",
+            "company_phone": "23df0",
+            "company_street": "23df0",
+            "company_street_number": "23df0",
+            "company_city": "23df0",
+            "company_postal": "23df0",
+            "company_description": "23df0",
+            "company_slogan": "23df0",
+            "created_at": "2020-09-29T01:38:00.000000Z",
+            "updated_at": null,
+            "category": {
+                "id": 9,
+                "name": "Sport i Hobby",
+                "slug": "sport-i-hobby",
+                "url": "http:\/\/localhost\/Lokando\/assets\/images\/category\/sport-i-hobby.jpg"
+            },
+            "company_contacts": [
+                {
+                    "id": 4,
+                    "name": "23df00",
+                    "contact": "23df00",
+                    "company_id": 2,
+                    "created_at": null,
+                    "updated_at": null
+                },
+                {
+                    "id": 5,
+                    "name": "23df01",
+                    "contact": "23df01",
+                    "company_id": 2,
+                    "created_at": null,
+                    "updated_at": null
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "company_nip": 1111111111,
+            "company_name": "c698e",
+            "company_slug": "c698e",
+            "company_phone": "c698e",
+            "company_street": "c698e",
+            "company_street_number": "c698e",
+            "company_city": "c698e",
+            "company_postal": "c698e",
+            "company_description": "c698e",
+            "company_slogan": "c698e",
+            "created_at": "2020-09-17T01:38:00.000000Z",
             "updated_at": null,
             "category": {
                 "id": 7,
@@ -576,63 +615,24 @@ fetch(url, {
             },
             "company_contacts": [
                 {
-                    "id": 8,
-                    "name": "d8dfd0",
-                    "contact": "d8dfd0",
-                    "company_id": 4,
-                    "created_at": null,
-                    "updated_at": null
-                }
-            ]
-        },
-        "4": {
-            "id": 5,
-            "company_nip": 1111111111,
-            "company_name": "1fd75",
-            "company_slug": "1fd75",
-            "company_phone": "1fd75",
-            "company_street": "1fd75",
-            "company_street_number": "1fd75",
-            "company_city": "1fd75",
-            "company_postal": "1fd75",
-            "company_description": "1fd75",
-            "company_slogan": "1fd75",
-            "created_at": "2020-10-04T00:29:08.000000Z",
-            "updated_at": null,
-            "category": {
-                "id": 5,
-                "name": "Edukacja",
-                "slug": "edukacja",
-                "url": "http:\/\/localhost\/Lokando\/assets\/images\/category\/edukacja.jpg"
-            },
-            "company_contacts": [
-                {
-                    "id": 9,
-                    "name": "1fd750",
-                    "contact": "1fd750",
-                    "company_id": 5,
+                    "id": 6,
+                    "name": "c698e0",
+                    "contact": "c698e0",
+                    "company_id": 3,
                     "created_at": null,
                     "updated_at": null
                 },
                 {
-                    "id": 10,
-                    "name": "1fd751",
-                    "contact": "1fd751",
-                    "company_id": 5,
-                    "created_at": null,
-                    "updated_at": null
-                },
-                {
-                    "id": 11,
-                    "name": "1fd752",
-                    "contact": "1fd752",
-                    "company_id": 5,
+                    "id": 7,
+                    "name": "c698e1",
+                    "contact": "c698e1",
+                    "company_id": 3,
                     "created_at": null,
                     "updated_at": null
                 }
             ]
         }
-    }
+    ]
 }
 ```
 
@@ -641,6 +641,64 @@ fetch(url, {
 
 
 <!-- END_2eee1ffe54f685bdbed2866b02227832 -->
+
+<!-- START_8d1557a19aa996ed07561aaff12d51f8 -->
+## api/company/{slug}
+
+Returns company by slug
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/Lokando/api/company/1?slug=et" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/Lokando/api/company/1"
+);
+
+let params = {
+    "slug": "et",
+};
+Object.keys(params)
+    .forEach(key => url.searchParams.append(key, params[key]));
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "data": null
+}
+```
+
+### HTTP Request
+`GET api/company/{slug}`
+
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    `slug` |  optional  | string required
+
+<!-- END_8d1557a19aa996ed07561aaff12d51f8 -->
 
 #Product
 
@@ -752,7 +810,7 @@ curl -X POST \
     "http://localhost/Lokando/api/products" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"voluptatem","short_description":"distinctio","long_description":"temporibus","price":17,"type":10}'
+    -d '{"name":"sint","short_description":"quia","long_description":"voluptas","price":15,"type":15}'
 
 ```
 
@@ -767,11 +825,11 @@ let headers = {
 };
 
 let body = {
-    "name": "voluptatem",
-    "short_description": "distinctio",
-    "long_description": "temporibus",
-    "price": 17,
-    "type": 10
+    "name": "sint",
+    "short_description": "quia",
+    "long_description": "voluptas",
+    "price": 15,
+    "type": 15
 }
 
 fetch(url, {
@@ -799,6 +857,43 @@ Parameter | Type | Status | Description
     
 <!-- END_05b4383f00fd57c4828a831e7057e920 -->
 
+<!-- START_7b1b863a682a5bcb2a423df0d56eec77 -->
+## api/products/search
+> Example request:
+
+```bash
+curl -X POST \
+    "http://localhost/Lokando/api/products/search" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/Lokando/api/products/search"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`POST api/products/search`
+
+
+<!-- END_7b1b863a682a5bcb2a423df0d56eec77 -->
+
 <!-- START_241fd2204f9f5b65c7aa7c9618dcca22 -->
 ## api/products/{id}
 
@@ -808,10 +903,10 @@ Updates Product
 
 ```bash
 curl -X PUT \
-    "http://localhost/Lokando/api/products/1?id=doloribus" \
+    "http://localhost/Lokando/api/products/1?id=voluptatem" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"molestiae","short_description":"optio","long_description":"odit","price":11,"type":7}'
+    -d '{"name":"consequuntur","short_description":"et","long_description":"ut","price":20,"type":17}'
 
 ```
 
@@ -821,7 +916,7 @@ const url = new URL(
 );
 
 let params = {
-    "id": "doloribus",
+    "id": "voluptatem",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -832,11 +927,11 @@ let headers = {
 };
 
 let body = {
-    "name": "molestiae",
-    "short_description": "optio",
-    "long_description": "odit",
-    "price": 11,
-    "type": 7
+    "name": "consequuntur",
+    "short_description": "et",
+    "long_description": "ut",
+    "price": 20,
+    "type": 17
 }
 
 fetch(url, {
@@ -878,10 +973,10 @@ Rates Product
 
 ```bash
 curl -X PUT \
-    "http://localhost/Lokando/api/products/1/rate?id=aut" \
+    "http://localhost/Lokando/api/products/1/rate?id=repellendus" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"rate":3}'
+    -d '{"rate":13}'
 
 ```
 
@@ -891,7 +986,7 @@ const url = new URL(
 );
 
 let params = {
-    "id": "aut",
+    "id": "repellendus",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -902,7 +997,7 @@ let headers = {
 };
 
 let body = {
-    "rate": 3
+    "rate": 13
 }
 
 fetch(url, {
@@ -970,675 +1065,17 @@ fetch(url, {
 {
     "data": {
         "current_page": 1,
-        "data": [
-            {
-                "id": 1,
-                "name": "voluptatibus accusamus quia",
-                "short_description": "Odit pariatur at qui repudiandae veritatis. Eaque minima ad quaerat est. Exercitationem harum qui aut et.",
-                "long_description": "Labore possimus similique ullam et laborum dignissimos iure nihil. Expedita pariatur voluptatem officia dolorem vitae. Non eveniet voluptatum cum voluptatem. Nisi voluptatem nulla tenetur. Ut dolores omnis nobis impedit. Quibusdam quisquam quaerat sit vero at iusto et. Et ea magni illum aperiam nisi accusamus suscipit. Et vel id ratione. Quisquam molestiae quia quia dolorum vitae nihil voluptates. Quisquam cumque placeat sunt. Et sint voluptatem aut. Voluptatem sit nisi eveniet repellendus.",
-                "price": 331,
-                "type": 2,
-                "rating": 4.88,
-                "rating_amount": 50,
-                "company_id": 1,
-                "created_at": "2020-11-22T00:29:08.000000Z",
-                "updated_at": "2020-11-22T00:29:08.000000Z",
-                "company": {
-                    "id": 1,
-                    "company_name": "a1bca",
-                    "company_street": "a1bca",
-                    "company_street_number": "a1bca",
-                    "company_city": "a1bca",
-                    "category": null,
-                    "company_contacts": [
-                        {
-                            "id": 1,
-                            "name": "a1bca0",
-                            "contact": "a1bca0",
-                            "company_id": 1,
-                            "created_at": null,
-                            "updated_at": null
-                        },
-                        {
-                            "id": 2,
-                            "name": "a1bca1",
-                            "contact": "a1bca1",
-                            "company_id": 1,
-                            "created_at": null,
-                            "updated_at": null
-                        },
-                        {
-                            "id": 3,
-                            "name": "a1bca2",
-                            "contact": "a1bca2",
-                            "company_id": 1,
-                            "created_at": null,
-                            "updated_at": null
-                        }
-                    ]
-                }
-            },
-            {
-                "id": 2,
-                "name": "fugit aut rem",
-                "short_description": "Sit aut libero ratione omnis dolor autem natus. Voluptas sed voluptatem aperiam ex possimus esse et. In sint voluptate maxime ut expedita repudiandae accusantium at.",
-                "long_description": "Nemo deleniti placeat ipsa itaque. Architecto inventore qui at est hic quae. Voluptates voluptas mollitia dolores ea minima tempore eligendi. Ut eaque et rem et dolores. Dicta alias eius reprehenderit consequatur quisquam doloremque est. Aut voluptate sunt eos non. Autem sequi exercitationem facere ea ut ea error. Laboriosam nobis illum vel et veniam id quae optio. Minus quaerat quaerat voluptatibus ipsa consequatur. Aperiam sint necessitatibus exercitationem. Vel in voluptas corrupti qui.",
-                "price": 11309,
-                "type": 1,
-                "rating": 1.94,
-                "rating_amount": 68,
-                "company_id": 4,
-                "created_at": "2020-11-22T00:29:08.000000Z",
-                "updated_at": "2020-11-22T00:29:08.000000Z",
-                "company": {
-                    "id": 4,
-                    "company_name": "d8dfd",
-                    "company_street": "d8dfd",
-                    "company_street_number": "d8dfd",
-                    "company_city": "d8dfd",
-                    "category": null,
-                    "company_contacts": [
-                        {
-                            "id": 8,
-                            "name": "d8dfd0",
-                            "contact": "d8dfd0",
-                            "company_id": 4,
-                            "created_at": null,
-                            "updated_at": null
-                        }
-                    ]
-                }
-            },
-            {
-                "id": 3,
-                "name": "id alias officiis",
-                "short_description": "Ut aliquid aut sapiente omnis itaque. Id qui soluta aut illum consequatur quod. Aliquam voluptatibus voluptatem et aut enim quia. Maxime enim sint aut illum itaque.",
-                "long_description": "Qui rem eaque aut nostrum laborum aliquid. Quia inventore voluptatem voluptas cupiditate magni. In suscipit ipsam deleniti nobis temporibus. Assumenda numquam cupiditate explicabo voluptatibus est. Sed ratione fugit quibusdam non illum hic beatae. Et voluptatum qui perspiciatis debitis est molestias eaque. Sint quia voluptatem nesciunt enim. Est esse aperiam suscipit esse quisquam. Qui distinctio consequatur omnis similique. Et veniam id unde illo. Explicabo aut magni magnam et.",
-                "price": 12890,
-                "type": 1,
-                "rating": 0.77,
-                "rating_amount": 90,
-                "company_id": 3,
-                "created_at": "2020-11-22T00:29:08.000000Z",
-                "updated_at": "2020-11-22T00:29:08.000000Z",
-                "company": {
-                    "id": 3,
-                    "company_name": "3b3f7",
-                    "company_street": "3b3f7",
-                    "company_street_number": "3b3f7",
-                    "company_city": "3b3f7",
-                    "category": null,
-                    "company_contacts": [
-                        {
-                            "id": 5,
-                            "name": "3b3f70",
-                            "contact": "3b3f70",
-                            "company_id": 3,
-                            "created_at": null,
-                            "updated_at": null
-                        },
-                        {
-                            "id": 6,
-                            "name": "3b3f71",
-                            "contact": "3b3f71",
-                            "company_id": 3,
-                            "created_at": null,
-                            "updated_at": null
-                        },
-                        {
-                            "id": 7,
-                            "name": "3b3f72",
-                            "contact": "3b3f72",
-                            "company_id": 3,
-                            "created_at": null,
-                            "updated_at": null
-                        }
-                    ]
-                }
-            },
-            {
-                "id": 4,
-                "name": "incidunt sint accusantium",
-                "short_description": "Sint impedit mollitia perferendis et deleniti. Qui sapiente expedita doloremque optio eos debitis omnis sed. Minus voluptas omnis id ut est rerum. Aspernatur ea cupiditate in perspiciatis.",
-                "long_description": "Maxime iure quia a vel sunt. Magnam ducimus cupiditate deserunt eveniet unde odio quaerat laudantium. Provident sed vel rerum nihil deleniti voluptates. Odio placeat laudantium occaecati quia vel voluptatum rem esse. Quam modi officia similique incidunt cupiditate natus accusamus. Placeat rerum aliquid quisquam maxime. Autem dolorem suscipit rerum ex. Consequatur odio id et et dolorum nihil nisi. Ut consequatur qui nostrum atque facere amet rem.",
-                "price": 8574,
-                "type": 1,
-                "rating": 4.78,
-                "rating_amount": 96,
-                "company_id": 1,
-                "created_at": "2020-11-22T00:29:08.000000Z",
-                "updated_at": "2020-11-22T00:29:08.000000Z",
-                "company": {
-                    "id": 1,
-                    "company_name": "a1bca",
-                    "company_street": "a1bca",
-                    "company_street_number": "a1bca",
-                    "company_city": "a1bca",
-                    "category": null,
-                    "company_contacts": [
-                        {
-                            "id": 1,
-                            "name": "a1bca0",
-                            "contact": "a1bca0",
-                            "company_id": 1,
-                            "created_at": null,
-                            "updated_at": null
-                        },
-                        {
-                            "id": 2,
-                            "name": "a1bca1",
-                            "contact": "a1bca1",
-                            "company_id": 1,
-                            "created_at": null,
-                            "updated_at": null
-                        },
-                        {
-                            "id": 3,
-                            "name": "a1bca2",
-                            "contact": "a1bca2",
-                            "company_id": 1,
-                            "created_at": null,
-                            "updated_at": null
-                        }
-                    ]
-                }
-            },
-            {
-                "id": 5,
-                "name": "ea dolor modi",
-                "short_description": "Quo suscipit tempora modi vel consequatur aut. Tempore et voluptatibus rem nihil. Amet repudiandae dolorem fuga distinctio dolores praesentium.",
-                "long_description": "Quos ea iste autem culpa qui. Consequatur sequi repudiandae et quos ratione ut optio fugit. Nihil ratione et eum aut eveniet. Nesciunt dolorem quo officiis sunt molestias similique consectetur. Dolor quo odit sit sunt consequuntur perspiciatis. Excepturi maxime minima fugiat laboriosam molestiae. Esse praesentium cum mollitia quod. Neque illum aspernatur nam qui debitis. Velit et optio ducimus vel eum.",
-                "price": 7506,
-                "type": 2,
-                "rating": 0.59,
-                "rating_amount": 2,
-                "company_id": 4,
-                "created_at": "2020-11-22T00:29:08.000000Z",
-                "updated_at": "2020-11-22T00:29:08.000000Z",
-                "company": {
-                    "id": 4,
-                    "company_name": "d8dfd",
-                    "company_street": "d8dfd",
-                    "company_street_number": "d8dfd",
-                    "company_city": "d8dfd",
-                    "category": null,
-                    "company_contacts": [
-                        {
-                            "id": 8,
-                            "name": "d8dfd0",
-                            "contact": "d8dfd0",
-                            "company_id": 4,
-                            "created_at": null,
-                            "updated_at": null
-                        }
-                    ]
-                }
-            },
-            {
-                "id": 6,
-                "name": "nesciunt non et",
-                "short_description": "Exercitationem est praesentium qui voluptatem excepturi vero quis. Impedit aut est natus eos quis. Est nostrum aut similique quod minus. Et non asperiores pariatur et facere dolorem et.",
-                "long_description": "Deserunt quisquam ducimus corporis eos et facere cupiditate. Placeat aut omnis tenetur nobis deserunt libero a qui. Recusandae ut molestias beatae voluptatem sint dicta ipsam architecto. Dolorem quos rerum reiciendis consequuntur. Quas nemo illum saepe accusamus dolores voluptatibus occaecati deserunt. Aperiam omnis provident et sunt. Facilis deserunt vitae est aut minus eius. Nulla iste accusantium nam tempora veniam. Aut et praesentium repudiandae assumenda.",
-                "price": 1669,
-                "type": 1,
-                "rating": 2.13,
-                "rating_amount": 71,
-                "company_id": 3,
-                "created_at": "2020-11-22T00:29:08.000000Z",
-                "updated_at": "2020-11-22T00:29:08.000000Z",
-                "company": {
-                    "id": 3,
-                    "company_name": "3b3f7",
-                    "company_street": "3b3f7",
-                    "company_street_number": "3b3f7",
-                    "company_city": "3b3f7",
-                    "category": null,
-                    "company_contacts": [
-                        {
-                            "id": 5,
-                            "name": "3b3f70",
-                            "contact": "3b3f70",
-                            "company_id": 3,
-                            "created_at": null,
-                            "updated_at": null
-                        },
-                        {
-                            "id": 6,
-                            "name": "3b3f71",
-                            "contact": "3b3f71",
-                            "company_id": 3,
-                            "created_at": null,
-                            "updated_at": null
-                        },
-                        {
-                            "id": 7,
-                            "name": "3b3f72",
-                            "contact": "3b3f72",
-                            "company_id": 3,
-                            "created_at": null,
-                            "updated_at": null
-                        }
-                    ]
-                }
-            },
-            {
-                "id": 7,
-                "name": "corrupti magni beatae",
-                "short_description": "Debitis et cumque corrupti deleniti quis dolores. Labore repudiandae vel ab mollitia tempore tenetur. Est dignissimos sint perferendis.",
-                "long_description": "Dolor ut quaerat atque corrupti architecto voluptatem nostrum. Perferendis ut quasi eligendi. Deleniti dolor quos est distinctio voluptatem. Excepturi culpa maxime iure cum suscipit vel voluptatem. Accusamus voluptatibus illum fuga quod. Minima at repellendus fuga est quibusdam et consequatur. Dolore voluptatem omnis quis qui. Sit sunt mollitia a fugit sed. Consectetur quaerat unde aut nostrum veniam. Quam beatae quaerat nihil. Sequi quidem cum temporibus velit voluptas molestias sapiente.",
-                "price": 16856,
-                "type": 2,
-                "rating": 4.82,
-                "rating_amount": 22,
-                "company_id": 3,
-                "created_at": "2020-11-22T00:29:08.000000Z",
-                "updated_at": "2020-11-22T00:29:08.000000Z",
-                "company": {
-                    "id": 3,
-                    "company_name": "3b3f7",
-                    "company_street": "3b3f7",
-                    "company_street_number": "3b3f7",
-                    "company_city": "3b3f7",
-                    "category": null,
-                    "company_contacts": [
-                        {
-                            "id": 5,
-                            "name": "3b3f70",
-                            "contact": "3b3f70",
-                            "company_id": 3,
-                            "created_at": null,
-                            "updated_at": null
-                        },
-                        {
-                            "id": 6,
-                            "name": "3b3f71",
-                            "contact": "3b3f71",
-                            "company_id": 3,
-                            "created_at": null,
-                            "updated_at": null
-                        },
-                        {
-                            "id": 7,
-                            "name": "3b3f72",
-                            "contact": "3b3f72",
-                            "company_id": 3,
-                            "created_at": null,
-                            "updated_at": null
-                        }
-                    ]
-                }
-            },
-            {
-                "id": 8,
-                "name": "occaecati ut fugit",
-                "short_description": "Consequatur maxime enim ut saepe quam id quam. Perspiciatis et quia est incidunt molestiae.",
-                "long_description": "Enim sed ex soluta nemo distinctio consequuntur in. Quisquam occaecati ex et sunt qui omnis labore. Illum nobis recusandae explicabo vel fugit non vero. Harum soluta vel molestiae. Id expedita omnis cupiditate necessitatibus officiis totam tempora. Recusandae quo vero in ea. Repellat culpa laborum magnam et. Qui ut repellat dolores sed consequatur facilis pariatur nulla.",
-                "price": 12118,
-                "type": 2,
-                "rating": 2.15,
-                "rating_amount": 61,
-                "company_id": 1,
-                "created_at": "2020-11-22T00:29:08.000000Z",
-                "updated_at": "2020-11-22T00:29:08.000000Z",
-                "company": {
-                    "id": 1,
-                    "company_name": "a1bca",
-                    "company_street": "a1bca",
-                    "company_street_number": "a1bca",
-                    "company_city": "a1bca",
-                    "category": null,
-                    "company_contacts": [
-                        {
-                            "id": 1,
-                            "name": "a1bca0",
-                            "contact": "a1bca0",
-                            "company_id": 1,
-                            "created_at": null,
-                            "updated_at": null
-                        },
-                        {
-                            "id": 2,
-                            "name": "a1bca1",
-                            "contact": "a1bca1",
-                            "company_id": 1,
-                            "created_at": null,
-                            "updated_at": null
-                        },
-                        {
-                            "id": 3,
-                            "name": "a1bca2",
-                            "contact": "a1bca2",
-                            "company_id": 1,
-                            "created_at": null,
-                            "updated_at": null
-                        }
-                    ]
-                }
-            },
-            {
-                "id": 9,
-                "name": "blanditiis recusandae facere",
-                "short_description": "Quam quas modi reprehenderit laborum quas totam consequatur. Laborum ducimus repellendus dolores. Ut quia dolor blanditiis est id quaerat unde exercitationem.",
-                "long_description": "Et similique officiis cupiditate ut non. Nihil nobis voluptas est et voluptatum. Et velit facere aut dolores numquam et ea. Tenetur omnis id ullam quo odit nulla. Quia porro consequatur voluptatum quod deserunt sed odit. Et odit tempora ut repudiandae placeat et. Et distinctio magnam praesentium recusandae sed. Animi ut nisi nostrum laudantium. Neque sed et ducimus nihil consequuntur.",
-                "price": 71,
-                "type": 1,
-                "rating": 2.91,
-                "rating_amount": 75,
-                "company_id": 1,
-                "created_at": "2020-11-22T00:29:08.000000Z",
-                "updated_at": "2020-11-22T00:29:08.000000Z",
-                "company": {
-                    "id": 1,
-                    "company_name": "a1bca",
-                    "company_street": "a1bca",
-                    "company_street_number": "a1bca",
-                    "company_city": "a1bca",
-                    "category": null,
-                    "company_contacts": [
-                        {
-                            "id": 1,
-                            "name": "a1bca0",
-                            "contact": "a1bca0",
-                            "company_id": 1,
-                            "created_at": null,
-                            "updated_at": null
-                        },
-                        {
-                            "id": 2,
-                            "name": "a1bca1",
-                            "contact": "a1bca1",
-                            "company_id": 1,
-                            "created_at": null,
-                            "updated_at": null
-                        },
-                        {
-                            "id": 3,
-                            "name": "a1bca2",
-                            "contact": "a1bca2",
-                            "company_id": 1,
-                            "created_at": null,
-                            "updated_at": null
-                        }
-                    ]
-                }
-            },
-            {
-                "id": 10,
-                "name": "odio explicabo esse",
-                "short_description": "Est et nostrum quia quia accusantium quisquam. Ipsa rerum autem dolorem. Ut in sit nihil enim provident error eum. Et vel est laboriosam quod voluptas.",
-                "long_description": "Ratione quasi occaecati blanditiis repellat. Non voluptatibus necessitatibus ea at id. Consequatur ratione itaque asperiores occaecati laudantium veritatis praesentium. Sapiente repellendus dolores voluptatibus provident qui velit. Est omnis minima impedit et cum. Tempore itaque molestiae assumenda adipisci eum quia aut. Nihil ullam quaerat iste quos. Harum pariatur autem soluta.",
-                "price": 17200,
-                "type": 2,
-                "rating": 0.16,
-                "rating_amount": 73,
-                "company_id": 5,
-                "created_at": "2020-11-22T00:29:08.000000Z",
-                "updated_at": "2020-11-22T00:29:08.000000Z",
-                "company": {
-                    "id": 5,
-                    "company_name": "1fd75",
-                    "company_street": "1fd75",
-                    "company_street_number": "1fd75",
-                    "company_city": "1fd75",
-                    "category": null,
-                    "company_contacts": [
-                        {
-                            "id": 9,
-                            "name": "1fd750",
-                            "contact": "1fd750",
-                            "company_id": 5,
-                            "created_at": null,
-                            "updated_at": null
-                        },
-                        {
-                            "id": 10,
-                            "name": "1fd751",
-                            "contact": "1fd751",
-                            "company_id": 5,
-                            "created_at": null,
-                            "updated_at": null
-                        },
-                        {
-                            "id": 11,
-                            "name": "1fd752",
-                            "contact": "1fd752",
-                            "company_id": 5,
-                            "created_at": null,
-                            "updated_at": null
-                        }
-                    ]
-                }
-            },
-            {
-                "id": 11,
-                "name": "velit commodi qui",
-                "short_description": "Iusto voluptas omnis libero. Voluptates qui perferendis adipisci et nulla excepturi aut. Dolore et officiis voluptatem et inventore assumenda beatae earum.",
-                "long_description": "Saepe tempora distinctio quis voluptas dolor rem et. In est id quisquam aut fugiat. Sint qui architecto eos hic vitae porro. Voluptatem nostrum optio sint voluptatum. Amet ab aut vel fugit. Consequuntur ea aut deserunt molestiae vel. Perspiciatis provident qui fugiat quia voluptatum. Vitae omnis sit itaque impedit aut voluptates doloribus sit. Possimus placeat accusantium sed quo. Accusamus dolor illo error est voluptatem repellat voluptate quis. Nihil quis ratione nihil soluta maxime.",
-                "price": 12027,
-                "type": 2,
-                "rating": 0.32,
-                "rating_amount": 81,
-                "company_id": 1,
-                "created_at": "2020-11-22T00:29:08.000000Z",
-                "updated_at": "2020-11-22T00:29:08.000000Z",
-                "company": {
-                    "id": 1,
-                    "company_name": "a1bca",
-                    "company_street": "a1bca",
-                    "company_street_number": "a1bca",
-                    "company_city": "a1bca",
-                    "category": null,
-                    "company_contacts": [
-                        {
-                            "id": 1,
-                            "name": "a1bca0",
-                            "contact": "a1bca0",
-                            "company_id": 1,
-                            "created_at": null,
-                            "updated_at": null
-                        },
-                        {
-                            "id": 2,
-                            "name": "a1bca1",
-                            "contact": "a1bca1",
-                            "company_id": 1,
-                            "created_at": null,
-                            "updated_at": null
-                        },
-                        {
-                            "id": 3,
-                            "name": "a1bca2",
-                            "contact": "a1bca2",
-                            "company_id": 1,
-                            "created_at": null,
-                            "updated_at": null
-                        }
-                    ]
-                }
-            },
-            {
-                "id": 12,
-                "name": "aliquam id natus",
-                "short_description": "Sed cumque quia aspernatur exercitationem et et. Sit quia aspernatur non ut voluptatem et voluptatem quasi.",
-                "long_description": "Minus commodi deserunt quibusdam quis sint cum tempore. Assumenda qui at quo voluptatem sint. Numquam molestiae quia aut autem reprehenderit. Laboriosam fugiat soluta sequi maxime. Recusandae sequi ipsam maiores itaque neque. Ducimus odit ad consequatur molestias. Vel itaque eligendi et quis aliquid molestiae. Sed omnis quis sed autem quae officia.",
-                "price": 17058,
-                "type": 2,
-                "rating": 2.95,
-                "rating_amount": 54,
-                "company_id": 2,
-                "created_at": "2020-11-22T00:29:08.000000Z",
-                "updated_at": "2020-11-22T00:29:08.000000Z",
-                "company": {
-                    "id": 2,
-                    "company_name": "de985",
-                    "company_street": "de985",
-                    "company_street_number": "de985",
-                    "company_city": "de985",
-                    "category": null,
-                    "company_contacts": [
-                        {
-                            "id": 4,
-                            "name": "de9850",
-                            "contact": "de9850",
-                            "company_id": 2,
-                            "created_at": null,
-                            "updated_at": null
-                        }
-                    ]
-                }
-            },
-            {
-                "id": 13,
-                "name": "alias voluptas saepe",
-                "short_description": "Officiis sequi consequatur iste et. Tenetur est quam minus et. Vitae dicta dolor dolor quia et labore accusantium et. Excepturi commodi consectetur nemo adipisci quod dicta explicabo.",
-                "long_description": "Quis saepe ut labore ratione consequatur beatae. Architecto quae voluptatem ut aut officiis. Autem dolorum dolores cum voluptatem ratione ipsa sit vel. Aspernatur dignissimos neque est ad rerum. Repellendus vel optio voluptatem quia quisquam placeat. Iste tempora dolore voluptatibus perspiciatis. Qui rerum perspiciatis neque velit magni perspiciatis odit. Repellendus deserunt ea ipsa.",
-                "price": 18638,
-                "type": 1,
-                "rating": 1.85,
-                "rating_amount": 84,
-                "company_id": 5,
-                "created_at": "2020-11-22T00:29:08.000000Z",
-                "updated_at": "2020-11-22T00:29:08.000000Z",
-                "company": {
-                    "id": 5,
-                    "company_name": "1fd75",
-                    "company_street": "1fd75",
-                    "company_street_number": "1fd75",
-                    "company_city": "1fd75",
-                    "category": null,
-                    "company_contacts": [
-                        {
-                            "id": 9,
-                            "name": "1fd750",
-                            "contact": "1fd750",
-                            "company_id": 5,
-                            "created_at": null,
-                            "updated_at": null
-                        },
-                        {
-                            "id": 10,
-                            "name": "1fd751",
-                            "contact": "1fd751",
-                            "company_id": 5,
-                            "created_at": null,
-                            "updated_at": null
-                        },
-                        {
-                            "id": 11,
-                            "name": "1fd752",
-                            "contact": "1fd752",
-                            "company_id": 5,
-                            "created_at": null,
-                            "updated_at": null
-                        }
-                    ]
-                }
-            },
-            {
-                "id": 14,
-                "name": "maiores earum dolore",
-                "short_description": "Ut dolores voluptates vitae facere. Incidunt culpa unde eos eius optio rerum autem. Deleniti doloribus non aliquid voluptates occaecati. Rerum doloribus exercitationem labore itaque nostrum qui.",
-                "long_description": "Rerum velit sint culpa eum sed et. Ullam molestiae ut voluptatum molestiae vel libero nulla. Omnis blanditiis quia vel repellendus excepturi delectus id illum. Distinctio rerum qui commodi numquam. Excepturi aperiam omnis eum harum debitis nesciunt. Aut sit incidunt natus culpa rerum. Modi illo dolorem ea et velit. Voluptas fugiat ab vel placeat aut tempora ad.",
-                "price": null,
-                "type": 0,
-                "rating": 1.24,
-                "rating_amount": 97,
-                "company_id": 3,
-                "created_at": "2020-11-22T00:29:08.000000Z",
-                "updated_at": "2020-11-22T00:29:08.000000Z",
-                "company": {
-                    "id": 3,
-                    "company_name": "3b3f7",
-                    "company_street": "3b3f7",
-                    "company_street_number": "3b3f7",
-                    "company_city": "3b3f7",
-                    "category": null,
-                    "company_contacts": [
-                        {
-                            "id": 5,
-                            "name": "3b3f70",
-                            "contact": "3b3f70",
-                            "company_id": 3,
-                            "created_at": null,
-                            "updated_at": null
-                        },
-                        {
-                            "id": 6,
-                            "name": "3b3f71",
-                            "contact": "3b3f71",
-                            "company_id": 3,
-                            "created_at": null,
-                            "updated_at": null
-                        },
-                        {
-                            "id": 7,
-                            "name": "3b3f72",
-                            "contact": "3b3f72",
-                            "company_id": 3,
-                            "created_at": null,
-                            "updated_at": null
-                        }
-                    ]
-                }
-            },
-            {
-                "id": 15,
-                "name": "et et doloribus",
-                "short_description": "Quaerat ipsam quos ullam quisquam est. Ullam voluptas voluptatem modi laborum eos ut. Facilis et qui ut dolorem aliquam temporibus. Iusto in dolor nesciunt quia voluptatem maiores.",
-                "long_description": "Sunt cupiditate vitae laudantium. Enim quis est molestiae ut et mollitia occaecati. Harum nesciunt reprehenderit ducimus doloribus deserunt dicta tempora. Quos sunt dolorum nobis quidem. Cupiditate accusamus corporis quo quo. Aut qui harum et quibusdam quaerat modi. Aspernatur a tempora deserunt voluptas. Facere et quas id vel. Ut qui saepe nihil sint voluptatem. Repellat est et corporis omnis consequatur aut voluptas. Quia est totam et fuga.",
-                "price": 8955,
-                "type": 2,
-                "rating": 2.01,
-                "rating_amount": 70,
-                "company_id": 5,
-                "created_at": "2020-11-22T00:29:08.000000Z",
-                "updated_at": "2020-11-22T00:29:08.000000Z",
-                "company": {
-                    "id": 5,
-                    "company_name": "1fd75",
-                    "company_street": "1fd75",
-                    "company_street_number": "1fd75",
-                    "company_city": "1fd75",
-                    "category": null,
-                    "company_contacts": [
-                        {
-                            "id": 9,
-                            "name": "1fd750",
-                            "contact": "1fd750",
-                            "company_id": 5,
-                            "created_at": null,
-                            "updated_at": null
-                        },
-                        {
-                            "id": 10,
-                            "name": "1fd751",
-                            "contact": "1fd751",
-                            "company_id": 5,
-                            "created_at": null,
-                            "updated_at": null
-                        },
-                        {
-                            "id": 11,
-                            "name": "1fd752",
-                            "contact": "1fd752",
-                            "company_id": 5,
-                            "created_at": null,
-                            "updated_at": null
-                        }
-                    ]
-                }
-            }
-        ],
+        "data": [],
         "first_page_url": "http:\/\/localhost\/api\/products?page=1",
-        "from": 1,
-        "last_page": 7,
-        "last_page_url": "http:\/\/localhost\/api\/products?page=7",
-        "next_page_url": "http:\/\/localhost\/api\/products?page=2",
+        "from": null,
+        "last_page": 1,
+        "last_page_url": "http:\/\/localhost\/api\/products?page=1",
+        "next_page_url": null,
         "path": "http:\/\/localhost\/api\/products",
         "per_page": 15,
         "prev_page_url": null,
-        "to": 15,
-        "total": 100
+        "to": null,
+        "total": 0
     }
 }
 ```
@@ -1665,7 +1102,7 @@ curl -X PUT \
     "http://localhost/Lokando/api/user" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"laboriosam","surname":"et","phone":"sunt","street":"natus","street_number":"iste","city":"aliquid","postal":"tempore","email":"sequi"}'
+    -d '{"name":"nulla","surname":"natus","phone":"et","street":"non","street_number":"ea","city":"eius","postal":"qui","email":"accusantium"}'
 
 ```
 
@@ -1680,14 +1117,14 @@ let headers = {
 };
 
 let body = {
-    "name": "laboriosam",
-    "surname": "et",
-    "phone": "sunt",
-    "street": "natus",
-    "street_number": "iste",
-    "city": "aliquid",
-    "postal": "tempore",
-    "email": "sequi"
+    "name": "nulla",
+    "surname": "natus",
+    "phone": "et",
+    "street": "non",
+    "street_number": "ea",
+    "city": "eius",
+    "postal": "qui",
+    "email": "accusantium"
 }
 
 fetch(url, {

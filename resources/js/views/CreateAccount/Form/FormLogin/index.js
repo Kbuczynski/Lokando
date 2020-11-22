@@ -45,9 +45,13 @@ const FormLogin = () => {
     const handleSubmit = e => {
         e.preventDefault();
 
-        sendLogin().then(() => {
-            getInfo();
-        });
+        sendLogin()
+            .then(() => {
+                getInfo();
+            })
+            .catch(() => {
+                setIsError(true);
+            });
     };
 
     return (
