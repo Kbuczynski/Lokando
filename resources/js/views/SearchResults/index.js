@@ -28,12 +28,14 @@ const SearchResults = (props) => {
 
             API.post('/products/search', params)
                 .then((res) => {
+                    // console.log(res.data.data.data);
                     setResults(res.data.data.data);
                 })
 
         } else {
             API.get('/products')
                 .then((res) => {
+                    // console.log(res.data.data.data);
                     setResults(res.data.data.data);
                 })
         }
@@ -53,8 +55,6 @@ const SearchResults = (props) => {
 
         results.map((product, key) => {
 
-            // console.log(product);
-
             resultsToRender.push(
                 <Product
                     onAddToBasketClicked={() => onAddToBasketClicked(product)}
@@ -65,8 +65,8 @@ const SearchResults = (props) => {
                     desc={product.short_description}
                     price={product.price}
                     logo={"https://kupujlokalnie.stargard.pl/wp-content/uploads/2020/08/ily_logo.jpg"}
-                    companyName={product.company.company_name}
-                    companyLocation={product.company.company_street + ", " + product.company.company_city}
+                    companyName={product.company ? product.company.company_name : ''}
+                    companyLocation={product.company ? (product.company.company_street + ", " + product.company.company_city) : ''}
                 />
             );
 

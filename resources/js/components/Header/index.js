@@ -39,11 +39,7 @@ const Header = props => {
         const user = sessionStorage.getItem("user");
 
         if (category) setCategory(category);
-        if (inputVal) setInputVal(inputVal);
-
-        if (inputVal) {
-            setPhrase(inputVal);
-        }
+        if (inputVal) setPhrase(inputVal);
 
         if (user) setLoggedIn(true);
         else setLoggedIn(false);
@@ -160,6 +156,7 @@ Header.propTypes = {
     onSearch: PropTypes.func,
     basket: PropTypes.object,
     basketActions: PropTypes.object,
+    searchActions: PropTypes.func,
 };
 
 const mapDispatchToProps = (dispatch) => {

@@ -2,6 +2,7 @@ import React from "react";
 import AwesomeSlider from "react-awesome-slider";
 import withAutoplay from "../../../../../../node_modules/react-awesome-slider/dist/autoplay";
 import AwesomeSliderStyles from "../../../../../../node_modules/react-awesome-slider/src/styles";
+// eslint-disable-next-line no-unused-vars
 import AnimationStyles from "../../../../../../node_modules/react-awesome-slider/src/styled/fold-out-animation/fold-out-animation.scss";
 
 const AutoplaySlider = withAutoplay(AwesomeSlider);

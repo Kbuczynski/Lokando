@@ -15,7 +15,8 @@ const Title = ({ text, position, marginY, className }) => {
 Title.propTypes = {
     text: PropTypes.string,
     position: PropTypes.string,
-    marginY: PropTypes.string
+    marginY: PropTypes.string,
+    className: PropTypes.string,
 };
 
 Title.defaultProps = {
