@@ -46,6 +46,7 @@ class Product extends Model
         'rating',
         'rating_amount',
         'company_id',
+        'category_id',
     ];
 
     public function company(){

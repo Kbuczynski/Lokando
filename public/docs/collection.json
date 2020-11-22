@@ -1,8 +1,8 @@
 {
     "variables": [],
     "info": {
-        "name": "Laravel API",
-        "_postman_id": "7ae00bba-b789-4e01-ab3d-541451b81bc8",
+        "name": "Lokando API",
+        "_postman_id": "3b5a7d62-6080-49db-a338-c8a93aa9e377",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
@@ -33,7 +33,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"name\": \"enim\",\n    \"surname\": \"quaerat\",\n    \"phone\": \"eaque\",\n    \"street\": \"facilis\",\n    \"street_number\": \"veniam\",\n    \"city\": \"est\",\n    \"postal\": \"eveniet\",\n    \"is_company\": false,\n    \"email\": \"quis\",\n    \"password\": \"sed\",\n    \"password_confirmation\": \"eum\",\n    \"company_nip\": 12,\n    \"company_name\": \"aut\",\n    \"company_phone\": \"assumenda\",\n    \"company_street\": \"qui\",\n    \"company_street_number\": \"odio\",\n    \"company_city\": \"aut\",\n    \"company_postal\": \"culpa\",\n    \"company_description\": \"reiciendis\",\n    \"company_slogan\": \"illo\",\n    \"company_contacts\": [],\n    \"category_id\": 6\n}"
+                            "raw": "{\n    \"name\": \"repellat\",\n    \"surname\": \"ad\",\n    \"phone\": \"maiores\",\n    \"street\": \"ullam\",\n    \"street_number\": \"non\",\n    \"city\": \"reiciendis\",\n    \"postal\": \"sunt\",\n    \"is_company\": true,\n    \"email\": \"accusamus\",\n    \"password\": \"consequatur\",\n    \"password_confirmation\": \"natus\",\n    \"company_nip\": 14,\n    \"company_name\": \"sunt\",\n    \"company_phone\": \"rerum\",\n    \"company_street\": \"quo\",\n    \"company_street_number\": \"consequatur\",\n    \"company_city\": \"sunt\",\n    \"company_postal\": \"velit\",\n    \"company_description\": \"enim\",\n    \"company_slogan\": \"cupiditate\",\n    \"company_contacts\": [],\n    \"category_id\": 17\n}"
                         },
                         "description": "Registers new user\nIf company_* fields are provided it also creates company profile, and user's optional fields are unnecessary",
                         "response": []
@@ -61,7 +61,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"email\": \"qui\",\n    \"password\": \"voluptas\"\n}"
+                            "raw": "{\n    \"email\": \"eum\",\n    \"password\": \"autem\"\n}"
                         },
                         "description": "Login user using credentials",
                         "response": []
@@ -185,7 +185,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"name\": \"laudantium\",\n    \"surname\": \"autem\",\n    \"email\": \"in\",\n    \"company_nip\": 13,\n    \"company_name\": \"facere\",\n    \"company_phone\": \"natus\",\n    \"company_street\": \"omnis\",\n    \"company_street_number\": \"saepe\",\n    \"company_city\": \"perspiciatis\",\n    \"company_postal\": \"ut\",\n    \"company_description\": \"magnam\",\n    \"company_slogan\": \"nihil\",\n    \"category_id\": 18,\n    \"company_contacts\": []\n}"
+                            "raw": "{\n    \"name\": \"quia\",\n    \"surname\": \"est\",\n    \"email\": \"vitae\",\n    \"company_nip\": 1,\n    \"company_name\": \"corporis\",\n    \"company_phone\": \"earum\",\n    \"company_street\": \"magni\",\n    \"company_street_number\": \"non\",\n    \"company_city\": \"odio\",\n    \"company_postal\": \"vel\",\n    \"company_description\": \"ducimus\",\n    \"company_slogan\": \"consequatur\",\n    \"category_id\": 10,\n    \"company_contacts\": []\n}"
                         },
                         "description": "Updates company",
                         "response": []
@@ -224,12 +224,12 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
+                            "host": "localhost\/Lokando",
                             "path": "api\/company\/:slug",
                             "query": [
                                 {
                                     "key": "slug",
-                                    "value": "consectetur",
+                                    "value": "sit",
                                     "description": "string required",
                                     "disabled": false
                                 }
@@ -338,7 +338,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"name\": \"totam\",\n    \"short_description\": \"corporis\",\n    \"long_description\": \"facere\",\n    \"price\": 11,\n    \"type\": 14\n}"
+                            "raw": "{\n    \"name\": \"totam\",\n    \"short_description\": \"dolorum\",\n    \"long_description\": \"voluptate\",\n    \"price\": 5,\n    \"type\": 1\n}"
                         },
                         "description": "Stores new Product",
                         "response": []
@@ -349,7 +349,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
+                            "host": "localhost\/Lokando",
                             "path": "api\/products\/search",
                             "query": []
                         },
@@ -366,7 +366,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "[]"
+                            "raw": "{\n    \"phrase\": \"ducimus\",\n    \"category\": 5,\n    \"order_by\": \"qui\",\n    \"ascending\": true\n}"
                         },
                         "description": "",
                         "response": []
@@ -382,7 +382,7 @@
                             "query": [
                                 {
                                     "key": "id",
-                                    "value": "reprehenderit",
+                                    "value": "consectetur",
                                     "description": "integer required",
                                     "disabled": false
                                 }
@@ -401,7 +401,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"name\": \"odio\",\n    \"short_description\": \"error\",\n    \"long_description\": \"libero\",\n    \"price\": 1,\n    \"type\": 11\n}"
+                            "raw": "{\n    \"name\": \"culpa\",\n    \"short_description\": \"occaecati\",\n    \"long_description\": \"voluptas\",\n    \"price\": 11,\n    \"type\": 17\n}"
                         },
                         "description": "Updates Product",
                         "response": []
@@ -417,7 +417,7 @@
                             "query": [
                                 {
                                     "key": "id",
-                                    "value": "deserunt",
+                                    "value": "corrupti",
                                     "description": "integer required",
                                     "disabled": false
                                 }
@@ -436,7 +436,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"rate\": 5\n}"
+                            "raw": "{\n    \"rate\": 7\n}"
                         },
                         "description": "Rates Product",
                         "response": []
@@ -498,7 +498,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"name\": \"distinctio\",\n    \"surname\": \"ea\",\n    \"phone\": \"beatae\",\n    \"street\": \"ad\",\n    \"street_number\": \"sunt\",\n    \"city\": \"omnis\",\n    \"postal\": \"repellat\",\n    \"email\": \"dignissimos\"\n}"
+                            "raw": "{\n    \"name\": \"illo\",\n    \"surname\": \"qui\",\n    \"phone\": \"voluptatibus\",\n    \"street\": \"qui\",\n    \"street_number\": \"deserunt\",\n    \"city\": \"maxime\",\n    \"postal\": \"eum\",\n    \"email\": \"ducimus\"\n}"
                         },
                         "description": "Updates user",
                         "response": []
