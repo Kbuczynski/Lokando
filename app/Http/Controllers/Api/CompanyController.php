@@ -97,4 +97,14 @@ class CompanyController extends Controller
         $companies = Company::all()->sortByDesc('created_at')->take(3);
         return response()->json(['data' => $companies], 200);
     }
+
+    /**
+     * api/company/{slug}
+     *
+     * Returns company by slug
+     * @queryParam slug string required
+     */
+    public function returnBySlug($slug){
+        return response()->json(['data' => Company::where('company_slug', $slug)->first()], 200);
+    }
 }

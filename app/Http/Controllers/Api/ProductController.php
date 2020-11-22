@@ -30,6 +30,31 @@ class ProductController extends Controller
         return response()->json(['data' => $products]);
     }
 
+    public function search(Request $request){
+        $request->validate([
+           'phrase' => 'nullable|string',
+           'category' => 'nullable|integer',
+           'order_by' => 'nullable|string',
+        ]);
+
+        $list = Product::query();
+        if($request->get('category', 0) != 0){
+            $list->where('category_id', $request->get('category'));
+        }
+        $pieces = explode(" ", $request->get('phrase', ''));
+//        for($i = 0; $i < count($pieces); $i++)
+//        {
+//            $list->orWhere('name', 'Like', '%'.$pieces[$i].'%');
+//        }
+        $list->whereIn('name', $pieces);
+        if($request->get('order_by', 0) != 0){
+            $list->orderBy($request->get('order_by'));
+        }
+        return response()->json(['data' => $list->paginate($request->get('limit', 0))]);
+
+
+    }
+
     /**
      * api/{id}/products
      *
