@@ -23,7 +23,10 @@ class ApiClass {
         this.allowedEndpoints = [
             "/auth/login",
             "/auth/register",
-            "/categories"
+            "/categories",
+            "/products",
+            "/products/search",
+            "/company/latest",
         ];
 
         this.authorizedEndpoints = [];
