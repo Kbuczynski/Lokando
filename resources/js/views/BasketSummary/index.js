@@ -93,7 +93,7 @@ const BasketSummary = (props) => {
 };
 
 ProductGroup.propTypes = {
-  children: PropTypes.node  
+  children: PropTypes.node
 };
 
 BasketSummary.propTypes = {

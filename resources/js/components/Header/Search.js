@@ -5,16 +5,18 @@ import { InputText } from 'primereact/inputtext';
 
 const Search = (props) => {
 
-    const citySelectItems = [
-        {label: 'Gastronomia', value: 'gastronomia'},
-        {label: 'Zakupy', value: 'zakupy'},
-        {label: 'Zdrowie i uroda', value: 'zdrowie'},
-        {label: 'Wyposażenie', value: 'wyposazenie'},
-        {label: 'Edukacja', value: 'edukacja'},
-        {label: 'Transport', value: 'transport'},
-        {label: 'Elektronika', value: 'elektronika'},
-        {label: 'Zwierzęta', value: 'zwierzeta'},
-        {label: 'Sport i Hobby', value: 'sport'}
+    const categories = [
+        {label: 'Kategorie', value: ''},
+        {label: 'Gastronomia', value: 1},
+        {label: 'Zakupy', value: 2},
+        {label: 'Zdrowie i uroda', value: 3},
+        {label: 'Wyposażenie', value: 4},
+        {label: 'Edukacja', value: 5},
+        {label: 'Transport', value: 6},
+        {label: 'Elektronika', value: 7},
+        {label: 'Zwierzęta', value: 8},
+        {label: 'Sport i Hobby', value: 9},
+        {label: 'Inne Usługi', value: 10}
     ];
 
     return (
@@ -24,7 +26,7 @@ const Search = (props) => {
                 <InputText value={props.inputVal} onChange={(e) => props.setInputVal(e.target.value)} placeholder="Znajdź coś dla siebie" className={"search__input"} />
             </span>
 
-            <Dropdown value={props.category} onChange={(e) => props.setCategory(e.target.value)} options={citySelectItems} placeholder="Kategoria" className={"search__dropdown"} />
+            <Dropdown value={props.category} onChange={(e) => props.setCategory(e.target.value)} options={categories} placeholder="Kategoria" className={"search__dropdown"} />
 
             <button className={"search__btn search__btn--active"} onClick={() => props.onSearch()}>
                 <span>Szukaj</span>

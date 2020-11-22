@@ -1,8 +1,8 @@
 {
     "variables": [],
     "info": {
-        "name": "Lokando API",
-        "_postman_id": "cbb3255a-9539-4b1a-bda2-abc744fd3ba8",
+        "name": "Laravel API",
+        "_postman_id": "7ae00bba-b789-4e01-ab3d-541451b81bc8",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
@@ -16,7 +16,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "api\/auth\/register",
                             "query": []
                         },
@@ -33,7 +33,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"name\": \"voluptatem\",\n    \"surname\": \"aut\",\n    \"phone\": \"optio\",\n    \"street\": \"quis\",\n    \"street_number\": \"dolor\",\n    \"city\": \"dolorem\",\n    \"postal\": \"nihil\",\n    \"is_company\": false,\n    \"email\": \"nesciunt\",\n    \"password\": \"sapiente\",\n    \"password_confirmation\": \"quo\",\n    \"company_nip\": 17,\n    \"company_name\": \"est\",\n    \"company_phone\": \"sed\",\n    \"company_street\": \"et\",\n    \"company_street_number\": \"qui\",\n    \"company_city\": \"est\",\n    \"company_postal\": \"dolor\",\n    \"company_description\": \"asperiores\",\n    \"company_slogan\": \"rerum\",\n    \"company_contacts\": [],\n    \"category_id\": 14\n}"
+                            "raw": "{\n    \"name\": \"enim\",\n    \"surname\": \"quaerat\",\n    \"phone\": \"eaque\",\n    \"street\": \"facilis\",\n    \"street_number\": \"veniam\",\n    \"city\": \"est\",\n    \"postal\": \"eveniet\",\n    \"is_company\": false,\n    \"email\": \"quis\",\n    \"password\": \"sed\",\n    \"password_confirmation\": \"eum\",\n    \"company_nip\": 12,\n    \"company_name\": \"aut\",\n    \"company_phone\": \"assumenda\",\n    \"company_street\": \"qui\",\n    \"company_street_number\": \"odio\",\n    \"company_city\": \"aut\",\n    \"company_postal\": \"culpa\",\n    \"company_description\": \"reiciendis\",\n    \"company_slogan\": \"illo\",\n    \"company_contacts\": [],\n    \"category_id\": 6\n}"
                         },
                         "description": "Registers new user\nIf company_* fields are provided it also creates company profile, and user's optional fields are unnecessary",
                         "response": []
@@ -44,7 +44,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "api\/auth\/login",
                             "query": []
                         },
@@ -61,7 +61,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"email\": \"incidunt\",\n    \"password\": \"fugit\"\n}"
+                            "raw": "{\n    \"email\": \"qui\",\n    \"password\": \"voluptas\"\n}"
                         },
                         "description": "Login user using credentials",
                         "response": []
@@ -72,7 +72,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "api\/me",
                             "query": []
                         },
@@ -100,7 +100,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "api\/logout",
                             "query": []
                         },
@@ -134,7 +134,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "api\/categories",
                             "query": []
                         },
@@ -168,7 +168,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "api\/company",
                             "query": []
                         },
@@ -185,7 +185,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"name\": \"numquam\",\n    \"surname\": \"reiciendis\",\n    \"email\": \"quia\",\n    \"company_nip\": 2,\n    \"company_name\": \"sed\",\n    \"company_phone\": \"dolores\",\n    \"company_street\": \"rem\",\n    \"company_street_number\": \"sed\",\n    \"company_city\": \"consequuntur\",\n    \"company_postal\": \"eum\",\n    \"company_description\": \"perferendis\",\n    \"company_slogan\": \"fugit\",\n    \"category_id\": 7,\n    \"company_contacts\": []\n}"
+                            "raw": "{\n    \"name\": \"laudantium\",\n    \"surname\": \"autem\",\n    \"email\": \"in\",\n    \"company_nip\": 13,\n    \"company_name\": \"facere\",\n    \"company_phone\": \"natus\",\n    \"company_street\": \"omnis\",\n    \"company_street_number\": \"saepe\",\n    \"company_city\": \"perspiciatis\",\n    \"company_postal\": \"ut\",\n    \"company_description\": \"magnam\",\n    \"company_slogan\": \"nihil\",\n    \"category_id\": 18,\n    \"company_contacts\": []\n}"
                         },
                         "description": "Updates company",
                         "response": []
@@ -196,7 +196,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "api\/company\/latest",
                             "query": []
                         },
@@ -218,6 +218,41 @@
                         "description": "Returns 3 latest companies",
                         "response": []
                     }
+                },
+                {
+                    "name": "api\/company\/{slug}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
+                            "path": "api\/company\/:slug",
+                            "query": [
+                                {
+                                    "key": "slug",
+                                    "value": "consectetur",
+                                    "description": "string required",
+                                    "disabled": false
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Returns company by slug",
+                        "response": []
+                    }
                 }
             ]
         },
@@ -230,7 +265,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "api\/:id\/products",
                             "query": []
                         },
@@ -258,7 +293,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "api\/products\/own",
                             "query": []
                         },
@@ -286,7 +321,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "api\/products",
                             "query": []
                         },
@@ -303,9 +338,37 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"name\": \"voluptatem\",\n    \"short_description\": \"distinctio\",\n    \"long_description\": \"temporibus\",\n    \"price\": 17,\n    \"type\": 10\n}"
+                            "raw": "{\n    \"name\": \"totam\",\n    \"short_description\": \"corporis\",\n    \"long_description\": \"facere\",\n    \"price\": 11,\n    \"type\": 14\n}"
                         },
                         "description": "Stores new Product",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/products\/search",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
+                            "path": "api\/products\/search",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
                         "response": []
                     }
                 },
@@ -314,12 +377,12 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "api\/products\/:id",
                             "query": [
                                 {
                                     "key": "id",
-                                    "value": "doloribus",
+                                    "value": "reprehenderit",
                                     "description": "integer required",
                                     "disabled": false
                                 }
@@ -338,7 +401,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"name\": \"molestiae\",\n    \"short_description\": \"optio\",\n    \"long_description\": \"odit\",\n    \"price\": 11,\n    \"type\": 7\n}"
+                            "raw": "{\n    \"name\": \"odio\",\n    \"short_description\": \"error\",\n    \"long_description\": \"libero\",\n    \"price\": 1,\n    \"type\": 11\n}"
                         },
                         "description": "Updates Product",
                         "response": []
@@ -349,12 +412,12 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "api\/products\/:id\/rate",
                             "query": [
                                 {
                                     "key": "id",
-                                    "value": "aut",
+                                    "value": "deserunt",
                                     "description": "integer required",
                                     "disabled": false
                                 }
@@ -373,7 +436,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"rate\": 3\n}"
+                            "raw": "{\n    \"rate\": 5\n}"
                         },
                         "description": "Rates Product",
                         "response": []
@@ -384,7 +447,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "api\/products",
                             "query": []
                         },
@@ -418,7 +481,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "api\/user",
                             "query": []
                         },
@@ -435,7 +498,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"name\": \"laboriosam\",\n    \"surname\": \"et\",\n    \"phone\": \"sunt\",\n    \"street\": \"natus\",\n    \"street_number\": \"iste\",\n    \"city\": \"aliquid\",\n    \"postal\": \"tempore\",\n    \"email\": \"sequi\"\n}"
+                            "raw": "{\n    \"name\": \"distinctio\",\n    \"surname\": \"ea\",\n    \"phone\": \"beatae\",\n    \"street\": \"ad\",\n    \"street_number\": \"sunt\",\n    \"city\": \"omnis\",\n    \"postal\": \"repellat\",\n    \"email\": \"dignissimos\"\n}"
                         },
                         "description": "Updates user",
                         "response": []
@@ -452,7 +515,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "_debugbar\/open",
                             "query": []
                         },
@@ -480,7 +543,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "_debugbar\/clockwork\/:id",
                             "query": []
                         },
@@ -508,7 +571,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "_debugbar\/telescope\/:id",
                             "query": []
                         },
@@ -536,7 +599,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "_debugbar\/assets\/stylesheets",
                             "query": []
                         },
@@ -564,7 +627,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "_debugbar\/assets\/javascript",
                             "query": []
                         },
@@ -592,7 +655,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "_debugbar\/cache\/:key\/:tags",
                             "query": []
                         },
@@ -620,7 +683,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "oauth\/authorize",
                             "query": []
                         },
@@ -648,7 +711,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "oauth\/authorize",
                             "query": []
                         },
@@ -676,7 +739,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "oauth\/authorize",
                             "query": []
                         },
@@ -704,7 +767,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "oauth\/token",
                             "query": []
                         },
@@ -732,7 +795,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "oauth\/tokens",
                             "query": []
                         },
@@ -760,7 +823,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "oauth\/tokens\/:token_id",
                             "query": []
                         },
@@ -788,7 +851,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "oauth\/token\/refresh",
                             "query": []
                         },
@@ -816,7 +879,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "oauth\/clients",
                             "query": []
                         },
@@ -844,7 +907,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "oauth\/clients",
                             "query": []
                         },
@@ -872,7 +935,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "oauth\/clients\/:client_id",
                             "query": []
                         },
@@ -900,7 +963,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "oauth\/clients\/:client_id",
                             "query": []
                         },
@@ -928,7 +991,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "oauth\/scopes",
                             "query": []
                         },
@@ -956,7 +1019,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "oauth\/personal-access-tokens",
                             "query": []
                         },
@@ -984,7 +1047,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "oauth\/personal-access-tokens",
                             "query": []
                         },
@@ -1012,7 +1075,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "oauth\/personal-access-tokens\/:token_id",
                             "query": []
                         },

@@ -10,17 +10,17 @@ const MAX_SLIDER_VALUE = 20000;
 
 const Filters = (props) => {
 
-    const categories = [
-        {label: 'Gastronomia', value: 'gastronomia'},
-        {label: 'Zakupy', value: 'zakupy'},
-        {label: 'Zdrowie i uroda', value: 'zdrowie'},
-        {label: 'Wyposażenie', value: 'wyposazenie'},
-        {label: 'Edukacja', value: 'edukacja'},
-        {label: 'Transport', value: 'transport'},
-        {label: 'Elektronika', value: 'elektronika'},
-        {label: 'Zwierzęta', value: 'zwierzeta'},
-        {label: 'Sport i Hobby', value: 'sport'}
-    ];
+    // const categories = [
+    //     {label: 'Gastronomia', value: 'gastronomia'},
+    //     {label: 'Zakupy', value: 'zakupy'},
+    //     {label: 'Zdrowie i uroda', value: 'zdrowie'},
+    //     {label: 'Wyposażenie', value: 'wyposazenie'},
+    //     {label: 'Edukacja', value: 'edukacja'},
+    //     {label: 'Transport', value: 'transport'},
+    //     {label: 'Elektronika', value: 'elektronika'},
+    //     {label: 'Zwierzęta', value: 'zwierzeta'},
+    //     {label: 'Sport i Hobby', value: 'sport'}
+    // ];
 
     const status = [
         {label: 'Pokaż wszystko', value: 'wszystkie'},
@@ -68,9 +68,9 @@ const Filters = (props) => {
                         </div>
                     </div>
                     <div className={"filters__dropdowns"}>
-                        <Dropdown value={props.category} options={categories}
-                                  onChange={(e) => props.setCategory(e.value)}
-                                  placeholder="Kategoria" className={"filters__input"}/>
+                        {/*<Dropdown value={props.category} options={categories}*/}
+                        {/*          onChange={(e) => props.setCategory(e.value)}*/}
+                        {/*          placeholder="Kategoria" className={"filters__input"}/>*/}
                         <Dropdown value={props.status} options={status} onChange={(e) => props.setStatus(e.value)}
                                   placeholder="Status" className={"filters__input"}/>
                     </div>

@@ -8,6 +8,7 @@ import Basket from "../Basket";
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as BasketActions from '../../actions/BasketActions';
+import * as SearchActions from '../../actions/SearchActions';
 
 window.onclick = function (event) {
     if (!event.target.matches(".dropdown__btn")) {
@@ -24,11 +25,12 @@ window.onclick = function (event) {
 
 const Header = props => {
     const [isLoggedIn, setLoggedIn] = useState(false);
-    const [category, setCategory] = useState("");
-    const [inputVal, setInputVal] = useState("");
 
     const refDropdown = useRef();
     const history = useHistory();
+
+    const [phrase, setPhrase] = useState("");
+    const [category, setCategory] = useState("");
 
     useEffect(() => {
         const URLParams = new URLSearchParams(window.location.search);
@@ -36,10 +38,13 @@ const Header = props => {
         const inputVal = URLParams.get("tags");
         const user = sessionStorage.getItem("user");
 
-        if (category)
+        if (category) {
             setCategory(category);
-        if (inputVal)
-            setInputVal(inputVal);
+        }
+
+        if (inputVal) {
+            setPhrase(inputVal);
+        }
 
         if (user) setLoggedIn(true);
         else setLoggedIn(false);
@@ -47,7 +52,8 @@ const Header = props => {
     }, []);
 
     const onSearch = () => {
-        history.push("/szukaj?cat=" + category + "&tags=" + inputVal);
+        props.searchActions.changeSearch(phrase, category);
+        history.push("/szukaj?cat=" + category + "&tags=" + phrase);
     };
 
     const onMenuClick = () => {
@@ -92,9 +98,9 @@ const Header = props => {
 
                     <Search
                         onSearch={() => onSearch()}
-                        setInputVal={val => setInputVal(val)}
+                        setInputVal={val => setPhrase(val)}
                         setCategory={category => setCategory(category)}
-                        inputVal={inputVal}
+                        inputVal={phrase}
                         category={category}
                     />
 
@@ -142,10 +148,10 @@ const Header = props => {
             </div>
             <Search
                 mobile={true}
-                onSearch={() => props.onSearch(inputVal, category)}
-                setInputVal={val => setInputVal(val)}
+                onSearch={() => onSearch()}
+                setInputVal={val => setPhrase(val)}
                 setCategory={category => setCategory(category)}
-                inputVal={inputVal}
+                inputVal={phrase}
                 category={category}
             />
         </Fragment>
@@ -161,12 +167,14 @@ Header.propTypes = {
 const mapDispatchToProps = (dispatch) => {
     return {
         basketActions: bindActionCreators(BasketActions, dispatch),
+        searchActions: bindActionCreators(SearchActions, dispatch),
     };
 };
 
 const mapStateToProps = (state) => {
     return {
         basket: state.basket,
+        search: state.search,
     };
 };
 
