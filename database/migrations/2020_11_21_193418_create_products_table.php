@@ -22,6 +22,7 @@ class CreateProductsTable extends Migration
             $table->unsignedInteger('type')->default(0)->comment('0-usluga, 1-product, 2-delivery');
             $table->unsignedFloat('rating')->default(0);
             $table->unsignedInteger('rating_amount')->default(0);
+            $table->unsignedBigInteger('category_id');
             $table->unsignedBigInteger('company_id');
             $table->foreign('company_id')->references('id')->on('companies')->onDelete('cascade');
             $table->timestamps();
