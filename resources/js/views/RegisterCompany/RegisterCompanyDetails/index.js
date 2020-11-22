@@ -108,6 +108,12 @@ const RegisterCompanyDetails = ({ fullValues, setFullValues }) => {
                             przekierowany na stronę do logowania
                         </small>
                     )}
+                    {isError && (
+                        <small className="item__alert">
+                            Konto nie mogło zostać utworzone, sprawdź czy
+                            wypełniłeś wszystkie pola
+                        </small>
+                    )}
                 </div>
                 <div className="login__item">
                     <span onClick={() => history.goBack()}>
