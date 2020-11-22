@@ -80,4 +80,8 @@ class User extends Authenticatable
         return $this->hasOne('App\Models\Company');
     }
 
+    public function orders(){
+        return $this->hasMany(Order::class);
+    }
+
 }

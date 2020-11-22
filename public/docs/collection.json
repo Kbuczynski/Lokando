@@ -2,7 +2,7 @@
     "variables": [],
     "info": {
         "name": "Lokando API",
-        "_postman_id": "3b5a7d62-6080-49db-a338-c8a93aa9e377",
+        "_postman_id": "60e29a5d-bfe3-490d-915a-9f1217055675",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
@@ -33,7 +33,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"name\": \"repellat\",\n    \"surname\": \"ad\",\n    \"phone\": \"maiores\",\n    \"street\": \"ullam\",\n    \"street_number\": \"non\",\n    \"city\": \"reiciendis\",\n    \"postal\": \"sunt\",\n    \"is_company\": true,\n    \"email\": \"accusamus\",\n    \"password\": \"consequatur\",\n    \"password_confirmation\": \"natus\",\n    \"company_nip\": 14,\n    \"company_name\": \"sunt\",\n    \"company_phone\": \"rerum\",\n    \"company_street\": \"quo\",\n    \"company_street_number\": \"consequatur\",\n    \"company_city\": \"sunt\",\n    \"company_postal\": \"velit\",\n    \"company_description\": \"enim\",\n    \"company_slogan\": \"cupiditate\",\n    \"company_contacts\": [],\n    \"category_id\": 17\n}"
+                            "raw": "{\n    \"name\": \"praesentium\",\n    \"surname\": \"excepturi\",\n    \"phone\": \"qui\",\n    \"street\": \"qui\",\n    \"street_number\": \"illum\",\n    \"city\": \"iure\",\n    \"postal\": \"itaque\",\n    \"is_company\": false,\n    \"email\": \"commodi\",\n    \"password\": \"est\",\n    \"password_confirmation\": \"a\",\n    \"company_nip\": 1,\n    \"company_name\": \"laudantium\",\n    \"company_phone\": \"non\",\n    \"company_street\": \"dolorum\",\n    \"company_street_number\": \"laudantium\",\n    \"company_city\": \"enim\",\n    \"company_postal\": \"architecto\",\n    \"company_description\": \"rerum\",\n    \"company_slogan\": \"dolorum\",\n    \"company_contacts\": [],\n    \"category_id\": 6\n}"
                         },
                         "description": "Registers new user\nIf company_* fields are provided it also creates company profile, and user's optional fields are unnecessary",
                         "response": []
@@ -61,7 +61,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"email\": \"eum\",\n    \"password\": \"autem\"\n}"
+                            "raw": "{\n    \"email\": \"suscipit\",\n    \"password\": \"amet\"\n}"
                         },
                         "description": "Login user using credentials",
                         "response": []
@@ -185,7 +185,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"name\": \"quia\",\n    \"surname\": \"est\",\n    \"email\": \"vitae\",\n    \"company_nip\": 1,\n    \"company_name\": \"corporis\",\n    \"company_phone\": \"earum\",\n    \"company_street\": \"magni\",\n    \"company_street_number\": \"non\",\n    \"company_city\": \"odio\",\n    \"company_postal\": \"vel\",\n    \"company_description\": \"ducimus\",\n    \"company_slogan\": \"consequatur\",\n    \"category_id\": 10,\n    \"company_contacts\": []\n}"
+                            "raw": "{\n    \"name\": \"dignissimos\",\n    \"surname\": \"aspernatur\",\n    \"email\": \"sit\",\n    \"company_nip\": 12,\n    \"company_name\": \"dolores\",\n    \"company_phone\": \"excepturi\",\n    \"company_street\": \"laboriosam\",\n    \"company_street_number\": \"omnis\",\n    \"company_city\": \"ut\",\n    \"company_postal\": \"dolore\",\n    \"company_description\": \"accusamus\",\n    \"company_slogan\": \"odit\",\n    \"category_id\": 17,\n    \"company_contacts\": []\n}"
                         },
                         "description": "Updates company",
                         "response": []
@@ -229,7 +229,7 @@
                             "query": [
                                 {
                                     "key": "slug",
-                                    "value": "sit",
+                                    "value": "omnis",
                                     "description": "string required",
                                     "disabled": false
                                 }
@@ -251,6 +251,82 @@
                             "raw": "[]"
                         },
                         "description": "Returns company by slug",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Orders",
+            "description": "Managing Orders",
+            "item": [
+                {
+                    "name": "api\/orders\/{id}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/Lokando",
+                            "path": "api\/orders\/:id",
+                            "query": [
+                                {
+                                    "key": "id",
+                                    "value": "dolores",
+                                    "description": "integer required id of company",
+                                    "disabled": false
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"status\": 7,\n    \"type\": 12,\n    \"products\": []\n}"
+                        },
+                        "description": "Creating new order",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/orders\/{id}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/Lokando",
+                            "path": "api\/orders\/:id",
+                            "query": [
+                                {
+                                    "key": "id",
+                                    "value": "fuga",
+                                    "description": "integer required id of company",
+                                    "disabled": false
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"status\": 20\n}"
+                        },
+                        "description": "",
                         "response": []
                     }
                 }
@@ -338,7 +414,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"name\": \"totam\",\n    \"short_description\": \"dolorum\",\n    \"long_description\": \"voluptate\",\n    \"price\": 5,\n    \"type\": 1\n}"
+                            "raw": "{\n    \"name\": \"illum\",\n    \"short_description\": \"dolores\",\n    \"long_description\": \"sunt\",\n    \"price\": 15,\n    \"type\": 2\n}"
                         },
                         "description": "Stores new Product",
                         "response": []
@@ -366,7 +442,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"phrase\": \"ducimus\",\n    \"category\": 5,\n    \"order_by\": \"qui\",\n    \"ascending\": true\n}"
+                            "raw": "{\n    \"phrase\": \"est\",\n    \"category\": 4,\n    \"order_by\": \"qui\",\n    \"ascending\": false\n}"
                         },
                         "description": "",
                         "response": []
@@ -382,7 +458,7 @@
                             "query": [
                                 {
                                     "key": "id",
-                                    "value": "consectetur",
+                                    "value": "optio",
                                     "description": "integer required",
                                     "disabled": false
                                 }
@@ -401,7 +477,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"name\": \"culpa\",\n    \"short_description\": \"occaecati\",\n    \"long_description\": \"voluptas\",\n    \"price\": 11,\n    \"type\": 17\n}"
+                            "raw": "{\n    \"name\": \"tempora\",\n    \"short_description\": \"laboriosam\",\n    \"long_description\": \"commodi\",\n    \"price\": 5,\n    \"type\": 19\n}"
                         },
                         "description": "Updates Product",
                         "response": []
@@ -417,7 +493,7 @@
                             "query": [
                                 {
                                     "key": "id",
-                                    "value": "corrupti",
+                                    "value": "et",
                                     "description": "integer required",
                                     "disabled": false
                                 }
@@ -436,7 +512,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"rate\": 7\n}"
+                            "raw": "{\n    \"rate\": 2\n}"
                         },
                         "description": "Rates Product",
                         "response": []
@@ -498,7 +574,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"name\": \"illo\",\n    \"surname\": \"qui\",\n    \"phone\": \"voluptatibus\",\n    \"street\": \"qui\",\n    \"street_number\": \"deserunt\",\n    \"city\": \"maxime\",\n    \"postal\": \"eum\",\n    \"email\": \"ducimus\"\n}"
+                            "raw": "{\n    \"name\": \"enim\",\n    \"surname\": \"temporibus\",\n    \"phone\": \"accusantium\",\n    \"street\": \"doloribus\",\n    \"street_number\": \"vel\",\n    \"city\": \"quibusdam\",\n    \"postal\": \"earum\",\n    \"email\": \"ut\"\n}"
                         },
                         "description": "Updates user",
                         "response": []
