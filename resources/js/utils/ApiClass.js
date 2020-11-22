@@ -306,6 +306,7 @@ class ApiClass {
                     }
                 } else if (typeof data === "object" && data) {
                     for (var key in data) {
+                        // eslint-disable-next-line no-prototype-builtins
                         if (data.hasOwnProperty(key)) {
                             if (root === "") {
                                 appendFormData(data[key], key);
