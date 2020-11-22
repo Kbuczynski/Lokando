@@ -184,7 +184,16 @@ class AuthController extends Controller {
      * return user data based on sended token
      */
     public function me(){
-        return response()->json(['data' => ['user' => Auth::user()]]);
+        $user = User::with('orders')->findOrFail(Auth::user()->id);
+        if($user->is_company){
+//            $company = $user->company->orders;
+//            $user->company['orders'] = $company;
+
+            return response()->json(['data' => ['user' => $user]]);
+        } else {
+            return response()->json(['data' => ['user' => $user]]);
+
+        }
     }
 
 
