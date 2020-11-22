@@ -12,11 +12,6 @@ const cookieOptions = {
 
 class ApiClass {
     constructor() {
-        let tmp = cookies.get("oauth_access_token");
-        if (tmp) {
-            console.log(this.decryptToken(tmp));
-        }
-
         this.onUnauthorized = null;
         this.baseUrl =
             window.apiUrl && window.apiUrl !== "" ? window.apiUrl : "/api";
@@ -62,8 +57,7 @@ class ApiClass {
         // check if oauth token is set and add it to headers
         if (cookies.get("oauth_access_token")) {
             token = this.decryptToken(cookies.get("oauth_access_token"));
-            this.axios.defaults.headers.common["Authorization"] =
-                "Bearer " + token;
+            this.axios.defaults.headers.common["Authorization"] = token;
         }
     }
 
@@ -113,28 +107,29 @@ class ApiClass {
                         ""
                     );
 
-                    if (endpoint === "/api/auth/login") {
+                    if (endpoint === "/auth/login") {
                         cookies.set(
                             "oauth_access_token",
-                            $this.encryptToken(response.data.access_token),
+                            $this.encryptToken(response.data.data.access_token),
                             cookieOptions
                         );
                         cookies.set(
                             "oauth_refresh_token",
-                            $this.encryptToken(response.data.refresh_token),
+                            $this.encryptToken(
+                                response.data.data.refresh_token
+                            ),
                             cookieOptions
                         );
                         cookies.set(
                             "oauth_expires",
-                            Date.now() + response.data.expires_in * 1000,
+                            Date.now() + response.data.data.expires_in * 1000,
                             cookieOptions
                         );
 
                         $this.axios.defaults.headers.common["Authorization"] =
-                            "Bearer " + response.data.access_token;
+                            response.data.data.access_token;
                     }
                 }
-
                 return response;
             },
             function(error) {
@@ -182,7 +177,6 @@ class ApiClass {
     }
 
     encryptToken(token) {
-        console.log(token);
         let textBytes = aesjs.utils.utf8.toBytes(token);
         let aesCtr = new aesjs.ModeOfOperation.ctr(key);
         let encryptedBytes = aesCtr.encrypt(textBytes);

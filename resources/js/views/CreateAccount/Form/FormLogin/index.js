@@ -28,18 +28,26 @@ const FormLogin = () => {
         });
     };
 
+    const sendLogin = () => {
+        return API.post("/auth/login", loginData);
+    };
+
+    const getInfo = () => {
+        API.get("/me").then(resp => {
+            sessionStorage.setItem("user", JSON.stringify(resp.data.data));
+
+            history.push({
+                pathname: `/`
+            });
+        });
+    };
+
     const handleSubmit = e => {
         e.preventDefault();
 
-        API.post("/auth/login", loginData)
-            .then(() => {
-                history.push({
-                    pathname: `/`
-                });
-            })
-            .catch(() => {
-                setIsError(true);
-            });
+        sendLogin().then(() => {
+            getInfo();
+        });
     };
 
     return (
