@@ -97,6 +97,11 @@ With seeder (random strings as data)
 \user> php passport:install
 ```
 
+7. Zbuduj frontend
+```batch
+\user> npm run dev
+```
+
 ## Authors
 
 * [Angelika Iskra](https://github.com/angelikaiskra) Frontend
