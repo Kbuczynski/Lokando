@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\CompanyUpdateRequest;
 use App\Models\Company;
 use App\Models\CompanyContact;
+use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -85,5 +86,15 @@ class CompanyController extends Controller
         return response()->json(['data' => [
             'messages' => 'Company updated'
         ]], 200);
+    }
+
+    /**
+     * api/company/latest
+     *
+     * Returns 3 latest companies
+     */
+    public function latestCompanies(){
+        $companies = Company::all()->sortByDesc('created_at')->take(3);
+        return response()->json(['data' => $companies], 200);
     }
 }
