@@ -1,5 +1,3 @@
-Options -Indexes
-
 # block files which needs to be hidden, specify .example extension of the file
 <Files ~ "\.(env|json|config.js|md|gitignore|gitattributes|lock)$">
     Order allow,deny
@@ -13,6 +11,9 @@ Options -Indexes
     </IfModule>
 
     RewriteEngine On
+
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 
     RewriteCond %{REQUEST_FILENAME} -d [OR]
     RewriteCond %{REQUEST_FILENAME} -f

@@ -1,0 +1,65 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site/application.
+// -----------------------------------------------------------------------------
+
+.footer {
+    background-image: $blue-gradient;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $white;
+    padding-bottom: 1.5rem;
+
+    @include respond-to("medium") {
+        flex-direction: column;
+        justify-content: flex-start;
+
+        & > *:nth-child(2) {
+            margin: 2rem 0;
+        }
+    }
+
+    &__category {
+        .category__box {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-column-gap: 5rem;
+            grid-row-gap: 1rem;
+
+            & > a {
+                color: $white;
+                font-size: 1rem;
+                white-space: nowrap;
+                transition: text-decoration 0.2s ease;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    &__logo {
+        text-align: center;
+    }
+
+    &__menu {
+        display: flex;
+        flex-direction: column;
+
+        @include respond-to("medium") {
+            text-align: center;
+        }
+
+        & > a {
+            color: $white;
+            margin: 0.8rem 0;
+            white-space: nowrap;
+            transition: text-decoration 0.2s ease;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

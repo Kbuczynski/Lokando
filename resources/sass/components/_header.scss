@@ -1,0 +1,54 @@
+.header {
+    background-color: #33445b;
+
+    &__container {
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include respond-to("large") {
+            min-height: 100px;
+            height: unset;
+            padding-bottom: 20px;
+            display: block;
+            flex-wrap: wrap;
+        }
+    }
+
+    &__logo {
+        margin-right: 0.5rem;
+        display: block;
+        width: 200px;
+
+        @include respond-to("large") {
+            margin: auto;
+            height: 100%;
+        }
+    }
+
+    &__buttons {
+        margin-top: 5px;
+        display: flex;
+        margin-left: 1rem;
+        font-size: 1.1rem;
+
+        a:nth-child(2) {
+            margin-left: 1rem;
+        }
+
+        a button {
+            height: 50px;
+        }
+
+        @include respond-to("large") {
+            justify-content: space-evenly;
+            transform: translateX(-20px);
+
+            a button {
+                padding: 0.5rem 1rem;
+                font-size: 1.2rem;
+            }
+        }
+    }
+}

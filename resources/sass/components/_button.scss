@@ -1,0 +1,28 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+
+.button {
+    font-size: .9em;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    cursor: pointer;
+    color: $white;
+    border: 0;
+    padding: 0.8rem 1.5rem;
+    font-weight: bold;
+    white-space: nowrap;
+    //min-width: 200px;
+
+    &:focus {
+        outline: 0;
+    }
+}
+
+.button--green {
+    background: $green-gradient;
+}
+
+.button--blue {
+    background-image: $blue-gradient;
+}

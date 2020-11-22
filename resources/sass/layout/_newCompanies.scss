@@ -1,0 +1,53 @@
+.newComapnies {
+    padding-bottom: 3rem;
+
+    &__title {
+        width: 100%;
+        text-align: center;
+        font-size: 2.5rem;
+        margin-top: 1rem;
+    }
+
+    &__box {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .box__item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: $white;
+            padding: 0.5rem 0;
+            margin: 1rem 1rem 0 1rem;
+            border: 0.1rem solid $gray-border;
+            width: 350px;
+
+            & > * {
+                margin: 0.2rem;
+            }
+
+            .item__image > img {
+                transition: transform 0.2s ease;
+            }
+
+            .item__title {
+                transition: text-transform 0.2s ease;
+            }
+
+            .item__slogan {
+                text-align: center;
+            }
+
+            @include respond-to("only-desktop") {
+                &:hover .item__image > img {
+                    transform: scale(1.1);
+                }
+
+                &:hover .item__title {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

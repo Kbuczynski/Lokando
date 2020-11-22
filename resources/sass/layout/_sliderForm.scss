@@ -1,0 +1,49 @@
+.sliderForm {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__slider {
+        width: 100%;
+
+        .slider__item {
+            position: absolute;
+            top: 0rem;
+            font-size: 2rem;
+            color: $white;
+            z-index: 1;
+            padding: 1rem;
+
+            @include respond-to("large") {
+                font-size: 1.5rem;
+            }
+
+            & > img {
+                width: 50%;
+            }
+        }
+    }
+
+    div div div div .awssld__box {
+        position: relative;
+        height: 1000px;
+    }
+
+    .awssld__content {
+        background: transparent !important;
+        position: relative;
+
+        & > img {
+            width: 50% !important;
+            height: auto !important;
+            top: 50% !important;
+            left: 50% !important;
+            transform: translate(-50%, -40%);
+        }
+    }
+
+    .awssld__timer {
+        visibility: hidden !important;
+    }
+}

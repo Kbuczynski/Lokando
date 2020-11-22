@@ -3,21 +3,21 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name=”roboqts” content="index, follow">
+    <meta name=”robots” content="index, follow">
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <base href="{{ request()->getBasePath() }}/" />
     <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-    <title>{{ empty(env('APP_NAME')) }}</title>
+    <title>{{ config('app.name') }}</title>
 
 </head>
 <body>
 <div id="app"></div>
 
 <script type="text/javascript">
-    window.apiUrl = "{{ empty(env('API_URL')) ? config('app.url/').'api' : env('API_URL') }}";
+    window.apiUrl = "{{ config('app.url').'/api' }}";
     window.baseUrl = "{{ request()->getBasePath() }}";
     window.assetsUrl = "{{ asset('') }}"
 </script>
