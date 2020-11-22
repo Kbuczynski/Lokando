@@ -1,18 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Button = ({ text, isGreen, btnClassName, isSubmit }) => {
+const Button = ({ text, isGreen, btnClassName, isSubmit, onClickButton }) => {
     return isSubmit ? (
         <button
+            onClick={onClickButton}
             className={`button ${
                 isGreen ? "button--green" : "button--blue"
             } ${btnClassName}`}
-            type="submit"
-        >
+            type="submit">
             {text}
         </button>
     ) : (
         <button
+            onClick={onClickButton}
             className={`button ${
                 isGreen ? "button--green" : "button--blue"
             } ${btnClassName}`}
@@ -24,6 +25,7 @@ const Button = ({ text, isGreen, btnClassName, isSubmit }) => {
 };
 
 Button.propTypes = {
+    onClickButton: PropTypes.func,
     text: PropTypes.string.isRequired,
     isGreen: PropTypes.bool,
     btnClassName: PropTypes.string,
@@ -31,6 +33,7 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
+    onClickButton: () => {},
     text: "",
     isGreen: true,
     btnClassName: "",

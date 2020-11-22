@@ -1,11 +1,15 @@
-import React, { Fragment, useState, useRef, useEffect } from "react";
+import React, {Fragment, useState, useRef, useEffect} from "react";
 import PropTypes from "prop-types";
 import Button from "../Button";
 import Search from "./Search";
 import { Link, useHistory } from "react-router-dom";
 import Basket from "../Basket";
 
-window.onclick = function(event) {
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as BasketActions from '../../actions/BasketActions';
+
+window.onclick = function (event) {
     if (!event.target.matches(".dropdown__btn")) {
         const dropdowns = document.getElementsByClassName("dropdown__content");
         let i;
@@ -60,6 +64,14 @@ const Header = props => {
             .catch(e => console.log(e));
     };
 
+    const onRedirectClicked = () => {
+        history.push("/koszyk");
+    };
+
+    const onRemoveFromBasket = (id) => {
+      props.basketActions.removeFromBasket(id);
+    };
+
     return (
         <Fragment>
             <div className={"header"} id={"page-wrap"}>
@@ -103,13 +115,17 @@ const Header = props => {
                                     </Link>
                                 </div>
                             </div>
-                            <Basket />
+                            <Basket
+                                items={props.basket.items}
+                                onRedirectClicked={() => onRedirectClicked()}
+                                onRemoveFromBasket={(id) => onRemoveFromBasket(id)}
+                            />
                         </div>
                     ) : (
                         // burger
                         <div className={"header__buttons"}>
                             <Link to="/utworz-konto?view=register">
-                                <Button text={"Dołącz do nas!"} />
+                                <Button text={"Dołącz do nas!"}/>
                             </Link>
                             <Link to="/utworz-konto?view=login">
                                 <Button
@@ -134,7 +150,21 @@ const Header = props => {
 };
 
 Header.propTypes = {
-    onSearch: PropTypes.func
+    onSearch: PropTypes.func,
+    basket: PropTypes.object,
+    basketActions: PropTypes.object,
 };
 
-export default Header;
+const mapDispatchToProps = (dispatch) => {
+    return {
+        basketActions: bindActionCreators(BasketActions, dispatch),
+    };
+};
+
+const mapStateToProps = (state) => {
+    return {
+        basket: state.basket,
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
