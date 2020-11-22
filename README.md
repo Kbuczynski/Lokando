@@ -15,8 +15,7 @@ Everything UI/UX wise was designed by us.
 
 ## Usage
 
-You can experience our application by clicking [Lokando](http://lokando.pl)  
-Or for more up-to-date version by clicking [Lokando - dev](http://dev.lokando.pl) 
+You can experience our application by clicking [Lokando - dev](http://dev.lokando.pl)  
 
 You can create user by yourself or use one of provided by us:
 ```batch
@@ -32,8 +31,6 @@ pass: osoba123
 login: czlowiek@czlowiek.pl
 pass: czlowiek123
 ```
-
-They work on [Lokando](http://lokando.pl) but on [Lokando - dev](http://dev.lokando.pl) they may not work due to frequent database rebuilds
 
 ## Local Installation
 
