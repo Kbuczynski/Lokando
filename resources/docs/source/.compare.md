@@ -16,7 +16,7 @@ toc_footers:
 # Info
 
 Welcome to the generated API reference.
-[Get Postman Collection](http://localhost/Lokando/docs/collection.json)
+[Get Postman Collection](http://localhost/PROJEKTY/Lokando/public/docs/collection.json)
 
 <!-- END_INFO -->
 
@@ -34,7 +34,7 @@ If company_* fields are provided it also creates company profile, and user's opt
 
 ```bash
 curl -X POST \
-    "http://localhost/Lokando/api/auth/register" \
+    "http://localhost/PROJEKTY/Lokando/public/api/auth/register" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"name":"praesentium","surname":"excepturi","phone":"qui","street":"qui","street_number":"illum","city":"iure","postal":"itaque","is_company":false,"email":"commodi","password":"est","password_confirmation":"a","company_nip":1,"company_name":"laudantium","company_phone":"non","company_street":"dolorum","company_street_number":"laudantium","company_city":"enim","company_postal":"architecto","company_description":"rerum","company_slogan":"dolorum","company_contacts":[],"category_id":6}'
@@ -43,7 +43,7 @@ curl -X POST \
 
 ```javascript
 const url = new URL(
-    "http://localhost/Lokando/api/auth/register"
+    "http://localhost/PROJEKTY/Lokando/public/api/auth/register"
 );
 
 let headers = {
@@ -127,7 +127,7 @@ Login user using credentials
 
 ```bash
 curl -X POST \
-    "http://localhost/Lokando/api/auth/login" \
+    "http://localhost/PROJEKTY/Lokando/public/api/auth/login" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"email":"suscipit","password":"amet"}'
@@ -136,7 +136,7 @@ curl -X POST \
 
 ```javascript
 const url = new URL(
-    "http://localhost/Lokando/api/auth/login"
+    "http://localhost/PROJEKTY/Lokando/public/api/auth/login"
 );
 
 let headers = {
@@ -180,14 +180,14 @@ return user data based on sended token
 
 ```bash
 curl -X GET \
-    -G "http://localhost/Lokando/api/me" \
+    -G "http://localhost/PROJEKTY/Lokando/public/api/me" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/Lokando/api/me"
+    "http://localhost/PROJEKTY/Lokando/public/api/me"
 );
 
 let headers = {
@@ -227,14 +227,14 @@ removes token from database disabling login possibility
 
 ```bash
 curl -X GET \
-    -G "http://localhost/Lokando/api/logout" \
+    -G "http://localhost/PROJEKTY/Lokando/public/api/logout" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/Lokando/api/logout"
+    "http://localhost/PROJEKTY/Lokando/public/api/logout"
 );
 
 let headers = {
@@ -278,14 +278,14 @@ Return list of categories
 
 ```bash
 curl -X GET \
-    -G "http://localhost/Lokando/api/categories" \
+    -G "http://localhost/PROJEKTY/Lokando/public/api/categories" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/Lokando/api/categories"
+    "http://localhost/PROJEKTY/Lokando/public/api/categories"
 );
 
 let headers = {
@@ -312,61 +312,61 @@ fetch(url, {
             "id": 1,
             "name": "Gastronomia",
             "slug": "gastronomia",
-            "url": "http:\/\/localhost\/Lokando\/assets\/images\/category\/gastronomia.jpg"
+            "url": "http:\/\/localhost\/PROJEKTY\/Lokando\/public\/assets\/images\/category\/gastronomia.jpg"
         },
         {
             "id": 2,
             "name": "Zakupy",
             "slug": "zakupy",
-            "url": "http:\/\/localhost\/Lokando\/assets\/images\/category\/zakupy.jpg"
+            "url": "http:\/\/localhost\/PROJEKTY\/Lokando\/public\/assets\/images\/category\/zakupy.jpg"
         },
         {
             "id": 3,
             "name": "Zdrowie i Uroda",
             "slug": "zdrowie-i-uroda",
-            "url": "http:\/\/localhost\/Lokando\/assets\/images\/category\/zdrowie-i-uroda.jpg"
+            "url": "http:\/\/localhost\/PROJEKTY\/Lokando\/public\/assets\/images\/category\/zdrowie-i-uroda.jpg"
         },
         {
             "id": 4,
             "name": "Wyposażenie",
             "slug": "wyposazenie",
-            "url": "http:\/\/localhost\/Lokando\/assets\/images\/category\/wyposazenie.jpg"
+            "url": "http:\/\/localhost\/PROJEKTY\/Lokando\/public\/assets\/images\/category\/wyposazenie.jpg"
         },
         {
             "id": 5,
             "name": "Edukacja",
             "slug": "edukacja",
-            "url": "http:\/\/localhost\/Lokando\/assets\/images\/category\/edukacja.jpg"
+            "url": "http:\/\/localhost\/PROJEKTY\/Lokando\/public\/assets\/images\/category\/edukacja.jpg"
         },
         {
             "id": 6,
             "name": "Transport",
             "slug": "transport",
-            "url": "http:\/\/localhost\/Lokando\/assets\/images\/category\/transport.jpg"
+            "url": "http:\/\/localhost\/PROJEKTY\/Lokando\/public\/assets\/images\/category\/transport.jpg"
         },
         {
             "id": 7,
             "name": "Elektronika",
             "slug": "elektronika",
-            "url": "http:\/\/localhost\/Lokando\/assets\/images\/category\/elektronika.jpg"
+            "url": "http:\/\/localhost\/PROJEKTY\/Lokando\/public\/assets\/images\/category\/elektronika.jpg"
         },
         {
             "id": 8,
             "name": "Zwierzęta",
             "slug": "zwierzeta",
-            "url": "http:\/\/localhost\/Lokando\/assets\/images\/category\/zwierzeta.jpg"
+            "url": "http:\/\/localhost\/PROJEKTY\/Lokando\/public\/assets\/images\/category\/zwierzeta.jpg"
         },
         {
             "id": 9,
             "name": "Sport i Hobby",
             "slug": "sport-i-hobby",
-            "url": "http:\/\/localhost\/Lokando\/assets\/images\/category\/sport-i-hobby.jpg"
+            "url": "http:\/\/localhost\/PROJEKTY\/Lokando\/public\/assets\/images\/category\/sport-i-hobby.jpg"
         },
         {
             "id": 10,
             "name": "Inne Usługi",
             "slug": "inne-uslugi",
-            "url": "http:\/\/localhost\/Lokando\/assets\/images\/category\/inne-uslugi.jpg"
+            "url": "http:\/\/localhost\/PROJEKTY\/Lokando\/public\/assets\/images\/category\/inne-uslugi.jpg"
         }
     ],
     "first_page_url": "http:\/\/localhost\/api\/categories?page=1",
@@ -401,7 +401,7 @@ Updates company
 
 ```bash
 curl -X PUT \
-    "http://localhost/Lokando/api/company" \
+    "http://localhost/PROJEKTY/Lokando/public/api/company" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"name":"dignissimos","surname":"aspernatur","email":"sit","company_nip":12,"company_name":"dolores","company_phone":"excepturi","company_street":"laboriosam","company_street_number":"omnis","company_city":"ut","company_postal":"dolore","company_description":"accusamus","company_slogan":"odit","category_id":17,"company_contacts":[]}'
@@ -410,7 +410,7 @@ curl -X PUT \
 
 ```javascript
 const url = new URL(
-    "http://localhost/Lokando/api/company"
+    "http://localhost/PROJEKTY/Lokando/public/api/company"
 );
 
 let headers = {
@@ -478,14 +478,14 @@ Returns 3 latest companies
 
 ```bash
 curl -X GET \
-    -G "http://localhost/Lokando/api/company/latest" \
+    -G "http://localhost/PROJEKTY/Lokando/public/api/company/latest" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/Lokando/api/company/latest"
+    "http://localhost/PROJEKTY/Lokando/public/api/company/latest"
 );
 
 let headers = {
@@ -826,14 +826,14 @@ Returns company product based on id
 
 ```bash
 curl -X GET \
-    -G "http://localhost/Lokando/api/1/products" \
+    -G "http://localhost/PROJEKTY/Lokando/public/api/1/products" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/Lokando/api/1/products"
+    "http://localhost/PROJEKTY/Lokando/public/api/1/products"
 );
 
 let headers = {
@@ -873,14 +873,14 @@ Returns all currently user's company products
 
 ```bash
 curl -X GET \
-    -G "http://localhost/Lokando/api/products/own" \
+    -G "http://localhost/PROJEKTY/Lokando/public/api/products/own" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/Lokando/api/products/own"
+    "http://localhost/PROJEKTY/Lokando/public/api/products/own"
 );
 
 let headers = {
@@ -920,7 +920,7 @@ Stores new Product
 
 ```bash
 curl -X POST \
-    "http://localhost/Lokando/api/products" \
+    "http://localhost/PROJEKTY/Lokando/public/api/products" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"name":"illum","short_description":"dolores","long_description":"sunt","price":15,"type":2}'
@@ -929,7 +929,7 @@ curl -X POST \
 
 ```javascript
 const url = new URL(
-    "http://localhost/Lokando/api/products"
+    "http://localhost/PROJEKTY/Lokando/public/api/products"
 );
 
 let headers = {
@@ -1043,7 +1043,7 @@ curl -X PUT \
 
 ```javascript
 const url = new URL(
-    "http://localhost/Lokando/api/products/1"
+    "http://localhost/PROJEKTY/Lokando/public/api/products/1"
 );
 
 let params = {
@@ -1113,7 +1113,7 @@ curl -X PUT \
 
 ```javascript
 const url = new URL(
-    "http://localhost/Lokando/api/products/1/rate"
+    "http://localhost/PROJEKTY/Lokando/public/api/products/1/rate"
 );
 
 let params = {
@@ -1166,14 +1166,14 @@ Returns all products with pagination
 
 ```bash
 curl -X GET \
-    -G "http://localhost/Lokando/api/products" \
+    -G "http://localhost/PROJEKTY/Lokando/public/api/products" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/Lokando/api/products"
+    "http://localhost/PROJEKTY/Lokando/public/api/products"
 );
 
 let headers = {
@@ -1823,7 +1823,7 @@ Updates user
 
 ```bash
 curl -X PUT \
-    "http://localhost/Lokando/api/user" \
+    "http://localhost/PROJEKTY/Lokando/public/api/user" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"name":"enim","surname":"temporibus","phone":"accusantium","street":"doloribus","street_number":"vel","city":"quibusdam","postal":"earum","email":"ut"}'
@@ -1832,7 +1832,7 @@ curl -X PUT \
 
 ```javascript
 const url = new URL(
-    "http://localhost/Lokando/api/user"
+    "http://localhost/PROJEKTY/Lokando/public/api/user"
 );
 
 let headers = {
@@ -1888,14 +1888,14 @@ Parameter | Type | Status | Description
 
 ```bash
 curl -X GET \
-    -G "http://localhost/Lokando/_debugbar/open" \
+    -G "http://localhost/PROJEKTY/Lokando/public/_debugbar/open" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/Lokando/_debugbar/open"
+    "http://localhost/PROJEKTY/Lokando/public/_debugbar/open"
 );
 
 let headers = {
@@ -1933,14 +1933,14 @@ fetch(url, {
 
 ```bash
 curl -X GET \
-    -G "http://localhost/Lokando/_debugbar/clockwork/1" \
+    -G "http://localhost/PROJEKTY/Lokando/public/_debugbar/clockwork/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/Lokando/_debugbar/clockwork/1"
+    "http://localhost/PROJEKTY/Lokando/public/_debugbar/clockwork/1"
 );
 
 let headers = {
@@ -1977,14 +1977,14 @@ fetch(url, {
 
 ```bash
 curl -X GET \
-    -G "http://localhost/Lokando/_debugbar/telescope/1" \
+    -G "http://localhost/PROJEKTY/Lokando/public/_debugbar/telescope/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/Lokando/_debugbar/telescope/1"
+    "http://localhost/PROJEKTY/Lokando/public/_debugbar/telescope/1"
 );
 
 let headers = {
@@ -2022,14 +2022,14 @@ fetch(url, {
 
 ```bash
 curl -X GET \
-    -G "http://localhost/Lokando/_debugbar/assets/stylesheets" \
+    -G "http://localhost/PROJEKTY/Lokando/public/_debugbar/assets/stylesheets" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/Lokando/_debugbar/assets/stylesheets"
+    "http://localhost/PROJEKTY/Lokando/public/_debugbar/assets/stylesheets"
 );
 
 let headers = {
@@ -2067,14 +2067,14 @@ fetch(url, {
 
 ```bash
 curl -X GET \
-    -G "http://localhost/Lokando/_debugbar/assets/javascript" \
+    -G "http://localhost/PROJEKTY/Lokando/public/_debugbar/assets/javascript" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/Lokando/_debugbar/assets/javascript"
+    "http://localhost/PROJEKTY/Lokando/public/_debugbar/assets/javascript"
 );
 
 let headers = {
@@ -2112,14 +2112,14 @@ fetch(url, {
 
 ```bash
 curl -X DELETE \
-    "http://localhost/Lokando/_debugbar/cache/1/" \
+    "http://localhost/PROJEKTY/Lokando/public/_debugbar/cache/1/" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/Lokando/_debugbar/cache/1/"
+    "http://localhost/PROJEKTY/Lokando/public/_debugbar/cache/1/"
 );
 
 let headers = {
@@ -2150,14 +2150,14 @@ fetch(url, {
 
 ```bash
 curl -X GET \
-    -G "http://localhost/Lokando/oauth/authorize" \
+    -G "http://localhost/PROJEKTY/Lokando/public/oauth/authorize" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/Lokando/oauth/authorize"
+    "http://localhost/PROJEKTY/Lokando/public/oauth/authorize"
 );
 
 let headers = {
@@ -2195,14 +2195,14 @@ fetch(url, {
 
 ```bash
 curl -X POST \
-    "http://localhost/Lokando/oauth/authorize" \
+    "http://localhost/PROJEKTY/Lokando/public/oauth/authorize" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/Lokando/oauth/authorize"
+    "http://localhost/PROJEKTY/Lokando/public/oauth/authorize"
 );
 
 let headers = {
@@ -2233,14 +2233,14 @@ fetch(url, {
 
 ```bash
 curl -X DELETE \
-    "http://localhost/Lokando/oauth/authorize" \
+    "http://localhost/PROJEKTY/Lokando/public/oauth/authorize" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/Lokando/oauth/authorize"
+    "http://localhost/PROJEKTY/Lokando/public/oauth/authorize"
 );
 
 let headers = {
@@ -2271,14 +2271,14 @@ fetch(url, {
 
 ```bash
 curl -X POST \
-    "http://localhost/Lokando/oauth/token" \
+    "http://localhost/PROJEKTY/Lokando/public/oauth/token" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/Lokando/oauth/token"
+    "http://localhost/PROJEKTY/Lokando/public/oauth/token"
 );
 
 let headers = {
@@ -2309,14 +2309,14 @@ fetch(url, {
 
 ```bash
 curl -X GET \
-    -G "http://localhost/Lokando/oauth/tokens" \
+    -G "http://localhost/PROJEKTY/Lokando/public/oauth/tokens" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/Lokando/oauth/tokens"
+    "http://localhost/PROJEKTY/Lokando/public/oauth/tokens"
 );
 
 let headers = {
@@ -2354,14 +2354,14 @@ fetch(url, {
 
 ```bash
 curl -X DELETE \
-    "http://localhost/Lokando/oauth/tokens/1" \
+    "http://localhost/PROJEKTY/Lokando/public/oauth/tokens/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/Lokando/oauth/tokens/1"
+    "http://localhost/PROJEKTY/Lokando/public/oauth/tokens/1"
 );
 
 let headers = {
@@ -2392,14 +2392,14 @@ fetch(url, {
 
 ```bash
 curl -X POST \
-    "http://localhost/Lokando/oauth/token/refresh" \
+    "http://localhost/PROJEKTY/Lokando/public/oauth/token/refresh" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/Lokando/oauth/token/refresh"
+    "http://localhost/PROJEKTY/Lokando/public/oauth/token/refresh"
 );
 
 let headers = {
@@ -2430,14 +2430,14 @@ fetch(url, {
 
 ```bash
 curl -X GET \
-    -G "http://localhost/Lokando/oauth/clients" \
+    -G "http://localhost/PROJEKTY/Lokando/public/oauth/clients" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/Lokando/oauth/clients"
+    "http://localhost/PROJEKTY/Lokando/public/oauth/clients"
 );
 
 let headers = {
@@ -2475,14 +2475,14 @@ fetch(url, {
 
 ```bash
 curl -X POST \
-    "http://localhost/Lokando/oauth/clients" \
+    "http://localhost/PROJEKTY/Lokando/public/oauth/clients" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/Lokando/oauth/clients"
+    "http://localhost/PROJEKTY/Lokando/public/oauth/clients"
 );
 
 let headers = {
@@ -2513,14 +2513,14 @@ fetch(url, {
 
 ```bash
 curl -X PUT \
-    "http://localhost/Lokando/oauth/clients/1" \
+    "http://localhost/PROJEKTY/Lokando/public/oauth/clients/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/Lokando/oauth/clients/1"
+    "http://localhost/PROJEKTY/Lokando/public/oauth/clients/1"
 );
 
 let headers = {
@@ -2551,14 +2551,14 @@ fetch(url, {
 
 ```bash
 curl -X DELETE \
-    "http://localhost/Lokando/oauth/clients/1" \
+    "http://localhost/PROJEKTY/Lokando/public/oauth/clients/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/Lokando/oauth/clients/1"
+    "http://localhost/PROJEKTY/Lokando/public/oauth/clients/1"
 );
 
 let headers = {
@@ -2589,14 +2589,14 @@ fetch(url, {
 
 ```bash
 curl -X GET \
-    -G "http://localhost/Lokando/oauth/scopes" \
+    -G "http://localhost/PROJEKTY/Lokando/public/oauth/scopes" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/Lokando/oauth/scopes"
+    "http://localhost/PROJEKTY/Lokando/public/oauth/scopes"
 );
 
 let headers = {
@@ -2634,14 +2634,14 @@ fetch(url, {
 
 ```bash
 curl -X GET \
-    -G "http://localhost/Lokando/oauth/personal-access-tokens" \
+    -G "http://localhost/PROJEKTY/Lokando/public/oauth/personal-access-tokens" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/Lokando/oauth/personal-access-tokens"
+    "http://localhost/PROJEKTY/Lokando/public/oauth/personal-access-tokens"
 );
 
 let headers = {
@@ -2679,14 +2679,14 @@ fetch(url, {
 
 ```bash
 curl -X POST \
-    "http://localhost/Lokando/oauth/personal-access-tokens" \
+    "http://localhost/PROJEKTY/Lokando/public/oauth/personal-access-tokens" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/Lokando/oauth/personal-access-tokens"
+    "http://localhost/PROJEKTY/Lokando/public/oauth/personal-access-tokens"
 );
 
 let headers = {
@@ -2717,14 +2717,14 @@ fetch(url, {
 
 ```bash
 curl -X DELETE \
-    "http://localhost/Lokando/oauth/personal-access-tokens/1" \
+    "http://localhost/PROJEKTY/Lokando/public/oauth/personal-access-tokens/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/Lokando/oauth/personal-access-tokens/1"
+    "http://localhost/PROJEKTY/Lokando/public/oauth/personal-access-tokens/1"
 );
 
 let headers = {

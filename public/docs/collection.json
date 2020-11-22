@@ -16,7 +16,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "api\/auth\/register",
                             "query": []
                         },
@@ -44,7 +44,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "api\/auth\/login",
                             "query": []
                         },
@@ -72,7 +72,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "api\/me",
                             "query": []
                         },
@@ -100,7 +100,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "api\/logout",
                             "query": []
                         },
@@ -134,7 +134,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "api\/categories",
                             "query": []
                         },
@@ -168,7 +168,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "api\/company",
                             "query": []
                         },
@@ -196,7 +196,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "api\/company\/latest",
                             "query": []
                         },
@@ -341,7 +341,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "api\/:id\/products",
                             "query": []
                         },
@@ -369,7 +369,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "api\/products\/own",
                             "query": []
                         },
@@ -397,7 +397,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "api\/products",
                             "query": []
                         },
@@ -453,7 +453,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "api\/products\/:id",
                             "query": [
                                 {
@@ -488,7 +488,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "api\/products\/:id\/rate",
                             "query": [
                                 {
@@ -523,7 +523,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "api\/products",
                             "query": []
                         },
@@ -557,7 +557,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "api\/user",
                             "query": []
                         },
@@ -591,7 +591,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "_debugbar\/open",
                             "query": []
                         },
@@ -619,7 +619,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "_debugbar\/clockwork\/:id",
                             "query": []
                         },
@@ -647,7 +647,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "_debugbar\/telescope\/:id",
                             "query": []
                         },
@@ -675,7 +675,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "_debugbar\/assets\/stylesheets",
                             "query": []
                         },
@@ -703,7 +703,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "_debugbar\/assets\/javascript",
                             "query": []
                         },
@@ -731,7 +731,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "_debugbar\/cache\/:key\/:tags",
                             "query": []
                         },
@@ -759,7 +759,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "oauth\/authorize",
                             "query": []
                         },
@@ -787,7 +787,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "oauth\/authorize",
                             "query": []
                         },
@@ -815,7 +815,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "oauth\/authorize",
                             "query": []
                         },
@@ -843,7 +843,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "oauth\/token",
                             "query": []
                         },
@@ -871,7 +871,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "oauth\/tokens",
                             "query": []
                         },
@@ -899,7 +899,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "oauth\/tokens\/:token_id",
                             "query": []
                         },
@@ -927,7 +927,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "oauth\/token\/refresh",
                             "query": []
                         },
@@ -955,7 +955,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "oauth\/clients",
                             "query": []
                         },
@@ -983,7 +983,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "oauth\/clients",
                             "query": []
                         },
@@ -1011,7 +1011,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "oauth\/clients\/:client_id",
                             "query": []
                         },
@@ -1039,7 +1039,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "oauth\/clients\/:client_id",
                             "query": []
                         },
@@ -1067,7 +1067,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "oauth\/scopes",
                             "query": []
                         },
@@ -1095,7 +1095,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "oauth\/personal-access-tokens",
                             "query": []
                         },
@@ -1123,7 +1123,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "oauth\/personal-access-tokens",
                             "query": []
                         },
@@ -1151,7 +1151,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/Lokando",
+                            "host": "localhost\/PROJEKTY\/Lokando\/public\/",
                             "path": "oauth\/personal-access-tokens\/:token_id",
                             "query": []
                         },

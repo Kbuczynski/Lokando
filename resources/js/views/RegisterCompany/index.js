@@ -4,6 +4,7 @@ import RegisterCompanyAddress from "./RegisterCompanyAddress";
 import RegisterCompanyDetails from "./RegisterCompanyDetails";
 
 const RegisterCompany = props => {
+    // eslint-disable-next-line no-unused-vars
     const [baseValues, setBaseValues] = useState(props.location.state);
 
     const [fullValues, setFullValues] = useState({
